@@ -64,7 +64,11 @@
       "Bash(ls -la *.js *.png)",
       "Bash(grep -E \"\\\\.\\(js|png\\)$\")",
       "Bash(find src/pages src/components -name \"*.astro\" -exec sed -i 's/class=\"section bg-slate-[0-9]\\\\+\"/class=\"section\"/g' {} \\\\;)",
-      "Bash(find src/pages src/components -name \"*.astro\" -exec sed -i 's/ bg-slate-9[0-9][0-9]/ /g; s/ bg-slate-8[0-9][0-9]/ /g' {} \\\\;)"
+      "Bash(find src/pages src/components -name \"*.astro\" -exec sed -i 's/ bg-slate-9[0-9][0-9]/ /g; s/ bg-slate-8[0-9][0-9]/ /g' {} \\\\;)",
+      "Bash(xargs -0 sed -i 's/ bg-gradient-to-b from-slate-900 to-slate-950//g')",
+      "Bash(xargs -0 sed -i 's/ bg-slate-900//g')",
+      "Bash(xargs -0 sed -i 's/bg-slate-950//g')",
+      "Bash(xargs -0 sed -i 's/<footer class=\"bg-slate-900/<footer class=\"/g')"
     ]
   }
 }

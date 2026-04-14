@@ -54,3 +54,41 @@ a {
 .card {
   @apply bg-slate-900 border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-500/50 transition-all;
 }
+
+/* Animated Gradient Border Styles */
+@keyframes gradient-rotate {
+  from {
+    --gradient-angle: 0deg;
+  }
+  to {
+    --gradient-angle: 360deg;
+  }
+}
+
+.gradient-border-component {
+  position: relative;
+}
+
+/* Auto-rotate animation */
+.gradient-border-auto {
+  animation: gradient-rotate 5s linear infinite;
+}
+
+/* Rotate on hover */
+.gradient-border-hover {
+  animation: none;
+  transition: animation 0.3s ease;
+}
+
+.gradient-border-hover:hover {
+  animation: gradient-rotate 5s linear infinite;
+}
+
+/* Stop rotate on hover */
+.gradient-border-stop-hover {
+  animation: gradient-rotate 5s linear infinite;
+}
+
+.gradient-border-stop-hover:hover {
+  animation: none;
+}
