@@ -16,7 +16,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-attachment: fixed;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,21 +50,9 @@ const {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="text-luxury-silver font-luxury antialiased">
+  <body class="text-luxury-silver font-luxury antialiased" style="background: inherit;">
     <div class="min-h-screen flex flex-col relative z-10">
       <slot />
     </div>
-
-    <style is:global>
-      html {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-        background-attachment: fixed !important;
-      }
-
-      body {
-        background: inherit !important;
-        color: #e5e5e5 !important;
-      }
-    </style>
   </body>
 </html>
