@@ -57,7 +57,8 @@
       "Bash(node check-canvas.js)",
       "Bash(npm list:*)",
       "Bash(node check-three.js)",
-      "Bash(node verify-placement.js)"
+      "Bash(node verify-placement.js)",
+      "Bash(node test-shader.js)"
     ]
   }
 }
