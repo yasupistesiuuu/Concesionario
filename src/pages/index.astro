@@ -8,6 +8,16 @@ const description = 'Amplia selección de vehículos de segunda mano y ocasión.
 const featured = catalog.vehicles.slice(0, 6);
 const testimonials = catalog.testimonials;
 const company = catalog.company;
+
+const getEmissionColor = (emission) => {
+  const colors = {
+    'C': 'bg-yellow-600',
+    'B': 'bg-green-700',
+    'ECO': 'bg-green-500',
+    'CERO': 'bg-blue-600'
+  };
+  return colors[emission] || 'bg-slate-600';
+};
 ---
 
 <Layout title={title} description={description}>
@@ -56,8 +66,11 @@ const company = catalog.company;
       <h2 class="text-4xl font-bold mb-16 text-yellow-400">Vehículos Destacados</h2>
       <div class="grid md:grid-cols-3 gap-8">
         {featured.map((vehicle) => (
-          <div class="card overflow-hidden">
+          <div class="card overflow-hidden relative">
             <img src={vehicle.image} alt={vehicle.name} class="w-full h-48 object-cover" />
+            <div class={`absolute top-3 right-3 ${getEmissionColor(vehicle.emission)} px-3 py-1 rounded-full text-white font-bold text-sm`}>
+              {vehicle.emission}
+            </div>
             <div class="p-6">
               <h3 class="font-bold text-lg mb-2 text-white">{vehicle.name}</h3>
               <p class="text-yellow-400 text-2xl font-bold mb-4">{vehicle.price}€</p>
@@ -134,6 +147,7 @@ const company = catalog.company;
           <h4 class="font-bold mb-4">Contacto</h4>
           <p class="text-slate-400 text-sm">📍 {company.location}</p>
           <p class="text-slate-400 text-sm">📧 {company.email}</p>
+          <p class="text-slate-400 text-sm">📞 {company.phone}</p>
         </div>
       </div>
       <div class="border-t border-yellow-500/30 pt-8 text-center text-slate-400 text-sm">

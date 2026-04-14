@@ -4,8 +4,18 @@ import Navigation from '@/components/Navigation.astro';
 import catalog from '@/data/catalog.json';
 
 const title = 'Catálogo Completo | AUTOS VELACRUZ';
-const description = '15 vehículos de lujo disponibles. Desde 13.900€. Financiación, entrega a domicilio.';
+const description = '61 vehículos de lujo disponibles. Desde 4.500€. Financiación, entrega a domicilio, vehículos revisados.';
 const vehicles = catalog.vehicles;
+
+const getEmissionColor = (emission) => {
+  const colors = {
+    'C': 'bg-yellow-600',
+    'B': 'bg-green-700',
+    'ECO': 'bg-green-500',
+    'CERO': 'bg-blue-600'
+  };
+  return colors[emission] || 'bg-slate-600';
+};
 ---
 
 <Layout title={title} description={description}>
@@ -18,8 +28,11 @@ const vehicles = catalog.vehicles;
 
       <div class="grid md:grid-cols-3 gap-8">
         {vehicles.map((vehicle) => (
-          <div class="card overflow-hidden" id={vehicle.slug}>
+          <div class="card overflow-hidden relative" id={vehicle.slug}>
             <img src={vehicle.image} alt={vehicle.name} class="w-full h-48 object-cover" />
+            <div class={`absolute top-3 right-3 ${getEmissionColor(vehicle.emission)} px-3 py-1 rounded-full text-white font-bold text-sm`}>
+              {vehicle.emission}
+            </div>
             <div class="p-6">
               <h3 class="font-bold text-lg mb-2 text-white">{vehicle.name}</h3>
               <div class="mb-4">

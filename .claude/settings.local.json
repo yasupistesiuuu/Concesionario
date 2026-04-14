@@ -16,7 +16,20 @@
       "Bash(vercel link:*)",
       "Bash(npx playwright:*)",
       "Bash(vercel ls:*)",
-      "Bash(vercel inspect:*)"
+      "Bash(vercel inspect:*)",
+      "Bash(python3 -m json.tool)",
+      "Bash(grep -A 8 \"^\\\\[.*\\\\]\\(https://autosvelacruz.es/coches-segunda-mano.*/$\\)\" /c/Users/vmmlp/OneDrive/Escritorio/Concesionario/datos-autos-velacruz.md)",
+      "Bash(vercel alias:*)",
+      "Bash(vercel domains:*)",
+      "Bash(curl -s https://concesionario-luxury-csg1vccft-yasupistesiuuus-projects.vercel.app/catalogo)",
+      "Bash(curl -s https://concesionario-luxury-csg1vccft-yasupistesiuuus-projects.vercel.app/)",
+      "Bash(curl -s http://localhost:4322/)",
+      "Bash(curl -s http://localhost:4322/catalogo/)",
+      "Bash(pkill -f \"astro preview\")",
+      "Bash(curl -I https://concesionario-luxury-csg1vccft-yasupistesiuuus-projects.vercel.app/catalogo)",
+      "Bash(vercel status:*)",
+      "Bash(vercel projects:*)",
+      "Bash(curl -s https://concesionario-luxury.vercel.app/catalogo)"
     ]
   }
 }
