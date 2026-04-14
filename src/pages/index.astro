@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation.astro';
 import HoverButton from '@/components/HoverButton.astro';
 import HeroAnimated from '@/components/HeroAnimated.astro';
 import GradientCard from '@/components/GradientCard.astro';
+import FooterAnimated from '@/components/FooterAnimated.astro';
 import catalog from '@/data/catalog.json';
 
 const title = 'AUTOS VELACRUZ | Concesionario de Lujo en Valdemoro';
@@ -169,39 +170,6 @@ const emissionTags = {
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class=" border-t border-yellow-500/30 py-12">
-    <div class="container">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
-        <div>
-          <img src="https://autosvelacruz.es/wp-content/uploads/2025/10/Velacruz-Logo1.jpg" alt="AUTOS VELACRUZ" class="h-12 w-auto object-contain mb-4" />
-          <p class="text-slate-400 text-sm">{company.location}</p>
-        </div>
-        <div>
-          <h4 class="font-bold mb-4">Navegación</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/" class="text-slate-400 hover:text-yellow-400">Inicio</a></li>
-            <li><a href="/catalogo" class="text-slate-400 hover:text-yellow-400">Catálogo</a></li>
-            <li><a href="/servicios" class="text-slate-400 hover:text-yellow-400">Servicios</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-bold mb-4">Empresa</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/sobre-nosotros" class="text-slate-400 hover:text-yellow-400">Sobre Nosotros</a></li>
-            <li><a href="/contacto" class="text-slate-400 hover:text-yellow-400">Contacto</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-bold mb-4">Contacto</h4>
-          <p class="text-slate-400 text-sm">📍 {company.location}</p>
-          <p class="text-slate-400 text-sm">📧 {company.email}</p>
-          <p class="text-slate-400 text-sm">📞 {company.phone}</p>
-        </div>
-      </div>
-      <div class="border-t border-yellow-500/30 pt-8 text-center text-slate-400 text-sm">
-        <p>&copy; 2026 {company.name}. Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </footer>
+  <!-- FOOTER ANIMATED -->
+  <FooterAnimated />
 </Layout>
