@@ -1,27 +1,161 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Navigation from '@/components/Navigation.astro';
+import catalog from '@/data/catalog.json';
 
 const title = 'Sobre Nosotros | AUTOS VELACRUZ';
-const description = 'Conoce la historia y valores de AUTOS VELACRUZ';
+const description = 'Más de 20 años en el sector con experiencia, profesionalidad y compromiso con nuestros clientes.';
+const company = catalog.company;
 ---
 
 <Layout title={title} description={description}>
   <Navigation />
-  <section class="section bg-luxury-dark">
-    <div class="container max-w-3xl">
-      <h1 class="text-5xl font-bold mb-12">Sobre Nosotros</h1>
-      <div class="prose prose-invert">
-        <p class="text-lg mb-6">AUTOS VELACRUZ es un concesionario de lujo especializado en vehículos de segunda mano y ocasión de las mejores marcas del mercado.</p>
-        <p class="text-lg mb-6">Nuestro objetivo es proporcionar una experiencia exclusiva y profesional en la compra de tu próximo vehículo.</p>
-        <h2 class="text-3xl font-bold mt-12 mb-6">Nuestros Valores</h2>
-        <ul class="space-y-4">
-          <li>✓ Profesionalidad en cada interacción</li>
-          <li>✓ Transparencia total en precios y condiciones</li>
-          <li>✓ Excelencia en el servicio postventa</li>
-          <li>✓ Compromiso con la calidad de nuestros vehículos</li>
-        </ul>
+
+  <!-- HERO -->
+  <section class="section bg-gradient-to-b from-slate-900 to-slate-950">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 text-yellow-400">
+          Sobre AUTOS VELACRUZ
+        </h1>
+        <p class="text-xl text-slate-300">
+          Más de 20 años especializados en vehículos de segunda mano de calidad en Valdemoro, Madrid.
+        </p>
       </div>
     </div>
   </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="section bg-slate-950">
+    <div class="container">
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <h2 class="text-4xl font-bold mb-6 text-yellow-400">Quiénes Somos</h2>
+          <p class="text-xl text-slate-300 mb-6 leading-relaxed">
+            {company.description}
+          </p>
+          <p class="text-lg text-slate-400 mb-6 leading-relaxed">
+            Somos un equipo apasionado por los coches, dedicados a ofrecer la mejor experiencia de compra con transparencia total, asesoramiento experto y un servicio que va más allá de lo esperado.
+          </p>
+          <p class="text-lg text-slate-400 leading-relaxed">
+            Desde el primer contacto hasta después de la compra, estamos aquí para garantizar tu satisfacción y confianza en tu inversión.
+          </p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=600&h=500&fit=crop" alt="AUTOS VELACRUZ" class="rounded-lg shadow-2xl" />
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section bg-slate-900">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-center mb-16 text-yellow-400">Nuestros Valores</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card p-8">
+          <h3 class="text-2xl font-bold mb-4">💎 Profesionalidad</h3>
+          <p class="text-slate-400">En cada interacción con nuestros clientes mostramos el máximo nivel de profesionalidad y competencia.</p>
+        </div>
+        <div class="card p-8">
+          <h3 class="text-2xl font-bold mb-4">🤝 Transparencia</h3>
+          <p class="text-slate-400">Información clara y completa sobre cada vehículo sin sorpresas ni letra pequeña.</p>
+        </div>
+        <div class="card p-8">
+          <h3 class="text-2xl font-bold mb-4">⭐ Excelencia</h3>
+          <p class="text-slate-400">Compromiso permanente con la calidad de nuestros vehículos y servicio postventa impecable.</p>
+        </div>
+        <div class="card p-8">
+          <h3 class="text-2xl font-bold mb-4">❤️ Pasión</h3>
+          <p class="text-slate-400">Nos encantan los coches y se nota en el trato y dedicación que ponemos en cada venta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section bg-slate-950">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-center mb-16 text-yellow-400">Nuestra Experiencia</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="card p-8 text-center">
+          <p class="text-5xl font-bold text-yellow-400 mb-2">+20</p>
+          <p class="text-xl text-slate-300">Años de Experiencia</p>
+        </div>
+        <div class="card p-8 text-center">
+          <p class="text-5xl font-bold text-yellow-400 mb-2">1000+</p>
+          <p class="text-xl text-slate-300">Clientes Satisfechos</p>
+        </div>
+        <div class="card p-8 text-center">
+          <p class="text-5xl font-bold text-yellow-400 mb-2">61</p>
+          <p class="text-xl text-slate-300">Vehículos en Stock</p>
+        </div>
+        <div class="card p-8 text-center">
+          <p class="text-5xl font-bold text-yellow-400 mb-2">⭐️ 5.0</p>
+          <p class="text-xl text-slate-300">Valoración en Google</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section bg-slate-900">
+    <div class="container max-w-3xl">
+      <h2 class="text-4xl font-bold text-center mb-16 text-yellow-400">Nuestro Equipo</h2>
+      <div class="card p-12 text-center">
+        <p class="text-xl text-slate-300 leading-relaxed mb-6">
+          Contamos con un equipo comprometido de profesionales especializados en automoción, cada uno con amplia experiencia y dedicación genuina por atender tus necesidades.
+        </p>
+        <p class="text-lg text-slate-400 leading-relaxed">
+          David, Raúl, Daniel, Diego y el resto del equipo están listos para ofrecerte el mejor servicio en la compra, venta o asesoramiento de tu vehículo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-950">
+    <div class="container text-center">
+      <h2 class="text-4xl font-bold mb-6">¿Quieres Conocernos?</h2>
+      <p class="text-xl mb-8 opacity-90">Visítanos en Valdemoro o contacta con nosotros hoy mismo</p>
+      <a href="/contacto" class="inline-block px-12 py-4 bg-slate-950 text-yellow-400 font-bold rounded-lg hover:bg-opacity-80 transition-all">
+        Contactar Ahora
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 border-t border-yellow-500/30 py-12">
+    <div class="container">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h4 class="font-bold text-yellow-400 mb-4">{company.name}</h4>
+          <p class="text-slate-400 text-sm">{company.location}</p>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Navegación</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/" class="text-slate-400 hover:text-yellow-400">Inicio</a></li>
+            <li><a href="/catalogo" class="text-slate-400 hover:text-yellow-400">Catálogo</a></li>
+            <li><a href="/sobre-nosotros" class="text-slate-400 hover:text-yellow-400">Sobre Nosotros</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Empresa</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/compramos-tu-coche" class="text-slate-400 hover:text-yellow-400">Compramos Tu Coche</a></li>
+            <li><a href="/vehiculos-por-encargo" class="text-slate-400 hover:text-yellow-400">Vehículos por Encargo</a></li>
+            <li><a href="/contacto" class="text-slate-400 hover:text-yellow-400">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Contacto</h4>
+          <p class="text-slate-400 text-sm">📍 {company.location}</p>
+          <p class="text-slate-400 text-sm">📧 {company.email}</p>
+          <p class="text-slate-400 text-sm">📞 {company.phone}</p>
+        </div>
+      </div>
+      <div class="border-t border-yellow-500/30 pt-8 text-center text-slate-400 text-sm">
+        <p>&copy; 2026 {company.name}. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
 </Layout>

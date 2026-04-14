@@ -32,7 +32,9 @@
       "Bash(curl -s https://concesionario-luxury.vercel.app/catalogo)",
       "Bash(curl -s https://concesionario-luxury.vercel.app/compramos-tu-coche)",
       "Bash(curl -s https://concesionario-luxury.vercel.app/vehiculos-por-encargo)",
-      "Bash(curl -s https://concesionario-luxury.vercel.app/contacto)"
+      "Bash(curl -s https://concesionario-luxury.vercel.app/contacto)",
+      "Bash(curl -s https://concesionario-luxury.vercel.app/servicios)",
+      "Bash(curl -s https://concesionario-luxury.vercel.app/sobre-nosotros)"
     ]
   }
 }

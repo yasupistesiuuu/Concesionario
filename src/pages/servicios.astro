@@ -1,30 +1,160 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Navigation from '@/components/Navigation.astro';
+import catalog from '@/data/catalog.json';
 
 const title = 'Servicios | AUTOS VELACRUZ';
-const description = 'Conoce nuestros servicios premium de financiación y mantenimiento';
+const description = 'Financiación personalizada, entrega a domicilio, vehículos revisados y tasación gratuita.';
+const company = catalog.company;
+
+const services = [
+  {
+    title: 'Financiación Personalizada',
+    description: 'Ofertas de financiación adaptadas a tus necesidades económicas con cuotas asequibles desde 200€/mes',
+    icon: '💳'
+  },
+  {
+    title: 'Entrega a Domicilio',
+    description: 'Entregamos tu vehículo en la puerta de tu casa sin trámites ni complicaciones en cualquier punto de la península',
+    icon: '🚚'
+  },
+  {
+    title: 'Vehículos Revisados',
+    description: 'Exhaustiva revisión mecánica antes de su venta garantizando el mejor estado del vehículo',
+    icon: '✅'
+  },
+  {
+    title: 'Tasación Gratuita',
+    description: 'Evaluación sin compromiso de tu vehículo actual con máxima tasación del mercado',
+    icon: '📋'
+  },
+  {
+    title: 'Cambio de Titularidad',
+    description: 'Nos encargamos de toda la documentación y gestión legal para que no tengas que preocuparte de nada',
+    icon: '🔐'
+  },
+  {
+    title: 'Asesoramiento Experto',
+    description: 'Equipo de profesionales con amplia experiencia para ayudarte a encontrar el vehículo perfecto',
+    icon: '👨‍💼'
+  }
+];
 ---
 
 <Layout title={title} description={description}>
   <Navigation />
-  <section class="section bg-luxury-dark">
+
+  <!-- HERO -->
+  <section class="section bg-gradient-to-b from-slate-900 to-slate-950">
     <div class="container">
-      <h1 class="text-5xl font-bold mb-16">Servicios Premium</h1>
+      <div class="max-w-3xl">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 text-yellow-400">
+          Nuestros Servicios
+        </h1>
+        <p class="text-xl text-slate-300">
+          Ofrecemos soluciones integrales para tu necesidad de movilidad: compra, venta, financiación y más.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="section bg-slate-950">
+    <div class="container">
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="card p-8">
-          <h3 class="text-2xl font-bold mb-4">Financiación Personalizada</h3>
-          <p class="mb-4">Ofrecemos financiación adaptada a tus necesidades económicas</p>
+        {services.map((service) => (
+          <div class="card p-8 hover:border-yellow-400 transition-all duration-300">
+            <div class="text-5xl mb-4">{service.icon}</div>
+            <h3 class="text-2xl font-bold mb-3">{service.title}</h3>
+            <p class="text-slate-400 leading-relaxed">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section bg-slate-900">
+    <div class="container max-w-3xl">
+      <h2 class="text-4xl font-bold text-center mb-16 text-yellow-400">¿Por Qué Elegirnos?</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <div class="text-3xl flex-shrink-0">💎</div>
+          <div>
+            <h3 class="text-2xl font-bold mb-2">Máxima Calidad</h3>
+            <p class="text-slate-400">Todos nuestros vehículos se someten a una exhaustiva revisión mecánica para garantizar su estado óptimo</p>
+          </div>
         </div>
-        <div class="card p-8">
-          <h3 class="text-2xl font-bold mb-4">Mantenimiento Especializado</h3>
-          <p class="mb-4">Servicio técnico especializado para tus vehículos</p>
+        <div class="flex gap-4 items-start">
+          <div class="text-3xl flex-shrink-0">🤝</div>
+          <div>
+            <h3 class="text-2xl font-bold mb-2">Transparencia Total</h3>
+            <p class="text-slate-400">Información clara y completa sobre cada vehículo sin sorpresas ni letra pequeña</p>
+          </div>
         </div>
-        <div class="card p-8">
-          <h3 class="text-2xl font-bold mb-4">Renting de Lujo</h3>
-          <p class="mb-4">Soluciones de movilidad premium sin compromiso</p>
+        <div class="flex gap-4 items-start">
+          <div class="text-3xl flex-shrink-0">⚡</div>
+          <div>
+            <h3 class="text-2xl font-bold mb-2">Proceso Rápido</h3>
+            <p class="text-slate-400">Trámites sencillos y ágiles desde la consulta hasta la entrega de tu vehículo</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="text-3xl flex-shrink-0">🏆</div>
+          <div>
+            <h3 class="text-2xl font-bold mb-2">Experiencia</h3>
+            <p class="text-slate-400">Más de 20 años ayudando a clientes a encontrar su vehículo ideal</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- CTA -->
+  <section class="section bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-950">
+    <div class="container text-center">
+      <h2 class="text-4xl font-bold mb-6">¿Necesitas Ayuda?</h2>
+      <p class="text-xl mb-8 opacity-90">Nuestro equipo está disponible para resolver todas tus dudas</p>
+      <a href="/contacto" class="inline-block px-12 py-4 bg-slate-950 text-yellow-400 font-bold rounded-lg hover:bg-opacity-80 transition-all">
+        Contactar Ahora
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 border-t border-yellow-500/30 py-12">
+    <div class="container">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h4 class="font-bold text-yellow-400 mb-4">{company.name}</h4>
+          <p class="text-slate-400 text-sm">{company.location}</p>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Navegación</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/" class="text-slate-400 hover:text-yellow-400">Inicio</a></li>
+            <li><a href="/catalogo" class="text-slate-400 hover:text-yellow-400">Catálogo</a></li>
+            <li><a href="/servicios" class="text-slate-400 hover:text-yellow-400">Servicios</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Empresa</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/compramos-tu-coche" class="text-slate-400 hover:text-yellow-400">Compramos Tu Coche</a></li>
+            <li><a href="/vehiculos-por-encargo" class="text-slate-400 hover:text-yellow-400">Vehículos por Encargo</a></li>
+            <li><a href="/contacto" class="text-slate-400 hover:text-yellow-400">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Contacto</h4>
+          <p class="text-slate-400 text-sm">📍 {company.location}</p>
+          <p class="text-slate-400 text-sm">📧 {company.email}</p>
+          <p class="text-slate-400 text-sm">📞 {company.phone}</p>
+        </div>
+      </div>
+      <div class="border-t border-yellow-500/30 pt-8 text-center text-slate-400 text-sm">
+        <p>&copy; 2026 {company.name}. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
 </Layout>
