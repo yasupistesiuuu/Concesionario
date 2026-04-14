@@ -1,0 +1,313 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Navigation from '@/components/Navigation.astro';
+import catalog from '@/data/catalog.json';
+
+const title = 'Vehículos por Etiqueta Ambiental | AUTOS VELACRUZ';
+const description = 'Filtra vehículos por su etiqueta ambiental: C, B, ECO o CERO. Encuentra el vehículo ecológico perfecto.';
+const company = catalog.company;
+
+// Agrupar vehículos por etiqueta
+const vehicles = catalog.vehicles;
+const emissionTags = {
+  'C': {
+    label: 'Etiqueta C',
+    color: 'bg-yellow-600',
+    description: 'Vehículos con emisiones moderadas',
+    vehicles: vehicles.filter(v => v.emission === 'C')
+  },
+  'B': {
+    label: 'Etiqueta B',
+    color: 'bg-green-700',
+    description: 'Vehículos con bajas emisiones',
+    vehicles: vehicles.filter(v => v.emission === 'B')
+  },
+  'ECO': {
+    label: 'Etiqueta ECO',
+    color: 'bg-green-500',
+    description: 'Vehículos ecológicos (híbridos)',
+    vehicles: vehicles.filter(v => v.emission === 'ECO')
+  },
+  'CERO': {
+    label: 'Etiqueta CERO',
+    color: 'bg-blue-600',
+    description: 'Vehículos de cero emisiones (eléctricos)',
+    vehicles: vehicles.filter(v => v.emission === 'CERO')
+  }
+};
+
+const getEmissionColor = (emission) => {
+  const colors = {
+    'C': 'bg-yellow-600',
+    'B': 'bg-green-700',
+    'ECO': 'bg-green-500',
+    'CERO': 'bg-blue-600'
+  };
+  return colors[emission] || 'bg-slate-600';
+};
+---
+
+<Layout title={title} description={description}>
+  <Navigation />
+
+  <!-- HERO -->
+  <section class="section bg-gradient-to-b from-slate-900 to-slate-950">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 text-yellow-400">
+          Vehículos por Etiqueta Ambiental
+        </h1>
+        <p class="text-xl text-slate-300">
+          Filtra nuestros vehículos según su clasificación ambiental y encuentra el que mejor se adapta a tus necesidades ecológicas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ETIQUETAS OVERVIEW -->
+  <section class="section bg-slate-950">
+    <div class="container">
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        {Object.entries(emissionTags).map(([key, tag]) => (
+          <div class={`${tag.color} rounded-lg p-8 text-white`}>
+            <h3 class="text-3xl font-bold mb-3">{tag.label}</h3>
+            <p class="text-lg mb-4">{tag.description}</p>
+            <p class="text-2xl font-bold">{tag.vehicles.length} vehículos</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ETIQUETA C -->
+  <section class="section bg-slate-900">
+    <div class="container">
+      <div class="flex items-center gap-4 mb-12">
+        <div class="bg-yellow-600 px-4 py-2 rounded-full text-white font-bold text-xl">C</div>
+        <div>
+          <h2 class="text-4xl font-bold text-yellow-400">Etiqueta C</h2>
+          <p class="text-slate-400">Vehículos con emisiones moderadas</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {emissionTags['C'].vehicles.map((vehicle) => (
+          <div class="card overflow-hidden relative hover:shadow-xl transition-shadow">
+            <img src={vehicle.image} alt={vehicle.name} class="w-full h-48 object-cover" />
+            <div class="absolute top-3 right-3 bg-yellow-600 px-3 py-1 rounded-full text-white font-bold text-sm">
+              C
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-white">{vehicle.name}</h3>
+              <p class="text-3xl font-bold text-yellow-400 mb-4">{vehicle.price}€</p>
+              <ul class="text-sm text-slate-400 space-y-2 mb-6 pb-6 border-b border-slate-700">
+                <li class="flex justify-between">
+                  <span>Año:</span>
+                  <span class="font-semibold">{vehicle.year}</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Kilómetros:</span>
+                  <span class="font-semibold">{vehicle.km}</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Combustible:</span>
+                  <span class="font-semibold">{vehicle.fuel}</span>
+                </li>
+              </ul>
+              <a href={`/catalogo#${vehicle.slug}`} class="btn-primary block w-full py-2 text-center">
+                Ver Detalles
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ETIQUETA B -->
+  <section class="section bg-slate-950">
+    <div class="container">
+      <div class="flex items-center gap-4 mb-12">
+        <div class="bg-green-700 px-4 py-2 rounded-full text-white font-bold text-xl">B</div>
+        <div>
+          <h2 class="text-4xl font-bold text-green-500">Etiqueta B</h2>
+          <p class="text-slate-400">Vehículos con bajas emisiones</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {emissionTags['B'].vehicles.map((vehicle) => (
+          <div class="card overflow-hidden relative hover:shadow-xl transition-shadow">
+            <img src={vehicle.image} alt={vehicle.name} class="w-full h-48 object-cover" />
+            <div class="absolute top-3 right-3 bg-green-700 px-3 py-1 rounded-full text-white font-bold text-sm">
+              B
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-white">{vehicle.name}</h3>
+              <p class="text-3xl font-bold text-yellow-400 mb-4">{vehicle.price}€</p>
+              <ul class="text-sm text-slate-400 space-y-2 mb-6 pb-6 border-b border-slate-700">
+                <li class="flex justify-between">
+                  <span>Año:</span>
+                  <span class="font-semibold">{vehicle.year}</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Kilómetros:</span>
+                  <span class="font-semibold">{vehicle.km}</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Combustible:</span>
+                  <span class="font-semibold">{vehicle.fuel}</span>
+                </li>
+              </ul>
+              <a href={`/catalogo#${vehicle.slug}`} class="btn-primary block w-full py-2 text-center">
+                Ver Detalles
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ETIQUETA ECO -->
+  <section class="section bg-slate-900">
+    <div class="container">
+      <div class="flex items-center gap-4 mb-12">
+        <div class="bg-green-500 px-4 py-2 rounded-full text-white font-bold text-xl">ECO</div>
+        <div>
+          <h2 class="text-4xl font-bold text-green-400">Etiqueta ECO</h2>
+          <p class="text-slate-400">Vehículos ecológicos (híbridos)</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {emissionTags['ECO'].vehicles.length > 0 ? emissionTags['ECO'].vehicles.map((vehicle) => (
+          <div class="card overflow-hidden relative hover:shadow-xl transition-shadow">
+            <img src={vehicle.image} alt={vehicle.name} class="w-full h-48 object-cover" />
+            <div class="absolute top-3 right-3 bg-green-500 px-3 py-1 rounded-full text-white font-bold text-sm">
+              ECO
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-white">{vehicle.name}</h3>
+              <p class="text-3xl font-bold text-yellow-400 mb-4">{vehicle.price}€</p>
+              <ul class="text-sm text-slate-400 space-y-2 mb-6 pb-6 border-b border-slate-700">
+                <li class="flex justify-between">
+                  <span>Año:</span>
+                  <span class="font-semibold">{vehicle.year}</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Kilómetros:</span>
+                  <span class="font-semibold">{vehicle.km}</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Combustible:</span>
+                  <span class="font-semibold">{vehicle.fuel}</span>
+                </li>
+              </ul>
+              <a href={`/catalogo#${vehicle.slug}`} class="btn-primary block w-full py-2 text-center">
+                Ver Detalles
+              </a>
+            </div>
+          </div>
+        )) : (
+          <div class="col-span-3 text-center py-12">
+            <p class="text-xl text-slate-400">No hay vehículos ECO disponibles en este momento</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- ETIQUETA CERO -->
+  <section class="section bg-slate-950">
+    <div class="container">
+      <div class="flex items-center gap-4 mb-12">
+        <div class="bg-blue-600 px-4 py-2 rounded-full text-white font-bold text-xl">0</div>
+        <div>
+          <h2 class="text-4xl font-bold text-blue-400">Etiqueta CERO</h2>
+          <p class="text-slate-400">Vehículos de cero emisiones (eléctricos)</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {emissionTags['CERO'].vehicles.length > 0 ? emissionTags['CERO'].vehicles.map((vehicle) => (
+          <div class="card overflow-hidden relative hover:shadow-xl transition-shadow">
+            <img src={vehicle.image} alt={vehicle.name} class="w-full h-48 object-cover" />
+            <div class="absolute top-3 right-3 bg-blue-600 px-3 py-1 rounded-full text-white font-bold text-sm">
+              0
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-white">{vehicle.name}</h3>
+              <p class="text-3xl font-bold text-yellow-400 mb-4">{vehicle.price}€</p>
+              <ul class="text-sm text-slate-400 space-y-2 mb-6 pb-6 border-b border-slate-700">
+                <li class="flex justify-between">
+                  <span>Año:</span>
+                  <span class="font-semibold">{vehicle.year}</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Kilómetros:</span>
+                  <span class="font-semibold">{vehicle.km}</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Combustible:</span>
+                  <span class="font-semibold">{vehicle.fuel}</span>
+                </li>
+              </ul>
+              <a href={`/catalogo#${vehicle.slug}`} class="btn-primary block w-full py-2 text-center">
+                Ver Detalles
+              </a>
+            </div>
+          </div>
+        )) : (
+          <div class="col-span-3 text-center py-12">
+            <p class="text-xl text-slate-400">No hay vehículos CERO disponibles en este momento</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-950">
+    <div class="container text-center">
+      <h2 class="text-4xl font-bold mb-6">¿No encuentras lo que buscas?</h2>
+      <p class="text-xl mb-8 opacity-90">Solicita un vehículo por encargo con la etiqueta ambiental que prefieres</p>
+      <a href="/vehiculos-por-encargo" class="inline-block px-12 py-4 bg-slate-950 text-yellow-400 font-bold rounded-lg hover:bg-opacity-80 transition-all">
+        Solicitar Vehículo por Encargo
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 border-t border-yellow-500/30 py-12">
+    <div class="container">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h4 class="font-bold text-yellow-400 mb-4">{company.name}</h4>
+          <p class="text-slate-400 text-sm">{company.location}</p>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Navegación</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/" class="text-slate-400 hover:text-yellow-400">Inicio</a></li>
+            <li><a href="/catalogo" class="text-slate-400 hover:text-yellow-400">Catálogo</a></li>
+            <li><a href="/etiquetas" class="text-slate-400 hover:text-yellow-400">Por Etiqueta</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Empresa</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/compramos-tu-coche" class="text-slate-400 hover:text-yellow-400">Compramos Tu Coche</a></li>
+            <li><a href="/vehiculos-por-encargo" class="text-slate-400 hover:text-yellow-400">Vehículos por Encargo</a></li>
+            <li><a href="/contacto" class="text-slate-400 hover:text-yellow-400">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Contacto</h4>
+          <p class="text-slate-400 text-sm">📍 {company.location}</p>
+          <p class="text-slate-400 text-sm">📧 {company.email}</p>
+          <p class="text-slate-400 text-sm">📞 {company.phone}</p>
+        </div>
+      </div>
+      <div class="border-t border-yellow-500/30 pt-8 text-center text-slate-400 text-sm">
+        <p>&copy; 2026 {company.name}. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
