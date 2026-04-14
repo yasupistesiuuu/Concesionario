@@ -46,7 +46,10 @@
       "Bash(node)",
       "Bash(firecrawl scrape:*)",
       "Bash(firecrawl crawl:*)",
-      "Bash(curl -s \"https://autosvelacruz.es/coches-segunda-mano-y-ocasion-valdemoro-madrid/porsche-macan-s-diesel/\")"
+      "Bash(curl -s \"https://autosvelacruz.es/coches-segunda-mano-y-ocasion-valdemoro-madrid/porsche-macan-s-diesel/\")",
+      "WebFetch(domain:concesionario-luxury.vercel.app)",
+      "Bash(node fix-vehicle-images.js)",
+      "WebFetch(domain:autosvelacruz.es)"
     ]
   }
 }
