@@ -1,0 +1,33 @@
+---
+import BorderRotate from './BorderRotateWrapper.tsx';
+
+interface Props {
+  className?: string;
+  animationMode?: 'auto-rotate' | 'rotate-on-hover' | 'stop-rotate-on-hover';
+  animationSpeed?: number;
+  slot?: string;
+}
+
+const {
+  className = '',
+  animationMode = 'auto-rotate',
+  animationSpeed = 5,
+} = Astro.props;
+---
+
+<BorderRotate
+  client:load
+  className={`w-full ${className}`}
+  gradientColors={{
+    primary: '#d4af37',
+    secondary: '#f9de90',
+    accent: '#fbbf24'
+  }}
+  backgroundColor="#1e1b4b"
+  borderWidth={2}
+  borderRadius={12}
+  animationMode={animationMode}
+  animationSpeed={animationSpeed}
+>
+  <slot />
+</BorderRotate>

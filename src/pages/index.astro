@@ -3,6 +3,7 @@ import Layout from '@/layouts/Layout.astro';
 import Navigation from '@/components/Navigation.astro';
 import HoverButton from '@/components/HoverButton.astro';
 import HeroAnimated from '@/components/HeroAnimated.astro';
+import GradientCard from '@/components/GradientCard.astro';
 import catalog from '@/data/catalog.json';
 
 const title = 'AUTOS VELACRUZ | Concesionario de Lujo en Valdemoro';
@@ -67,11 +68,13 @@ const emissionTags = {
       <h2 class="text-4xl font-bold text-center mb-16 text-yellow-400">¿Por Qué Elegirnos?</h2>
       <div class="grid md:grid-cols-4 gap-8">
         {company.features.map((feature) => (
-          <div class="card">
-            <div class="text-5xl mb-4">{feature.icon === 'grid' ? '🏆' : feature.icon === 'truck' ? '🚚' : feature.icon === 'check' ? '✅' : '💰'}</div>
-            <h3 class="text-xl font-bold mb-3">{feature.title}</h3>
-            <p class="text-slate-400">{feature.description}</p>
-          </div>
+          <GradientCard animationMode="auto-rotate" animationSpeed={4}>
+            <div class="p-6">
+              <div class="text-5xl mb-4">{feature.icon === 'grid' ? '🏆' : feature.icon === 'truck' ? '🚚' : feature.icon === 'check' ? '✅' : '💰'}</div>
+              <h3 class="text-xl font-bold mb-3">{feature.title}</h3>
+              <p class="text-slate-400">{feature.description}</p>
+            </div>
+          </GradientCard>
         ))}
       </div>
     </div>
@@ -83,23 +86,25 @@ const emissionTags = {
       <h2 class="text-4xl font-bold mb-16 text-yellow-400">Vehículos Destacados</h2>
       <div class="grid md:grid-cols-3 gap-8">
         {featured.map((vehicle) => (
-          <div class="card overflow-hidden relative hover:shadow-2xl transition-shadow duration-300">
-            <img src={vehicle.image} alt={vehicle.name} class="w-full h-48 object-cover rounded-t-lg" />
-            <div class={`absolute top-3 right-3 ${getEmissionColor(vehicle.emission)} px-3 py-1 rounded-full text-white font-bold text-sm`}>
-              {vehicle.emission}
+          <GradientCard animationMode="rotate-on-hover" animationSpeed={3}>
+            <div class="overflow-hidden relative">
+              <img src={vehicle.image} alt={vehicle.name} class="w-full h-48 object-cover" />
+              <div class={`absolute top-3 right-3 ${getEmissionColor(vehicle.emission)} px-3 py-1 rounded-full text-white font-bold text-sm`}>
+                {vehicle.emission}
+              </div>
+              <div class="p-6">
+                <h3 class="font-bold text-lg mb-2 text-white">{vehicle.name}</h3>
+                <p class="text-yellow-400 text-2xl font-bold mb-4">{vehicle.price}€</p>
+                <ul class="text-sm text-slate-400 space-y-1 mb-4">
+                  <li>📅 {vehicle.year} | {vehicle.km} km</li>
+                  <li>⛽ {vehicle.fuel} | ⚙️ {vehicle.transmission}</li>
+                </ul>
+                <HoverButton href={`/catalogo#${vehicle.slug}`} containerClass="w-full" className="w-full text-center py-2 text-sm">
+                  Ver Detalles
+                </HoverButton>
+              </div>
             </div>
-            <div class="p-6">
-              <h3 class="font-bold text-lg mb-2 text-white">{vehicle.name}</h3>
-              <p class="text-yellow-400 text-2xl font-bold mb-4">{vehicle.price}€</p>
-              <ul class="text-sm text-slate-400 space-y-1 mb-4">
-                <li>📅 {vehicle.year} | {vehicle.km} km</li>
-                <li>⛽ {vehicle.fuel} | ⚙️ {vehicle.transmission}</li>
-              </ul>
-              <HoverButton href={`/catalogo#${vehicle.slug}`} containerClass="w-full" className="w-full text-center py-2 text-sm">
-                Ver Detalles
-              </HoverButton>
-            </div>
-          </div>
+          </GradientCard>
         ))}
       </div>
       <div class="text-center mt-12">
@@ -139,13 +144,15 @@ const emissionTags = {
       <h2 class="text-4xl font-bold text-center mb-16 text-yellow-400">Opiniones de Clientes</h2>
       <div class="grid md:grid-cols-2 gap-12">
         {testimonials.map((test) => (
-          <div class="card p-8 border-l-4 border-yellow-500">
-            <p class="text-lg italic text-slate-300 mb-6">"{test.text}"</p>
-            <div>
-              <p class="font-bold text-yellow-400">{test.author}</p>
-              <p class="text-slate-400 text-sm">{test.role}</p>
+          <GradientCard animationMode="rotate-on-hover" animationSpeed={3}>
+            <div class="p-8">
+              <p class="text-lg italic text-slate-300 mb-6">"{test.text}"</p>
+              <div>
+                <p class="font-bold text-yellow-400">{test.author}</p>
+                <p class="text-slate-400 text-sm">{test.role}</p>
+              </div>
             </div>
-          </div>
+          </GradientCard>
         ))}
       </div>
     </div>

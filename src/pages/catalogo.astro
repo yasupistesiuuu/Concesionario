@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import Navigation from '@/components/Navigation.astro';
 import HoverButton from '@/components/HoverButton.astro';
+import GradientCard from '@/components/GradientCard.astro';
 import catalog from '@/data/catalog.json';
 
 const title = 'Catálogo Completo | AUTOS VELACRUZ';
@@ -29,8 +30,8 @@ const getEmissionColor = (emission) => {
 
       <div class="grid md:grid-cols-3 gap-8">
         {vehicles.map((vehicle) => (
-          <div class="card overflow-hidden relative hover:shadow-2xl transition-shadow duration-300" id={vehicle.slug}>
-            <img src={vehicle.image} alt={vehicle.name} class="w-full h-48 object-cover rounded-t-lg aspect-video" />
+          <GradientCard animationMode="rotate-on-hover" animationSpeed={3} className="overflow-hidden relative" id={vehicle.slug}>
+            <img src={vehicle.image} alt={vehicle.name} class="w-full h-48 object-cover aspect-video" />
             <div class={`absolute top-3 right-3 ${getEmissionColor(vehicle.emission)} px-3 py-1 rounded-full text-white font-bold text-sm`}>
               {vehicle.emission}
             </div>
@@ -67,7 +68,7 @@ const getEmissionColor = (emission) => {
                 </HoverButton>
               </div>
             </div>
-          </div>
+          </GradientCard>
         ))}
       </div>
 
