@@ -51,20 +51,12 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body class="text-luxury-silver font-luxury antialiased">
-    <div id="bg"></div>
     <div class="min-h-screen flex flex-col relative z-10">
       <slot />
     </div>
 
-    <style>
-      #bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 0;
-        pointer-events: none;
+    <style is:global>
+      body {
         background: linear-gradient(-45deg, #ff6b6b, #ee5a6f, #c44569, #f8b195, #f67280, #c06c84, #6c5b7b, #355c7d);
         background-size: 300% 300%;
         background-position: 0% 50%;
