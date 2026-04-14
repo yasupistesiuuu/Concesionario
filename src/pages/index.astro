@@ -1,0 +1,24 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Navigation from '@/components/Navigation.astro';
+
+const title = 'AUTOS VELACRUZ | Concesionario de Lujo';
+const description = 'Descubre nuestra exclusiva selección de vehículos de segunda mano';
+
+const featuredVehicles = [
+  { id: 1, name: 'PORSCHE Macan S', price: '32.900', year: '2016', km: '225.100' },
+  { id: 2, name: 'TOYOTA C-HR Advance', price: '16.900', year: '2017', km: '131.250' },
+  { id: 3, name: 'HYUNDAI KONA Style', price: '17.500', year: '2020', km: '93.000' }
+];
+---
+
+<Layout title={title} description={description}>
+  <Navigation />
+  <section class="section bg-gradient-to-b from-luxury-accent to-luxury-dark">
+    <div class="container">
+      <h1 class="text-5xl font-bold mb-6"><span class="gradient-text">AUTOS VELACRUZ</span></h1>
+      <p class="text-xl mb-8">Concesionario de lujo en Valdemoro, Madrid</p>
+      <a href="/catalogo" class="btn-primary">Ver Catálogo</a>
+    </div>
+  </section>
+</Layout>

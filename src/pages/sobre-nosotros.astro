@@ -1,0 +1,27 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Navigation from '@/components/Navigation.astro';
+
+const title = 'Sobre Nosotros | AUTOS VELACRUZ';
+const description = 'Conoce la historia y valores de AUTOS VELACRUZ';
+---
+
+<Layout title={title} description={description}>
+  <Navigation />
+  <section class="section bg-luxury-dark">
+    <div class="container max-w-3xl">
+      <h1 class="text-5xl font-bold mb-12">Sobre Nosotros</h1>
+      <div class="prose prose-invert">
+        <p class="text-lg mb-6">AUTOS VELACRUZ es un concesionario de lujo especializado en vehículos de segunda mano y ocasión de las mejores marcas del mercado.</p>
+        <p class="text-lg mb-6">Nuestro objetivo es proporcionar una experiencia exclusiva y profesional en la compra de tu próximo vehículo.</p>
+        <h2 class="text-3xl font-bold mt-12 mb-6">Nuestros Valores</h2>
+        <ul class="space-y-4">
+          <li>✓ Profesionalidad en cada interacción</li>
+          <li>✓ Transparencia total en precios y condiciones</li>
+          <li>✓ Excelencia en el servicio postventa</li>
+          <li>✓ Compromiso con la calidad de nuestros vehículos</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>

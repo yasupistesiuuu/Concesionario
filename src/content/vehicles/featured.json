@@ -1,0 +1,38 @@
+[
+  {
+    "id": "peugeot-508-active-1-6-thp",
+    "name": "PEUGEOT 508 ACTIVE 1.6 THP",
+    "slug": "peugeot-508-active-1-6-thp",
+    "price": null
+  },
+  {
+    "id": "kia-sportage-1-6-gdi",
+    "name": "KIA SPORTAGE 1.6 GDI",
+    "slug": "kia-sportage-1-6-gdi",
+    "price": null
+  },
+  {
+    "id": "mini-cooper-s-5-puertas",
+    "name": "MINI COOPER S 5 PUERTAS",
+    "slug": "mini-cooper-s-5-puertas",
+    "price": null
+  },
+  {
+    "id": "renault-clio-dynamique-energy",
+    "name": "RENAULT CLIO DYNAMIQUE ENERGY",
+    "slug": "renault-clio-dynamique-energy",
+    "price": null
+  },
+  {
+    "id": "audi-a4-avant-30-tdi-s-tronic",
+    "name": "AUDI A4 AVANT 30 TDI S TRONIC",
+    "slug": "audi-a4-avant-30-tdi-s-tronic",
+    "price": null
+  },
+  {
+    "id": "volvo-v40-2-0-d2",
+    "name": "VOLVO V40 2.0 D2",
+    "slug": "volvo-v40-2-0-d2",
+    "price": null
+  }
+]

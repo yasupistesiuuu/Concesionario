@@ -1,0 +1,38 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Navigation from '@/components/Navigation.astro';
+
+const title = 'Catálogo | AUTOS VELACRUZ';
+const description = 'Descubre nuestro catálogo completo de vehículos de lujo';
+
+const vehicles = [
+  { id: 1, brand: 'PORSCHE', model: 'Macan S', price: '32.900', year: 2016, km: '225.100' },
+  { id: 2, brand: 'TOYOTA', model: 'C-HR', price: '16.900', year: 2017, km: '131.250' },
+  { id: 3, brand: 'HYUNDAI', model: 'KONA', price: '17.500', year: 2020, km: '93.000' },
+  { id: 4, brand: 'DACIA', model: 'Dokker', price: '13.900', year: 2016, km: '72.900' },
+  { id: 5, brand: 'BMW', model: 'Serie 3', price: '19.500', year: 2018, km: '110.000' },
+  { id: 6, brand: 'AUDI', model: 'A4', price: '22.000', year: 2019, km: '95.000' }
+];
+---
+
+<Layout title={title} description={description}>
+  <Navigation />
+  <section class="section bg-luxury-dark">
+    <div class="container">
+      <h1 class="text-5xl font-bold mb-16">Catálogo de Vehículos</h1>
+      <div class="grid md:grid-cols-3 gap-8">
+        {vehicles.map(v => (
+          <div class="card p-6">
+            <h3 class="font-bold text-xl mb-2">{v.brand} {v.model}</h3>
+            <p class="text-luxury-gold text-2xl font-bold mb-4">{v.price}€</p>
+            <ul class="text-sm space-y-1 mb-4">
+              <li>Año: {v.year}</li>
+              <li>Km: {v.km}</li>
+            </ul>
+            <button class="btn-secondary w-full">Ver Detalles</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,30 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Navigation from '@/components/Navigation.astro';
+
+const title = 'Servicios | AUTOS VELACRUZ';
+const description = 'Conoce nuestros servicios premium de financiación y mantenimiento';
+---
+
+<Layout title={title} description={description}>
+  <Navigation />
+  <section class="section bg-luxury-dark">
+    <div class="container">
+      <h1 class="text-5xl font-bold mb-16">Servicios Premium</h1>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card p-8">
+          <h3 class="text-2xl font-bold mb-4">Financiación Personalizada</h3>
+          <p class="mb-4">Ofrecemos financiación adaptada a tus necesidades económicas</p>
+        </div>
+        <div class="card p-8">
+          <h3 class="text-2xl font-bold mb-4">Mantenimiento Especializado</h3>
+          <p class="mb-4">Servicio técnico especializado para tus vehículos</p>
+        </div>
+        <div class="card p-8">
+          <h3 class="text-2xl font-bold mb-4">Renting de Lujo</h3>
+          <p class="mb-4">Soluciones de movilidad premium sin compromiso</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
