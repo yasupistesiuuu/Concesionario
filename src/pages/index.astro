@@ -121,7 +121,7 @@ const emissionTags = {
       <h2 class="text-4xl font-bold mb-16 text-yellow-400">Distintivo Ambiental</h2>
       <div class="grid md:grid-cols-4 gap-8">
         {Object.entries(emissionTags).map(([key, tag]) => (
-          <div class={`card p-8 text-center border-2 border-slate-700 hover:border-yellow-400 transition-colors`}>
+          <a href={`/etiqueta/${key}`} class={`card p-8 text-center border-2 border-slate-700 hover:border-yellow-400 hover:shadow-lg transition-all cursor-pointer`}>
             <div class={`${tag.color} inline-block px-6 py-3 rounded-full text-white font-bold text-3xl mb-4`}>
               {tag.label}
             </div>
@@ -132,7 +132,7 @@ const emissionTags = {
               {key === 'ECO' && 'Ecológicos (Híbridos)'}
               {key === 'CERO' && 'Cero Emisiones (Eléctricos)'}
             </p>
-          </div>
+          </a>
         ))}
       </div>
     </div>
