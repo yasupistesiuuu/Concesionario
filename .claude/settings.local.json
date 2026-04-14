@@ -36,7 +36,9 @@
       "Bash(curl -s https://concesionario-luxury.vercel.app/servicios)",
       "Bash(curl -s https://concesionario-luxury.vercel.app/sobre-nosotros)",
       "Bash(curl -I https://autosvelacruz.es/wp-content/uploads/2025/10/0-scaled.jpg.webp)",
-      "Bash(curl -s https://concesionario-luxury.vercel.app/etiquetas)"
+      "Bash(curl -s https://concesionario-luxury.vercel.app/etiquetas)",
+      "Bash(curl -s https://autosvelacruz.es/)",
+      "Bash(curl -s https://concesionario-luxury.vercel.app/)"
     ]
   }
 }

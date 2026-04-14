@@ -18,6 +18,30 @@ const getEmissionColor = (emission) => {
   };
   return colors[emission] || 'bg-slate-600';
 };
+
+// Agrupar vehículos por etiqueta
+const emissionTags = {
+  'C': {
+    label: 'C',
+    color: 'bg-yellow-600',
+    count: catalog.vehicles.filter(v => v.emission === 'C').length
+  },
+  'B': {
+    label: 'B',
+    color: 'bg-green-700',
+    count: catalog.vehicles.filter(v => v.emission === 'B').length
+  },
+  'ECO': {
+    label: 'ECO',
+    color: 'bg-green-500',
+    count: catalog.vehicles.filter(v => v.emission === 'ECO').length
+  },
+  'CERO': {
+    label: '0',
+    color: 'bg-blue-600',
+    count: catalog.vehicles.filter(v => v.emission === 'CERO').length
+  }
+};
 ---
 
 <Layout title={title} description={description}>
@@ -87,6 +111,29 @@ const getEmissionColor = (emission) => {
       </div>
       <div class="text-center mt-12">
         <a href="/catalogo" class="btn-primary">Ver Todo el Inventario</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISTINTIVO AMBIENTAL -->
+  <section class="section bg-slate-950">
+    <div class="container">
+      <h2 class="text-4xl font-bold mb-16 text-yellow-400">Distintivo Ambiental</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        {Object.entries(emissionTags).map(([key, tag]) => (
+          <div class={`card p-8 text-center border-2 border-slate-700 hover:border-yellow-400 transition-colors`}>
+            <div class={`${tag.color} inline-block px-6 py-3 rounded-full text-white font-bold text-3xl mb-4`}>
+              {tag.label}
+            </div>
+            <p class="text-3xl font-bold text-yellow-400 mb-2">{tag.count}</p>
+            <p class="text-slate-400">
+              {key === 'C' && 'Emisiones Moderadas'}
+              {key === 'B' && 'Bajas Emisiones'}
+              {key === 'ECO' && 'Ecológicos (Híbridos)'}
+              {key === 'CERO' && 'Cero Emisiones (Eléctricos)'}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
