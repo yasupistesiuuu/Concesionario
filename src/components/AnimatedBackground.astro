@@ -5,62 +5,71 @@
 <canvas id="bg-canvas"></canvas>
 
 <script>
-  console.log('AnimatedBackground script starting...');
-
-  let canvas = document.querySelector('canvas');
+(function() {
+  var canvas = document.querySelector('canvas');
   if (!canvas) {
-    console.error('Canvas not found!');
-    // Create canvas if not found
     canvas = document.createElement('canvas');
     canvas.id = 'bg-canvas';
     canvas.style.position = 'fixed';
     canvas.style.top = '0';
     canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
     canvas.style.zIndex = '0';
     canvas.style.pointerEvents = 'none';
     document.body.insertBefore(canvas, document.body.firstChild);
   }
 
-  const ctx = canvas.getContext('2d');
-  if (!ctx) {
-    console.error('Could not get 2D context');
-  } else {
-    console.log('Canvas context OK');
-  }
+  var ctx = canvas.getContext('2d');
+  if (!ctx) return;
 
-  // Set canvas size
   function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    console.log(`Canvas resized to ${canvas.width}x${canvas.height}`);
   }
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
 
-  // Animation
-  let time = 0;
+  var time = 0;
   function animate() {
-    // Draw simple blue background
-    ctx.fillStyle = '#1a1a2e';
+    // Dark background
+    ctx.fillStyle = '#0a0a15';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Draw gradient
-    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, `hsl(${time % 360}, 70%, 40%)`);
-    gradient.addColorStop(1, `hsl(${(time + 180) % 360}, 70%, 40%)`);
+    // Animated gradient
+    var hue = (time * 0.5) % 360;
+    var gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradient.addColorStop(0, 'hsl(' + hue + ', 100%, 30%)');
+    gradient.addColorStop(0.5, 'hsl(' + ((hue + 90) % 360) + ', 100%, 20%)');
+    gradient.addColorStop(1, 'hsl(' + ((hue + 180) % 360) + ', 100%, 25%)');
+
     ctx.fillStyle = gradient;
-    ctx.globalAlpha = 0.5;
+    ctx.globalAlpha = 0.7;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.globalAlpha = 1;
 
-    if (time === 0) {
-      console.log('First frame drawn');
+    // Draw moving circles
+    for (var i = 0; i < 3; i++) {
+      var x = canvas.width / 2 + Math.cos(time * 0.002 + i) * 400;
+      var y = canvas.height / 2 + Math.sin(time * 0.001 + i) * 250;
+      var radius = 150 + Math.sin(time * 0.003 + i) * 80;
+
+      var circleGrad = ctx.createRadialGradient(x, y, 0, x, y, radius);
+      circleGrad.addColorStop(0, 'hsla(' + ((hue + i * 90) % 360) + ', 100%, 50%, 0.4)');
+      circleGrad.addColorStop(1, 'hsla(' + ((hue + i * 90) % 360) + ', 100%, 30%, 0)');
+
+      ctx.fillStyle = circleGrad;
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fill();
     }
+
     time++;
     requestAnimationFrame(animate);
   }
 
   animate();
+})();
 </script>
 
 <style>
