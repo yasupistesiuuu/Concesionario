@@ -1,0 +1,44 @@
+{
+  "vehicles": [
+    {"name": "PORSCHE Macan S diesel", "slug": "porsche-macan-s-diesel", "price": "32.900", "year": "2016", "km": "225.100", "fuel": "Diésel", "transmission": "Automático", "image": "https://images.unsplash.com/photo-1617469767537-b85461dcff60?w=500&h=400&fit=crop"},
+    {"name": "TOYOTA C-HR 1.8 125H Advance", "slug": "toyota-c-hr-1-8-125h-advance", "price": "16.900", "year": "2017", "km": "131.250", "fuel": "Híbrido", "transmission": "Automático", "image": "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop"},
+    {"name": "HYUNDAI KONA 1.6 GDI HEV Style", "slug": "hyundai-kona-1-6-gdi-hev-style-sky-dct", "price": "17.500", "year": "2020", "km": "93.000", "fuel": "Híbrido", "transmission": "Automático", "image": "https://images.unsplash.com/photo-1591524521406-39e53910d08f?w=500&h=400&fit=crop"},
+    {"name": "DACIA Dokker Stepway dci", "slug": "dacia-dokker-stepway-dci", "price": "13.900", "year": "2016", "km": "72.900", "fuel": "Diésel", "transmission": "Manual", "image": "https://images.unsplash.com/photo-1609426659174-b17b1e59f0cb?w=500&h=400&fit=crop"},
+    {"name": "BMW Serie 3 320D", "slug": "bmw-serie-3-320d", "price": "19.900", "year": "2018", "km": "115.000", "fuel": "Diésel", "transmission": "Automático", "image": "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop"},
+    {"name": "AUDI A4 Avant 30 TDI", "slug": "audi-a4-avant-30-tdi-s-tronic", "price": "22.500", "year": "2019", "km": "98.000", "fuel": "Diésel", "transmission": "Automático", "image": "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop"},
+    {"name": "MERCEDES-BENZ Clase C 220D", "slug": "mercedes-benz-clase-c-c-coupe-220-d", "price": "25.900", "year": "2020", "km": "85.000", "fuel": "Diésel", "transmission": "Automático", "image": "https://images.unsplash.com/photo-1553882900-d5160ca3c426?w=500&h=400&fit=crop"},
+    {"name": "VOLKSWAGEN Golf Sport 2.0 TDI", "slug": "volkswagen-golf-sport-2-0-tdi-150cv-bmt", "price": "18.500", "year": "2017", "km": "120.000", "fuel": "Diésel", "transmission": "Manual", "image": "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop"},
+    {"name": "TESLA Model Y Performance", "slug": "tesla-model-y-performace", "price": "45.000", "year": "2022", "km": "35.000", "fuel": "Eléctrico", "transmission": "Automático", "image": "https://images.unsplash.com/photo-1560958089-b8a46dd8a1db?w=500&h=400&fit=crop"},
+    {"name": "RENAULT Megane GT LINE", "slug": "renault-megane-gt-line", "price": "15.900", "year": "2018", "km": "110.000", "fuel": "Gasolina", "transmission": "Manual", "image": "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop"},
+    {"name": "FORD Focus 1.6 EcoBoost", "slug": "ford-focus-1-6-ecobost", "price": "14.500", "year": "2016", "km": "125.000", "fuel": "Gasolina", "transmission": "Manual", "image": "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop"},
+    {"name": "SEAT Alhambra 2.0 TDI", "slug": "seat-alhambra-2-0-tdi-140-cv-ecomotive-style", "price": "20.500", "year": "2017", "km": "105.000", "fuel": "Diésel", "transmission": "Automático", "image": "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop"},
+    {"name": "VOLVO XC60 2.0 D3", "slug": "volvo-xc60-2-0-d3-momentum-auto", "price": "28.500", "year": "2021", "km": "45.000", "fuel": "Diésel", "transmission": "Automático", "image": "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop"},
+    {"name": "SKODA Octavia 1.6 TDI", "slug": "skoda-octavia-1-6-tdi-cr-105cv-ambition", "price": "16.500", "year": "2019", "km": "95.000", "fuel": "Diésel", "transmission": "Manual", "image": "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop"},
+    {"name": "PEUGEOT 3008 Sport Pack", "slug": "peugeot-3008-sport-pack-1-6-thp", "price": "21.500", "year": "2018", "km": "108.000", "fuel": "Gasolina", "transmission": "Automático", "image": "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop"}
+  ],
+  "testimonials": [
+    {
+      "text": "Quisiera agradecerles la experiencia tan satisfactoria de haberles comprado un coche. El coche está en unas condiciones excelentes, el trato por parte de David y Raúl es más que destacable. Tanto antes como después de la compra, la gestión, la entrega y la postventa impecable. Los recomiendo al 100 x 100.",
+      "author": "Rodrigo Bernasconi",
+      "role": "Cliente Satisfecho"
+    },
+    {
+      "text": "Unos profesionales increíbles. La atención al cliente, gestión y postventa impecable. Los recomiendo al 100%.",
+      "author": "Cliente Premium",
+      "role": "Comprador Verificado"
+    }
+  ],
+  "company": {
+    "name": "AUTOS VELACRUZ",
+    "location": "Valdemoro, Madrid",
+    "email": "contacto@autosvelacruz.es",
+    "tagline": "Experiencia de Lujo en Automoción",
+    "description": "En AUTOS VELACRUZ le ofrecemos una amplia selección de vehículos de segunda mano y ocasión.",
+    "features": [
+      {"title": "Amplia Variedad", "description": "Vehículos de todas las marcas y segmentos del mercado", "icon": "grid"},
+      {"title": "Entrega a Domicilio", "description": "Entregamos en cualquier punto de la península", "icon": "truck"},
+      {"title": "Vehículos Revisados", "description": "Exhaustiva revisión antes de su venta", "icon": "check"},
+      {"title": "Financiación", "description": "A medida de tus necesidades", "icon": "credit"}
+    ]
+  }
+}

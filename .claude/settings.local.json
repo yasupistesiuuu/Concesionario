@@ -12,7 +12,11 @@
       "Bash(vercel deploy:*)",
       "Bash(rm -rf concesionario-luxury/.git concesionario-luxury/.vercel)",
       "Bash(mv concesionario-luxury/* .)",
-      "Bash(rm -rf concesionario-luxury/.git concesionario-luxury/.vercel concesionario-luxury/dist)"
+      "Bash(rm -rf concesionario-luxury/.git concesionario-luxury/.vercel concesionario-luxury/dist)",
+      "Bash(vercel link:*)",
+      "Bash(npx playwright:*)",
+      "Bash(vercel ls:*)",
+      "Bash(vercel inspect:*)"
     ]
   }
 }
