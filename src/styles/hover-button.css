@@ -1,0 +1,25 @@
+.hover-gradient-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(250, 204, 21, 0.5);
+  background-color: #000;
+  color: #facc15;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.hover-gradient-button:hover {
+  border-color: #facc15;
+  background: linear-gradient(to right, #eab308, #ca8a04);
+  color: #1e293b;
+  box-shadow: 0 10px 15px -3px rgba(250, 204, 21, 0.5);
+}
+
+.hover-gradient-button:active {
+  transform: scale(0.98);
+}
