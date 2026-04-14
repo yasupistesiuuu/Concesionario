@@ -8,16 +8,20 @@ const AnimatedShaderBackground = () => {
     if (!containerRef.current) return;
 
     const container = containerRef.current;
-
-    // Clear any existing canvas
-    const existingCanvas = container.querySelector('canvas');
-    if (existingCanvas) {
-      existingCanvas.remove();
-    }
+    container.innerHTML = ''; // Clear all existing content
 
     const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+
+    // Create renderer with explicit canvas
+    const canvas = document.createElement('canvas');
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas,
+      antialias: true,
+      alpha: false,
+      powerPreference: 'high-performance'
+    });
+
     renderer.setClearColor(0x0a0a15, 1);
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
