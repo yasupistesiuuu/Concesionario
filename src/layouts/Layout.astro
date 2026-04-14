@@ -1,7 +1,7 @@
 ---
 import '@/styles/global.css';
 import '@/styles/hover-button.css';
-import AnimatedBackground from '@/components/AnimatedBackground.astro';
+import GradientBackground from '@/components/GradientBackground.astro';
 
 interface Props {
   title?: string;
@@ -51,8 +51,8 @@ const {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-luxury-dark text-luxury-silver font-luxury antialiased">
-    <AnimatedBackground />
+  <body class="text-luxury-silver font-luxury antialiased">
+    <GradientBackground />
     <div class="min-h-screen flex flex-col relative z-10">
       <slot />
     </div>
