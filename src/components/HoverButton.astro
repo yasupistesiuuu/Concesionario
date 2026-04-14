@@ -1,0 +1,37 @@
+---
+import { HoverBorderGradient } from './ui/HoverBorderGradient'
+
+interface Props {
+  href?: string
+  class?: string
+  containerClass?: string
+  className?: string
+  [key: string]: any
+}
+
+const { href, class: baseClass, containerClass, className, ...props } = Astro.props
+const children = await Astro.slots.render('default')
+---
+
+{href ? (
+  <a href={href} class="inline-flex no-underline">
+    <HoverBorderGradient
+      client:load
+      as="div"
+      containerClassName={containerClass}
+      className={className || baseClass}
+      {...props}
+    >
+      <Fragment set:html={children} />
+    </HoverBorderGradient>
+  </a>
+) : (
+  <HoverBorderGradient
+    client:load
+    containerClassName={containerClass}
+    className={className || baseClass}
+    {...props}
+  >
+    <Fragment set:html={children} />
+  </HoverBorderGradient>
+)}

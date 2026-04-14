@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Navigation from '@/components/Navigation.astro';
+import HoverButton from '@/components/HoverButton.astro';
 import catalog from '@/data/catalog.json';
 
 const title = 'Catálogo Completo | AUTOS VELACRUZ';
@@ -58,12 +59,12 @@ const getEmissionColor = (emission) => {
                 </li>
               </ul>
               <div class="space-y-2">
-                <button class="btn-primary block w-full py-2 text-center">
+                <HoverButton containerClass="w-full" className="w-full py-2 text-center">
                   Solicitar Información
-                </button>
-                <a href="/contacto" class="btn-secondary block w-full py-2 text-center">
+                </HoverButton>
+                <HoverButton href="/contacto" containerClass="w-full" className="w-full py-2 text-center">
                   Agendar Test Drive
-                </a>
+                </HoverButton>
               </div>
             </div>
           </div>
@@ -74,9 +75,9 @@ const getEmissionColor = (emission) => {
         <p class="text-lg text-slate-400 mb-8">
           ¿No encuentra lo que busca? Contáctenos para vehículos por encargo o consultar opciones especiales.
         </p>
-        <a href="/contacto" class="btn-primary inline-block">
+        <HoverButton href="/contacto" containerClass="h-auto inline-flex">
           Contactar Asesor Especializado
-        </a>
+        </HoverButton>
       </div>
     </div>
   </section>

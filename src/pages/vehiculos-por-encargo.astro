@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Navigation from '@/components/Navigation.astro';
+import HoverButton from '@/components/HoverButton.astro';
 import catalog from '@/data/catalog.json';
 
 const title = 'Vehículos por Encargo | AUTOS VELACRUZ';
@@ -47,9 +48,9 @@ const features = [
         <p class="text-xl text-slate-300 mb-8">
           ¿No encuentras el vehículo que buscas? Contáctanos para encontrar el coche perfecto para ti.
         </p>
-        <a href="/contacto" class="btn-primary inline-block">
+        <HoverButton href="/contacto" containerClass="h-auto inline-flex">
           Solicitar Vehículo
-        </a>
+        </HoverButton>
       </div>
     </div>
   </section>

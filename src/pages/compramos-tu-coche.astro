@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Navigation from '@/components/Navigation.astro';
+import HoverButton from '@/components/HoverButton.astro';
 import catalog from '@/data/catalog.json';
 
 const title = 'Compramos Tu Coche | AUTOS VELACRUZ';
@@ -52,9 +53,9 @@ const testimonials = [
         <p class="text-xl text-slate-300 mb-8">
           Vende tu vehículo al mejor precio con nosotros. Tasación gratuita, pago inmediato y sin complicaciones.
         </p>
-        <a href="/contacto" class="btn-primary inline-block">
+        <HoverButton href="/contacto" containerClass="h-auto inline-flex">
           Solicitar Tasación
-        </a>
+        </HoverButton>
       </div>
     </div>
   </section>

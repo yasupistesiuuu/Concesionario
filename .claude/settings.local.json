@@ -49,7 +49,9 @@
       "Bash(curl -s \"https://autosvelacruz.es/coches-segunda-mano-y-ocasion-valdemoro-madrid/porsche-macan-s-diesel/\")",
       "WebFetch(domain:concesionario-luxury.vercel.app)",
       "Bash(node fix-vehicle-images.js)",
-      "WebFetch(domain:autosvelacruz.es)"
+      "WebFetch(domain:autosvelacruz.es)",
+      "Bash(curl -I \"https://autosvelacruz.es/wp-content/uploads/2025/10/IMG_20250914_034354.png.webp\")",
+      "Bash(grep -l \"btn-primary\\\\|btn-secondary\" src/pages/*.astro)"
     ]
   }
 }
