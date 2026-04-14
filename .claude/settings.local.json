@@ -29,7 +29,10 @@
       "Bash(curl -I https://concesionario-luxury-csg1vccft-yasupistesiuuus-projects.vercel.app/catalogo)",
       "Bash(vercel status:*)",
       "Bash(vercel projects:*)",
-      "Bash(curl -s https://concesionario-luxury.vercel.app/catalogo)"
+      "Bash(curl -s https://concesionario-luxury.vercel.app/catalogo)",
+      "Bash(curl -s https://concesionario-luxury.vercel.app/compramos-tu-coche)",
+      "Bash(curl -s https://concesionario-luxury.vercel.app/vehiculos-por-encargo)",
+      "Bash(curl -s https://concesionario-luxury.vercel.app/contacto)"
     ]
   }
 }
