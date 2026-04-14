@@ -40,7 +40,6 @@ export function HoverBorderGradient({
 }: HoverBorderGradientProps) {
   const [hovered, setHovered] = useState<boolean>(false)
   const [direction, setDirection] = useState<Direction>('BOTTOM')
-  const [mounted, setMounted] = useState(false)
 
   const rotateDirection = (currentDirection: Direction): Direction => {
     const directions: Direction[] = ['TOP', 'LEFT', 'BOTTOM', 'RIGHT']
@@ -52,25 +51,13 @@ export function HoverBorderGradient({
   }
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  useEffect(() => {
-    if (!hovered && mounted) {
+    if (!hovered) {
       const interval = setInterval(() => {
         setDirection((prevState) => rotateDirection(prevState))
       }, duration * 1000)
       return () => clearInterval(interval)
     }
-  }, [hovered, mounted, duration, clockwise])
-
-  if (!mounted) {
-    return (
-      <Element className={cn('relative inline-flex px-6 py-3 font-bold rounded-lg', className)}>
-        {children}
-      </Element>
-    )
-  }
+  }, [hovered, duration, clockwise])
 
   return (
     <Element
