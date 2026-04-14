@@ -2,153 +2,119 @@
 // Pure Astro Three.js Background Component
 ---
 
-<div id="three-background-container"></div>
+<div id="three-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></div>
 
-<script>
-  import * as THREE from 'three';
+<script is:inline>
+// Initialize Three.js background
+(async function() {
+  const { default: THREE } = await import('three');
 
-  function initBackground() {
-    const container = document.getElementById('three-background-container');
-    if (!container) return;
+  const container = document.getElementById('three-bg');
+  if (!container) {
+    console.error('Container not found');
+    return;
+  }
 
-    const scene = new THREE.Scene();
-    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+  const scene = new THREE.Scene();
+  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
-    const renderer = new THREE.WebGLRenderer({
-      antialias: true,
-      alpha: false,
-      powerPreference: 'high-performance'
-    });
+  const renderer = new THREE.WebGLRenderer({
+    antialias: true,
+    alpha: false,
+    powerPreference: 'high-performance'
+  });
 
-    renderer.setClearColor(0x0a0a15, 1);
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    container.appendChild(renderer.domElement);
+  renderer.setClearColor(0x0a0a15, 1);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
 
-    // Shader Material
-    const material = new THREE.ShaderMaterial({
-      uniforms: {
-        iTime: { value: 0 },
-        iResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
-      },
-      vertexShader: `
-        void main() {
-          gl_Position = vec4(position, 1.0);
-        }
-      `,
-      fragmentShader: `
-        uniform float iTime;
-        uniform vec2 iResolution;
-
-        float hash(vec2 p) {
-          return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
-        }
-
-        float noise(vec2 p) {
-          vec2 i = floor(p);
-          vec2 f = fract(p);
-          f = f * f * (3.0 - 2.0 * f);
-
-          float a = hash(i);
-          float b = hash(i + vec2(1.0, 0.0));
-          float c = hash(i + vec2(0.0, 1.0));
-          float d = hash(i + vec2(1.0, 1.0));
-
-          return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
-        }
-
-        void main() {
-          vec2 uv = gl_FragCoord.xy / iResolution.xy;
-          vec3 color = vec3(0.0);
-
-          // Background gradient
-          color = mix(vec3(0.05, 0.05, 0.15), vec3(0.1, 0.05, 0.2), uv.y);
-
-          // Aurora waves
-          for (int i = 0; i < 4; i++) {
-            float t = iTime * 0.3 + float(i) * 1.57;
-            float wave = sin(uv.x * 3.0 + t) * 0.5 + 0.5;
-            wave *= sin(uv.y * 2.0 - t * 0.5) * 0.5 + 0.5;
-
-            vec3 auroraColor = vec3(0.0);
-            if (i == 0) auroraColor = vec3(0.3, 0.8, 0.5); // Cyan
-            else if (i == 1) auroraColor = vec3(0.6, 0.3, 0.9); // Purple
-            else if (i == 2) auroraColor = vec3(0.2, 0.9, 0.4); // Green
-            else auroraColor = vec3(0.8, 0.2, 0.6); // Magenta
-
-            float n = noise(uv * 3.0 + vec2(t * 0.2, float(i)));
-            wave *= n;
-            color += auroraColor * wave * 0.4;
-          }
-
-          // Add glow effect
-          float glow = noise(uv * 2.0 + iTime * 0.1) * 0.5 + 0.3;
-          color += vec3(0.2, 0.4, 0.5) * glow * 0.3;
-
-          // Brightness boost
-          color *= 1.2;
-
-          gl_FragColor = vec4(color, 1.0);
-        }
-      `
-    });
-
-    const geometry = new THREE.PlaneGeometry(2, 2);
-    const mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh);
-
-    let frameId;
-    const animate = () => {
-      material.uniforms.iTime.value += 0.016;
-      renderer.render(scene, camera);
-      frameId = requestAnimationFrame(animate);
-    };
-    animate();
-
-    const handleResize = () => {
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      material.uniforms.iResolution.value.set(window.innerWidth, window.innerHeight);
-    };
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      cancelAnimationFrame(frameId);
-      window.removeEventListener('resize', handleResize);
-      if (renderer.domElement.parentNode === container) {
-        container.removeChild(renderer.domElement);
+  // Shader Material
+  const material = new THREE.ShaderMaterial({
+    uniforms: {
+      iTime: { value: 0 },
+      iResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
+    },
+    vertexShader: `
+      void main() {
+        gl_Position = vec4(position, 1.0);
       }
-      geometry.dispose();
-      material.dispose();
-      renderer.dispose();
-    };
-  }
+    `,
+    fragmentShader: `
+      uniform float iTime;
+      uniform vec2 iResolution;
 
-  // Initialize on load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initBackground);
-  } else {
-    initBackground();
-  }
+      float hash(vec2 p) {
+        return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+      }
+
+      float noise(vec2 p) {
+        vec2 i = floor(p);
+        vec2 f = fract(p);
+        f = f * f * (3.0 - 2.0 * f);
+
+        float a = hash(i);
+        float b = hash(i + vec2(1.0, 0.0));
+        float c = hash(i + vec2(0.0, 1.0));
+        float d = hash(i + vec2(1.0, 1.0));
+
+        return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+      }
+
+      void main() {
+        vec2 uv = gl_FragCoord.xy / iResolution.xy;
+        vec3 color = vec3(0.0);
+
+        // Background gradient
+        color = mix(vec3(0.05, 0.05, 0.15), vec3(0.1, 0.05, 0.2), uv.y);
+
+        // Aurora waves
+        for (int i = 0; i < 4; i++) {
+          float t = iTime * 0.3 + float(i) * 1.57;
+          float wave = sin(uv.x * 3.0 + t) * 0.5 + 0.5;
+          wave *= sin(uv.y * 2.0 - t * 0.5) * 0.5 + 0.5;
+
+          vec3 auroraColor = vec3(0.0);
+          if (i == 0) auroraColor = vec3(0.3, 0.8, 0.5);
+          else if (i == 1) auroraColor = vec3(0.6, 0.3, 0.9);
+          else if (i == 2) auroraColor = vec3(0.2, 0.9, 0.4);
+          else auroraColor = vec3(0.8, 0.2, 0.6);
+
+          float n = noise(uv * 3.0 + vec2(t * 0.2, float(i)));
+          wave *= n;
+          color += auroraColor * wave * 0.4;
+        }
+
+        // Add glow effect
+        float glow = noise(uv * 2.0 + iTime * 0.1) * 0.5 + 0.3;
+        color += vec3(0.2, 0.4, 0.5) * glow * 0.3;
+
+        // Brightness boost
+        color *= 1.2;
+
+        gl_FragColor = vec4(color, 1.0);
+      }
+    `
+  });
+
+  const geometry = new THREE.PlaneGeometry(2, 2);
+  const mesh = new THREE.Mesh(geometry, material);
+  scene.add(mesh);
+
+  let frameId;
+  const animate = () => {
+    material.uniforms.iTime.value += 0.016;
+    renderer.render(scene, camera);
+    frameId = requestAnimationFrame(animate);
+  };
+  animate();
+
+  const handleResize = () => {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    material.uniforms.iResolution.value.set(window.innerWidth, window.innerHeight);
+  };
+  window.addEventListener('resize', handleResize);
+
+  console.log('Three.js background initialized successfully');
+})();
 </script>
-
-<style>
-  #three-background-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-    display: block;
-  }
-
-  #three-background-container :global(canvas) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-</style>
