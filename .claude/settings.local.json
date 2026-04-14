@@ -58,7 +58,8 @@
       "Bash(npm list:*)",
       "Bash(node check-three.js)",
       "Bash(node verify-placement.js)",
-      "Bash(node test-shader.js)"
+      "Bash(node test-shader.js)",
+      "Bash(node check-errors.js)"
     ]
   }
 }
