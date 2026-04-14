@@ -62,7 +62,9 @@
       "Bash(node check-errors.js)",
       "Bash(node check-bg-styles.js)",
       "Bash(ls -la *.js *.png)",
-      "Bash(grep -E \"\\\\.\\(js|png\\)$\")"
+      "Bash(grep -E \"\\\\.\\(js|png\\)$\")",
+      "Bash(find src/pages src/components -name \"*.astro\" -exec sed -i 's/class=\"section bg-slate-[0-9]\\\\+\"/class=\"section\"/g' {} \\\\;)",
+      "Bash(find src/pages src/components -name \"*.astro\" -exec sed -i 's/ bg-slate-9[0-9][0-9]/ /g; s/ bg-slate-8[0-9][0-9]/ /g' {} \\\\;)"
     ]
   }
 }
