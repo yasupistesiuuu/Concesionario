@@ -1,3 +1,39 @@
+@keyframes movingBorderLight {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes lightGlow {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(250, 204, 21, 0.1),
+      inset 0 0 10px rgba(250, 204, 21, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 20px 5px rgba(250, 204, 21, 0.2),
+      inset 0 0 15px rgba(250, 204, 21, 0.15);
+  }
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(250, 204, 21, 0.1),
+      inset 0 0 10px rgba(250, 204, 21, 0.1);
+  }
+}
+
 .hover-gradient-button {
   position: relative;
   display: inline-flex;
@@ -11,6 +47,31 @@
   color: #facc15;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  overflow: hidden;
+  animation: lightGlow 3s ease-in-out infinite;
+}
+
+.hover-gradient-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(250, 204, 21, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(250, 204, 21, 0.2) 0%, transparent 50%);
+  background-size: 200% 200%;
+  animation: movingBorderLight 6s linear infinite;
+  pointer-events: none;
+  border-radius: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.hover-gradient-button:hover::before {
+  opacity: 1;
 }
 
 .hover-gradient-button:hover {
@@ -18,6 +79,7 @@
   background: linear-gradient(to right, #eab308, #ca8a04);
   color: #1e293b;
   box-shadow: 0 10px 15px -3px rgba(250, 204, 21, 0.5);
+  animation: none;
 }
 
 .hover-gradient-button:active {

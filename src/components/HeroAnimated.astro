@@ -1,0 +1,59 @@
+---
+import HoverButton from '@/components/HoverButton.astro';
+import '@/styles/hero-animated.css';
+
+interface Props {
+  title: string;
+  titleHighlight?: string;
+  description: string;
+  primaryButtonText?: string;
+  primaryButtonHref?: string;
+  secondaryButtonText?: string;
+  secondaryButtonHref?: string;
+  image?: string;
+  imageAlt?: string;
+}
+
+const {
+  title,
+  titleHighlight = '',
+  description,
+  primaryButtonText = 'Ver Catálogo',
+  primaryButtonHref = '/catalogo',
+  secondaryButtonText = 'Contactar',
+  secondaryButtonHref = '/contacto',
+  image = 'https://autosvelacruz.es/wp-content/uploads/2025/10/0.jpeg',
+  imageAlt = 'Destacado'
+} = Astro.props;
+---
+
+<section class="hero-animated section">
+  <div class="container">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="hero-animated-content">
+        <h1 class="hero-title">
+          {title}
+          {titleHighlight && <strong>{titleHighlight}</strong>}
+        </h1>
+        <p class="hero-description">
+          {description}
+        </p>
+        <div class="hero-buttons">
+          <HoverButton href={primaryButtonHref} containerClass="h-auto">
+            {primaryButtonText}
+          </HoverButton>
+          <HoverButton href={secondaryButtonHref} containerClass="h-auto">
+            {secondaryButtonText}
+          </HoverButton>
+        </div>
+      </div>
+      <div class="hero-image-container">
+        <img
+          src={image}
+          alt={imageAlt}
+          class="hero-image"
+        />
+      </div>
+    </div>
+  </div>
+</section>

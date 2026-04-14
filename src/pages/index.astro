@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import Navigation from '@/components/Navigation.astro';
 import HoverButton from '@/components/HoverButton.astro';
+import HeroAnimated from '@/components/HeroAnimated.astro';
 import catalog from '@/data/catalog.json';
 
 const title = 'AUTOS VELACRUZ | Concesionario de Lujo en Valdemoro';
@@ -48,30 +49,17 @@ const emissionTags = {
 <Layout title={title} description={description}>
   <Navigation />
 
-  <!-- HERO -->
-  <section class="section bg-gradient-to-b from-slate-900 to-slate-950">
-    <div class="container">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h1 class="text-5xl md:text-6xl font-bold mb-6 text-yellow-400">
-            {company.tagline}
-          </h1>
-          <p class="text-xl text-slate-300 mb-8">
-            {company.description}
-          </p>
-          <div class="flex gap-4 flex-wrap">
-            <HoverButton href="/catalogo" containerClass="h-auto">
-              Ver Catálogo Completo
-            </HoverButton>
-            <HoverButton href="/contacto" containerClass="h-auto">
-              Contactar Ahora
-            </HoverButton>
-          </div>
-        </div>
-        <img src="https://autosvelacruz.es/wp-content/uploads/2025/10/0.jpeg" alt="Vehículos de lujo" class="rounded-lg shadow-2xl w-full h-auto object-cover aspect-video" />
-      </div>
-    </div>
-  </section>
+  <!-- HERO ANIMATED -->
+  <HeroAnimated
+    title={company.tagline}
+    description={company.description}
+    primaryButtonText="Ver Catálogo Completo"
+    primaryButtonHref="/catalogo"
+    secondaryButtonText="Contactar Ahora"
+    secondaryButtonHref="/contacto"
+    image="https://autosvelacruz.es/wp-content/uploads/2025/10/0.jpeg"
+    imageAlt="Vehículos de Lujo"
+  />
 
   <!-- FEATURES -->
   <section class="section bg-slate-950">

@@ -51,7 +51,13 @@
       "Bash(node fix-vehicle-images.js)",
       "WebFetch(domain:autosvelacruz.es)",
       "Bash(curl -I \"https://autosvelacruz.es/wp-content/uploads/2025/10/IMG_20250914_034354.png.webp\")",
-      "Bash(grep -l \"btn-primary\\\\|btn-secondary\" src/pages/*.astro)"
+      "Bash(grep -l \"btn-primary\\\\|btn-secondary\" src/pages/*.astro)",
+      "Bash(node test-hover-buttons.js)",
+      "Bash(node check-visual.js)",
+      "Bash(node check-canvas.js)",
+      "Bash(npm list:*)",
+      "Bash(node check-three.js)",
+      "Bash(node verify-placement.js)"
     ]
   }
 }

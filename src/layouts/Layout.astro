@@ -1,6 +1,7 @@
 ---
 import '@/styles/global.css';
 import '@/styles/hover-button.css';
+import AnimatedShaderBackground from '@/components/AnimatedShaderBackground.jsx';
 
 interface Props {
   title?: string;
@@ -51,7 +52,8 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body class="bg-luxury-dark text-luxury-silver font-luxury antialiased">
-    <div class="min-h-screen flex flex-col">
+    <AnimatedShaderBackground client:load />
+    <div class="min-h-screen flex flex-col relative z-10">
       <slot />
     </div>
   </body>
