@@ -5,13 +5,34 @@
 <canvas id="bg-canvas"></canvas>
 
 <script>
-  const canvas = document.getElementById('bg-canvas') as HTMLCanvasElement;
-  const ctx = canvas.getContext('2d')!;
+  console.log('AnimatedBackground script starting...');
+
+  let canvas = document.querySelector('canvas');
+  if (!canvas) {
+    console.error('Canvas not found!');
+    // Create canvas if not found
+    canvas = document.createElement('canvas');
+    canvas.id = 'bg-canvas';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.zIndex = '0';
+    canvas.style.pointerEvents = 'none';
+    document.body.insertBefore(canvas, document.body.firstChild);
+  }
+
+  const ctx = canvas.getContext('2d');
+  if (!ctx) {
+    console.error('Could not get 2D context');
+  } else {
+    console.log('Canvas context OK');
+  }
 
   // Set canvas size
   function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    console.log(`Canvas resized to ${canvas.width}x${canvas.height}`);
   }
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
@@ -19,29 +40,22 @@
   // Animation
   let time = 0;
   function animate() {
-    // Draw gradient background
-    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, `hsl(${time % 360}, 70%, 30%)`);
-    gradient.addColorStop(0.5, `hsl(${(time + 60) % 360}, 70%, 20%)`);
-    gradient.addColorStop(1, `hsl(${(time + 120) % 360}, 70%, 35%)`);
-
-    ctx.fillStyle = gradient;
+    // Draw simple blue background
+    ctx.fillStyle = '#1a1a2e';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Draw animated circles
-    for (let i = 0; i < 5; i++) {
-      const x = canvas.width / 2 + Math.cos(time * 0.0005 + i) * 300;
-      const y = canvas.height / 2 + Math.sin(time * 0.0003 + i * 0.5) * 200;
-      const r = 100 + Math.sin(time * 0.001 + i) * 50;
+    // Draw gradient
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradient.addColorStop(0, `hsl(${time % 360}, 70%, 40%)`);
+    gradient.addColorStop(1, `hsl(${(time + 180) % 360}, 70%, 40%)`);
+    ctx.fillStyle = gradient;
+    ctx.globalAlpha = 0.5;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.globalAlpha = 1;
 
-      const circleGradient = ctx.createRadialGradient(x, y, 0, x, y, r);
-      circleGradient.addColorStop(0, `hsla(${(time + i * 60) % 360}, 100%, 60%, 0.4)`);
-      circleGradient.addColorStop(1, `hsla(${(time + i * 60) % 360}, 100%, 40%, 0)`);
-
-      ctx.fillStyle = circleGradient;
-      ctx.fillRect(x - r, y - r, r * 2, r * 2);
+    if (time === 0) {
+      console.log('First frame drawn');
     }
-
     time++;
     requestAnimationFrame(animate);
   }
