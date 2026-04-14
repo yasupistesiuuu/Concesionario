@@ -1,0 +1,5 @@
+{
+  "name": "concesionario-luxury",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
+}

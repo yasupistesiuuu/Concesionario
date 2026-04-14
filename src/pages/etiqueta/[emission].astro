@@ -87,8 +87,8 @@ const getEmissionColor = (emission) => {
       {vehicles.length > 0 ? (
         <div class="grid md:grid-cols-3 gap-8">
           {vehicles.map((vehicle) => (
-            <div class="card overflow-hidden relative hover:shadow-xl transition-shadow">
-              <img src={vehicle.image} alt={vehicle.name} class="w-full h-48 object-cover" />
+            <div class="card overflow-hidden relative hover:shadow-2xl transition-all duration-300">
+              <img src={vehicle.image} alt={vehicle.name} class="w-full h-48 object-cover rounded-t-lg aspect-video" />
               <div class={`absolute top-3 right-3 ${getEmissionColor(vehicle.emission)} px-3 py-1 rounded-full text-white font-bold text-sm`}>
                 {vehicle.emission}
               </div>

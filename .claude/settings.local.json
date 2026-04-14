@@ -39,7 +39,14 @@
       "Bash(curl -s https://concesionario-luxury.vercel.app/etiquetas)",
       "Bash(curl -s https://autosvelacruz.es/)",
       "Bash(curl -s https://concesionario-luxury.vercel.app/)",
-      "Bash(curl -s https://concesionario-luxury.vercel.app/etiqueta/C)"
+      "Bash(curl -s https://concesionario-luxury.vercel.app/etiqueta/C)",
+      "Bash(rm -rf dist)",
+      "Bash(vercel --prod)",
+      "Bash(npx vercel:*)",
+      "Bash(node)",
+      "Bash(firecrawl scrape:*)",
+      "Bash(firecrawl crawl:*)",
+      "Bash(curl -s \"https://autosvelacruz.es/coches-segunda-mano-y-ocasion-valdemoro-madrid/porsche-macan-s-diesel/\")"
     ]
   }
 }
