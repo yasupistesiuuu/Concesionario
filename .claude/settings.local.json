@@ -59,7 +59,10 @@
       "Bash(node check-three.js)",
       "Bash(node verify-placement.js)",
       "Bash(node test-shader.js)",
-      "Bash(node check-errors.js)"
+      "Bash(node check-errors.js)",
+      "Bash(node check-bg-styles.js)",
+      "Bash(ls -la *.js *.png)",
+      "Bash(grep -E \"\\\\.\\(js|png\\)$\")"
     ]
   }
 }
