@@ -56,25 +56,14 @@ const {
     </div>
 
     <style is:global>
-      html, body {
-        background: linear-gradient(-45deg, #ff6b6b, #ee5a6f, #c44569, #f8b195, #f67280, #c06c84, #6c5b7b, #355c7d) !important;
-        background-size: 300% 300% !important;
-        background-position: 0% 50% !important;
+      html {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
         background-attachment: fixed !important;
-        animation: gradient 15s ease infinite !important;
-        min-height: 100vh !important;
       }
 
-      @keyframes gradient {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
+      body {
+        background: inherit !important;
+        color: #e5e5e5 !important;
       }
     </style>
   </body>
