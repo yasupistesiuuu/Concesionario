@@ -15,7 +15,9 @@ html {
 }
 
 body {
-  @apply bg-slate-950 text-slate-100 font-sans antialiased;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
+  @apply text-slate-100 font-sans antialiased;
 }
 
 h1 {
