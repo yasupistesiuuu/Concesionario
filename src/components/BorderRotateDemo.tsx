@@ -235,7 +235,7 @@ export default function BorderRotateDemo() {
       </div>
 
       {/* Code Example */}
-      <div className="mt-16 bg-slate-900 p-6 rounded-lg border border-yellow-500/30">
+      <div className="mt-16 bg-black/60 p-6 rounded-lg border border-yellow-500/30 backdrop-blur-sm">
         <h2 className="text-2xl font-bold text-yellow-400 mb-4">Usage Example</h2>
         <pre className="text-slate-200 overflow-x-auto"><code>{`import { BorderRotate } from '@/components/ui/animated-gradient-border';
 
