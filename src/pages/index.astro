@@ -2,10 +2,10 @@
 import Layout from '@/layouts/Layout.astro';
 import Navigation from '@/components/Navigation.astro';
 import HoverButton from '@/components/HoverButton.astro';
-import HeroAnimated from '@/components/HeroAnimated.astro';
 import GradientCard from '@/components/GradientCard.astro';
 import FooterAnimated from '@/components/FooterAnimated.astro';
 import Testimonials from '@/components/blocks/Testimonials';
+import { HeroSection, LogosSection } from '@/components/blocks/hero-1';
 import catalog from '@/data/catalog.json';
 
 const title = 'AUTOS VELACRUZ | Concesionario de Lujo en Valdemoro';
@@ -52,17 +52,9 @@ const emissionTags = {
 <Layout title={title} description={description}>
   <Navigation />
 
-  <!-- HERO ANIMATED -->
-  <HeroAnimated
-    title={company.tagline}
-    description={company.description}
-    primaryButtonText="Ver Catálogo Completo"
-    primaryButtonHref="/catalogo"
-    secondaryButtonText="Contactar Ahora"
-    secondaryButtonHref="/contacto"
-    image="/cocheHero.jpg"
-    imageAlt="Vehículos de Lujo"
-  />
+  <!-- HERO PREMIUM CON CARRUSEL DE LOGOS -->
+  <HeroSection client:load />
+  <LogosSection client:load />
 
   <!-- FEATURES -->
   <section class="section">
