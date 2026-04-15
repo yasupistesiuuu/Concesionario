@@ -1,5 +1,5 @@
-import React, { CSSProperties, ReactNode } from 'react';
-import type { HTMLAttributes } from 'react';
+import React from 'react';
+import type { CSSProperties, ReactNode, HTMLAttributes } from 'react';
 
 type AnimationMode = 'auto-rotate' | 'rotate-on-hover' | 'stop-rotate-on-hover';
 

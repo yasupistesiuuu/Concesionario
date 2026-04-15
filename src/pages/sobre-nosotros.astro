@@ -2,7 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import FooterAnimated from '@/components/FooterAnimated.astro';
 import Navigation from '@/components/Navigation.astro';
-import TestimonialsSection from '@/components/TestimonialsSection.tsx';
+import Testimonials from '@/components/blocks/Testimonials';
 import HoverButton from '@/components/HoverButton.astro';
 import catalog from '@/data/catalog.json';
 
@@ -75,7 +75,12 @@ const company = catalog.company;
   </section>
 
   <!-- TESTIMONIALS -->
-  <TestimonialsSection client:load testimonials={catalog.testimonials} />
+  <section class="section">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-center mb-16 text-yellow-400">Opiniones de Clientes</h2>
+      <Testimonials client:visible />
+    </div>
+  </section>
 
   <!-- STATS -->
   <section class="section">

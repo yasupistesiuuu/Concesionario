@@ -5,6 +5,7 @@ import HoverButton from '@/components/HoverButton.astro';
 import HeroAnimated from '@/components/HeroAnimated.astro';
 import GradientCard from '@/components/GradientCard.astro';
 import FooterAnimated from '@/components/FooterAnimated.astro';
+import Testimonials from '@/components/blocks/Testimonials';
 import catalog from '@/data/catalog.json';
 
 const title = 'AUTOS VELACRUZ | Concesionario de Lujo en Valdemoro';
@@ -143,19 +144,7 @@ const emissionTags = {
   <section class="section">
     <div class="container">
       <h2 class="text-4xl font-bold text-center mb-16 text-yellow-400">Opiniones de Clientes</h2>
-      <div class="grid md:grid-cols-2 gap-12">
-        {testimonials.map((test) => (
-          <GradientCard animationMode="rotate-on-hover" animationSpeed={3}>
-            <div class="p-8">
-              <p class="text-lg italic text-slate-300 mb-6">"{test.text}"</p>
-              <div>
-                <p class="font-bold text-yellow-400">{test.author}</p>
-                <p class="text-slate-400 text-sm">{test.role}</p>
-              </div>
-            </div>
-          </GradientCard>
-        ))}
-      </div>
+      <Testimonials client:visible />
     </div>
   </section>
 

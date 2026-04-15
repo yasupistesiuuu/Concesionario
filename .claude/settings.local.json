@@ -10,7 +10,11 @@
       "Bash(find src/pages src/components -type f \\\\\\( -name \"*.astro\" -o -name \"*.tsx\" -o -name \"*.jsx\" \\\\\\) -exec grep -l \"bg-\" {} \\\\;)",
       "Bash(npm install *)",
       "Bash(npm run *)",
-      "Bash(npm list *)"
+      "Bash(npm list *)",
+      "Bash(curl -s http://localhost:4321/)",
+      "Bash(pkill -f \"npm run dev\")",
+      "Bash(curl -s http://localhost:4322/)",
+      "Bash(curl -s http://localhost:4323/)"
     ]
   }
 }
