@@ -17,6 +17,8 @@ const carLogos = [
 ];
 
 export const HeroSection = () => {
+  console.log("🎬 HeroSection montado correctamente");
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
