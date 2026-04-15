@@ -70,7 +70,18 @@
       "Bash(xargs -0 sed -i 's/bg-slate-950//g')",
       "Bash(xargs -0 sed -i 's/<footer class=\"bg-slate-900/<footer class=\"/g')",
       "Bash(cp cocheHero.jpg public/)",
-      "Bash(ls -lh public/*.jpg)"
+      "Bash(ls -lh public/*.jpg)",
+      "Bash(node -e ' *)",
+      "Bash(node verify-layout.js)",
+      "Bash(vercel --version)",
+      "Bash(vercel logs *)",
+      "Bash(sed 's|localhost:4321|concesionario-luxury-8kcdu90on-yasupistesiuuus-projects.vercel.app|g')",
+      "Bash(node verify-preview.js)",
+      "Bash(node check-testimonials.js)",
+      "Bash(node inspect-testimonials.js)",
+      "Bash(curl -s -I https://concesionario-luxury-8kcdu90on-yasupistesiuuus-projects.vercel.app/sobre-nosotros)",
+      "Bash(awk '{print $2}')",
+      "Bash(xargs -r kill)"
     ]
   }
 }
