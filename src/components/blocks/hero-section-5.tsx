@@ -47,7 +47,7 @@ export const HeroSection = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-90"
         >
           <source
             src="https://commondatastorage.googleapis.com/gtv-videos-library/sample/ElephantsDream.mp4"
@@ -55,12 +55,12 @@ export const HeroSection = () => {
           />
         </video>
 
-        {/* OVERLAY PROGRESIVO */}
+        {/* OVERLAY OSCURO SUAVE */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(circle at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%)",
+              "radial-gradient(circle at center, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%)",
           }}
         />
       </div>
