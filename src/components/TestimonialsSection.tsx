@@ -59,16 +59,16 @@ export default function TestimonialsSection({
                 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)',
             }}
           >
-            <TestimonialsColumn testimonials={firstColumn} duration={25} />
+            <TestimonialsColumn testimonials={firstColumn} duration={12} />
             <TestimonialsColumn
               testimonials={secondColumn}
               className="hidden md:block"
-              duration={30}
+              duration={14}
             />
             <TestimonialsColumn
               testimonials={thirdColumn}
               className="hidden lg:block"
-              duration={28}
+              duration={13}
             />
           </div>
         </div>
