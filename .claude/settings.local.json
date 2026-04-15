@@ -16,7 +16,8 @@
       "Bash(curl -s http://localhost:4322/)",
       "Bash(curl -s http://localhost:4323/)",
       "Bash(vercel --prod)",
-      "Bash(curl -s https://concesionario-luxury.vercel.app/)"
+      "Bash(curl -s https://concesionario-luxury.vercel.app/)",
+      "Bash(curl -I \"https://cdn.coverr.co/videos/coverr-driving-a-porsche-in-the-mountains-5435/1080p.mp4\")"
     ]
   }
 }

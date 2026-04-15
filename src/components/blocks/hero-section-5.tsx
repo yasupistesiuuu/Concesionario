@@ -49,7 +49,7 @@ export const HeroSection = () => {
           className="w-full h-full object-cover opacity-60"
         >
           <source
-            src="https://cdn.coverr.co/videos/coverr-driving-a-porsche-in-the-mountains-5435/1080p.mp4"
+            src="https://videos.pexels.com/video-files/3424652/3424652-sd_640_360_25fps.mp4"
             type="video/mp4"
           />
         </video>
