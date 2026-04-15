@@ -1,58 +1,27 @@
 ---
 import HoverButton from './HoverButton.astro'
+import NavHeader from './ui/nav-header'
 ---
 
 <header class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full py-3 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
-  <nav class="max-w-[85rem] w-full mx-auto px-4 flex flex-wrap basis-full items-center justify-between">
+  <nav class="max-w-[85rem] w-full mx-auto px-4 flex flex-wrap basis-full items-center justify-between gap-4">
     <!-- Brand/Logo -->
     <a class="sm:order-1 flex-none text-xl font-semibold text-yellow-400 focus:outline-none focus:opacity-80 hover:opacity-90 transition-opacity" href="/">
       <img src="https://autosvelacruz.es/wp-content/uploads/2025/10/Velacruz-Logo1.jpg" alt="AUTOS VELACRUZ" class="h-12 w-auto object-contain" />
     </a>
 
-    <!-- Mobile Toggle Button -->
+    <!-- Premium Navigation Header -->
+    <div class="sm:order-2 flex-grow flex justify-center">
+      <NavHeader client:load />
+    </div>
+
+    <!-- Mobile Toggle & Contact Button -->
     <div class="sm:order-3 flex items-center gap-x-2">
-      <button type="button" class="sm:hidden relative size-9 flex justify-center items-center gap-x-2 rounded-lg bg-slate-800/50 border border-slate-700 text-slate-200 hover:bg-slate-700 focus:outline-none focus:bg-slate-600" id="hs-navbar-toggle" aria-expanded="false" aria-controls="hs-navbar-menu" aria-label="Toggle navigation">
-        <svg class="toggle-open shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
-        <svg class="toggle-close hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-      </button>
       <div class="hidden sm:block">
-        <HoverButton containerClass="h-10" className="px-4 py-2 text-sm">
+        <HoverButton href="/contacto" containerClass="h-10" className="px-4 py-2 text-sm">
           Contacto
         </HoverButton>
       </div>
     </div>
-
-    <!-- Navigation Menu -->
-    <div id="hs-navbar-menu" class="hidden overflow-hidden transition-all duration-300 basis-full grow sm:grow-0 sm:basis-auto sm:block sm:order-2" aria-labelledby="hs-navbar-toggle" role="region">
-      <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:mt-0 sm:ps-5">
-        <a class="text-sm font-medium text-yellow-400 hover:text-yellow-300 focus:outline-none transition-colors" href="/">Inicio</a>
-        <a class="text-sm text-slate-300 hover:text-yellow-400 focus:outline-none transition-colors" href="/catalogo">Catálogo</a>
-        <a class="text-sm text-slate-300 hover:text-yellow-400 focus:outline-none transition-colors" href="/compramos-tu-coche">Compramos Tu Coche</a>
-        <a class="text-sm text-slate-300 hover:text-yellow-400 focus:outline-none transition-colors" href="/vehiculos-por-encargo">Vehículos por Encargo</a>
-        <a class="text-sm text-slate-300 hover:text-yellow-400 focus:outline-none transition-colors" href="/sobre-nosotros">Sobre Nosotros</a>
-      </div>
-    </div>
   </nav>
 </header>
-
-<script>
-  const toggleBtn = document.getElementById('hs-navbar-toggle');
-  const menu = document.getElementById('hs-navbar-menu');
-  const openIcon = toggleBtn?.querySelector('.toggle-open');
-  const closeIcon = toggleBtn?.querySelector('.toggle-close');
-
-  if (toggleBtn && menu) {
-    toggleBtn.addEventListener('click', () => {
-      const isOpen = menu.classList.contains('hidden');
-      if (isOpen) {
-        menu.classList.remove('hidden');
-        openIcon?.classList.add('hidden');
-        closeIcon?.classList.remove('hidden');
-      } else {
-        menu.classList.add('hidden');
-        openIcon?.classList.remove('hidden');
-        closeIcon?.classList.add('hidden');
-      }
-    });
-  }
-</script>
