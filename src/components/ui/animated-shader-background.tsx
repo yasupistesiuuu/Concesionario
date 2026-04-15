@@ -70,11 +70,11 @@ const AnoAI = () => {
             v = p + cos(i * i + (iTime + p.x * 0.08) * 0.025 + i * vec2(13.0, 11.0)) * 3.5 + vec2(sin(iTime * 3.0 + i) * 0.003, cos(iTime * 3.5 - i) * 0.003);
             float tailNoise = fbm(v + vec2(iTime * 0.5, i)) * 0.3 * (1.0 - (i / 35.0));
 
-            // Brand Yellow/Gold asteroids: #fbbf24, #d4af37
+            // Brand Pure Yellow/Gold asteroids: #fbbf24 (251,191,36)
             vec4 auroraColors = vec4(
-              0.984 + 0.16 * sin(i * 0.2 + iTime * 0.4),     // R: Bright yellow
-              0.749 + 0.25 * cos(i * 0.3 + iTime * 0.5),     // G: Yellow-gold
-              0.0 + 0.2 * sin(i * 0.4 + iTime * 0.3),        // B: Minimal blue for contrast
+              1.0,                                            // R: Pure red (255)
+              0.75 + 0.15 * sin(i * 0.2 + iTime * 0.4),      // G: Yellow-gold (191-200)
+              0.0,                                            // B: No blue (pure yellow)
               1.0
             );
 
@@ -84,11 +84,11 @@ const AnoAI = () => {
           }
 
           // Blue background base
-          vec3 bgBlue = vec3(0.05, 0.15, 0.35);
+          vec3 bgBlue = vec3(0.02, 0.08, 0.25);
           o = tanh(pow(o / 100.0, vec4(1.6)));
 
-          // Blend yellow asteroids with blue background
-          gl_FragColor = vec4(mix(bgBlue, o.rgb, o.a * 0.8), 1.0);
+          // Composite: Yellow asteroids on blue background
+          gl_FragColor = vec4(mix(bgBlue, o.rgb, min(o.a, 1.0)), 1.0);
         }
       `
     });
