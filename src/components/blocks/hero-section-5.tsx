@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 
 const carLogos = [
   { src: "https://cdn.simpleicons.org/porsche/ffffff", alt: "Porsche" },
