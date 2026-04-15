@@ -39,39 +39,33 @@ export const HeroSection = () => {
   };
 
   return (
-    <main className="relative w-full overflow-hidden">
-      {/* FONDO CON GRADIENTE PREMIUM VISIBLE */}
-      <div className="absolute inset-0 w-full h-full">
-        {/* Gradiente de fondo base */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "linear-gradient(135deg, #1a1a1a 0%, #2d1f0e 25%, #1a1a1a 50%, #0f1418 75%, #1a1a1a 100%)",
-          }}
-        />
-
-        {/* Efecto de brillo dorado animado */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(circle at 30% 40%, rgba(245, 158, 11, 0.25) 0%, transparent 40%), radial-gradient(circle at 70% 60%, rgba(217, 119, 6, 0.2) 0%, transparent 40%)",
-            animation: "glow 6s ease-in-out infinite",
-          }}
-        />
+    <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-transparent pt-20">
+      {/* Background Video Fullscreen */}
+      <div className="absolute inset-0 w-full h-full z-[-1]">
+        {/* Capa de cristal oscuro para que resalte el texto */}
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] z-10"></div>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+          src="https://videos.pexels.com/video-files/5320002/5320002-uhd_2560_1440_25fps.mp4"
+        ></video>
       </div>
 
-      {/* CONTENIDO */}
-      <section className="relative w-full py-32 md:py-48 z-10">
+      {/* CONTENIDO PRINCIPAL */}
+      <div className="relative z-20 w-full">
+        {/* HERO PRINCIPAL */}
         <div className="container mx-auto px-4">
           <motion.div
-            className="flex flex-col items-center justify-center space-y-8 text-center"
+            className="flex flex-col items-center justify-center space-y-8 text-center max-w-4xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
             {/* H1 PRINCIPAL */}
-            <motion.div variants={itemVariants} className="max-w-4xl space-y-4">
+            <motion.div variants={itemVariants} className="space-y-4">
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
                 Encuentra el Coche de tus{" "}
                 <span className="bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent">
@@ -112,57 +106,57 @@ export const HeroSection = () => {
             </motion.div>
           </motion.div>
         </div>
-      </section>
 
-      {/* CARRUSEL DE MARCAS */}
-      <section className="relative w-full py-16 md:py-20 z-10 bg-gradient-to-b from-transparent to-black/40">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="space-y-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
-          >
-            {/* TÍTULO */}
-            <div className="text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-                Trabajamos con las marcas más{" "}
-                <span className="text-yellow-400">exclusivas</span>
-              </h2>
-              <p className="text-slate-400 text-lg">
-                Los vehículos de lujo más prestigiosos del mundo
-              </p>
-            </div>
+        {/* CARRUSEL DE MARCAS */}
+        <section className="relative w-full py-16 md:py-20 mt-12">
+          <div className="container mx-auto px-4">
+            <motion.div
+              className="space-y-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+            >
+              {/* TÍTULO */}
+              <div className="text-center">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                  Trabajamos con las marcas más{" "}
+                  <span className="text-yellow-400">exclusivas</span>
+                </h2>
+                <p className="text-slate-400 text-lg">
+                  Los vehículos de lujo más prestigiosos del mundo
+                </p>
+              </div>
 
-            {/* CARRUSEL */}
-            <div className="relative overflow-hidden">
-              <motion.div
-                className="flex gap-4"
-                animate={{ x: [0, -2000] }}
-                transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              >
-                {[...carLogos, ...carLogos, ...carLogos].map((logo, idx) => (
-                  <div
-                    key={idx}
-                    className="flex-shrink-0 h-16 w-32 flex items-center justify-center rounded-lg border border-white/10 bg-black/40 backdrop-blur-sm hover:bg-white/10 transition-colors"
-                  >
-                    <img
-                      src={logo.src}
-                      alt={logo.alt}
-                      className="h-8 w-auto object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </main>
+              {/* CARRUSEL */}
+              <div className="relative overflow-hidden">
+                <motion.div
+                  className="flex gap-4"
+                  animate={{ x: [0, -2000] }}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                >
+                  {[...carLogos, ...carLogos, ...carLogos].map((logo, idx) => (
+                    <div
+                      key={idx}
+                      className="flex-shrink-0 h-16 w-32 flex items-center justify-center rounded-lg border border-white/10 bg-black/40 backdrop-blur-sm hover:bg-white/10 transition-colors"
+                    >
+                      <img
+                        src={logo.src}
+                        alt={logo.alt}
+                        className="h-8 w-auto object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </div>
+    </section>
   );
 };
