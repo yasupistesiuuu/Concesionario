@@ -68,7 +68,9 @@
       "Bash(xargs -0 sed -i 's/ bg-gradient-to-b from-slate-900 to-slate-950//g')",
       "Bash(xargs -0 sed -i 's/ bg-slate-900//g')",
       "Bash(xargs -0 sed -i 's/bg-slate-950//g')",
-      "Bash(xargs -0 sed -i 's/<footer class=\"bg-slate-900/<footer class=\"/g')"
+      "Bash(xargs -0 sed -i 's/<footer class=\"bg-slate-900/<footer class=\"/g')",
+      "Bash(cp cocheHero.jpg public/)",
+      "Bash(ls -lh public/*.jpg)"
     ]
   }
 }
