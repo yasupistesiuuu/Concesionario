@@ -42,8 +42,8 @@ export const HeroSection = () => {
     <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-transparent pt-20">
       {/* Background Video Fullscreen */}
       <div className="absolute inset-0 w-full h-full z-[-1]">
-        {/* Capa de cristal oscuro para que resalte el texto */}
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] z-10"></div>
+        {/* Capa de cristal suave para que resalte el texto */}
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
         <video
           autoPlay
           loop
