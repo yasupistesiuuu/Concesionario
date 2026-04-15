@@ -1,2 +1,36 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output
+dist/
+.astro/
+
+# IDE & local config
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.claude/
+.firecrawl/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Screenshots & temp files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.tmp
+
+# Vercel (keep for production)
 .vercel
-node_modules
