@@ -5,38 +5,41 @@ interface HoverBorderGradientProps extends React.HTMLAttributes<HTMLElement> {
   containerClassName?: string
   className?: string
   children: React.ReactNode
-  variant?: 'filled' | 'outline'
+  fillFrom?: 'left' | 'right' | 'top' | 'bottom'
 }
 
 export function HoverBorderGradient({
   children,
   containerClassName = '',
-  className = 'px-12 py-3',
+  className = 'px-8 py-3',
   as: Element = 'button',
-  variant = 'filled',
+  fillFrom = 'top',
   ...props
 }: HoverBorderGradientProps) {
-  if (variant === 'outline') {
-    return (
-      <Element
-        className={`group relative inline-block text-sm font-medium text-yellow-400 ${containerClassName}`}
-        {...props}
-      >
-        <span className="absolute inset-0 border border-current"></span>
-        <span className={`block border border-current bg-slate-950 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 ${className}`}>
-          {children}
-        </span>
-      </Element>
-    )
+  let fillSpanClass = ''
+
+  switch (fillFrom) {
+    case 'left':
+      fillSpanClass = 'inset-y-0 left-0 w-0.5 group-hover:w-full'
+      break
+    case 'right':
+      fillSpanClass = 'inset-y-0 right-0 w-0.5 group-hover:w-full'
+      break
+    case 'top':
+      fillSpanClass = 'inset-x-0 top-0 h-0.5 group-hover:h-full'
+      break
+    case 'bottom':
+      fillSpanClass = 'inset-x-0 bottom-0 h-0.5 group-hover:h-full'
+      break
   }
 
   return (
     <Element
-      className={`group relative inline-block text-sm font-medium text-white ${containerClassName}`}
+      className={`group relative inline-block overflow-hidden border border-yellow-400 text-sm font-medium text-yellow-400 transition-colors ${containerClassName}`}
       {...props}
     >
-      <span className="absolute inset-0 border border-yellow-400"></span>
-      <span className={`block border border-yellow-400 bg-yellow-500 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 ${className}`}>
+      <span className={`absolute bg-yellow-400 transition-all ${fillSpanClass}`}></span>
+      <span className={`relative block group-hover:text-slate-950 transition-colors ${className}`}>
         {children}
       </span>
     </Element>

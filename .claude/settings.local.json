@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(ls -1 *.*)"
+      "Bash(ls -1 *.*)",
+      "Bash(vercel deploy *)",
+      "Bash(grep -r \"button\\\\|Button\\\\|href\" src/components/*.astro src/components/*.tsx)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }
