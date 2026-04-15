@@ -40,27 +40,15 @@ export const HeroSection = () => {
 
   return (
     <main className="relative w-full overflow-hidden">
-      {/* VIDEO DE FONDO */}
-      <div className="absolute inset-0 w-full h-full">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-90"
-        >
-          <source
-            src="https://commondatastorage.googleapis.com/gtv-videos-library/sample/ElephantsDream.mp4"
-            type="video/mp4"
-          />
-        </video>
-
-        {/* OVERLAY OSCURO SUAVE */}
+      {/* FONDO CON GRADIENTE DINÁMICO */}
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-amber-900/30 via-black to-black">
+        {/* Elementos decorativos animados */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(circle at center, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%)",
+              "radial-gradient(circle at 20% 50%, rgba(217, 119, 6, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(217, 119, 6, 0.1) 0%, transparent 50%)",
+            animation: "pulse 4s ease-in-out infinite",
           }}
         />
       </div>
