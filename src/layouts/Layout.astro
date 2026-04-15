@@ -1,6 +1,7 @@
 ---
 import '@/styles/global.css';
 import '@/styles/hover-button.css';
+import AnoAI from '@/components/ui/animated-shader-background';
 
 interface Props {
   title?: string;
@@ -52,9 +53,8 @@ const {
   </head>
   <body class="text-luxury-silver font-luxury antialiased overflow-x-hidden" style="background: inherit;">
     <!-- Fondo Vivo Animado (Fixed Z-index) -->
-    <div class="fixed inset-0 h-full w-full bg-black" style="z-index: -50;">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,#1a1a1a,transparent)]"></div>
-      <div class="absolute inset-0 bg-[size:20px_20px] bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] opacity-30"></div>
+    <div class="fixed inset-0 w-full h-full bg-black" style="z-index: -50;">
+      <AnoAI client:load />
     </div>
 
     <div class="min-h-screen flex flex-col relative z-20">
