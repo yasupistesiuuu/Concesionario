@@ -59,36 +59,59 @@ const AnoAI = () => {
         }
 
         void main() {
-          vec2 shake = vec2(sin(iTime * 1.2) * 0.005, cos(iTime * 2.1) * 0.005);
-          vec2 p = ((gl_FragCoord.xy + shake * iResolution.xy) - iResolution.xy * 0.5) / iResolution.y * mat2(6.0, -4.0, 4.0, 6.0);
+          vec2 shake = vec2(sin(iTime * 1.2) * 0.008, cos(iTime * 2.1) * 0.008);
+          vec2 p = ((gl_FragCoord.xy + shake * iResolution.xy) - iResolution.xy * 0.5) / iResolution.y * mat2(8.0, -5.0, 5.0, 8.0);
           vec2 v;
           vec4 o = vec4(0.0);
 
-          float f = 2.0 + fbm(p + vec2(iTime * 5.0, 0.0)) * 0.5;
+          // Deep space background with stars
+          vec3 starField = vec3(0.01);
+          for (float i = 0.0; i < 10.0; i++) {
+            float star = rand(floor(p * 50.0 + i));
+            starField += vec3(star * 0.3) * smoothstep(0.95, 1.0, star);
+          }
 
-          for (float i = 0.0; i < 35.0; i++) {
-            v = p + cos(i * i + (iTime + p.x * 0.08) * 0.025 + i * vec2(13.0, 11.0)) * 3.5 + vec2(sin(iTime * 3.0 + i) * 0.003, cos(iTime * 3.5 - i) * 0.003);
-            float tailNoise = fbm(v + vec2(iTime * 0.5, i)) * 0.3 * (1.0 - (i / 35.0));
+          float f = 2.5 + fbm(p + vec2(iTime * 3.0, iTime * 1.5)) * 0.7;
 
-            // Brand Pure Yellow/Gold asteroids: #fbbf24 (251,191,36)
-            vec4 auroraColors = vec4(
-              1.0,                                            // R: Pure red (255)
-              0.75 + 0.15 * sin(i * 0.2 + iTime * 0.4),      // G: Yellow-gold (191-200)
-              0.0,                                            // B: No blue (pure yellow)
+          // More asteroids with enhanced movement
+          for (float i = 0.0; i < 85.0; i++) {
+            v = p + cos(i * i + (iTime + p.x * 0.15) * 0.04 + i * vec2(13.0, 11.0)) * 4.5
+              + vec2(sin(iTime * 2.5 + i * 0.3) * 0.008, cos(iTime * 3.2 - i * 0.2) * 0.008)
+              + vec2(sin(iTime * 1.3 + i) * 0.005, cos(iTime * 1.7 - i) * 0.005);
+
+            float tailNoise = fbm(v + vec2(iTime * 0.7, i)) * 0.4 * (1.0 - (i / 85.0));
+            float depthFactor = sin(i * 0.3 + iTime * 0.5) * 0.5 + 0.7;
+
+            // Brand Pure Yellow/Gold asteroids with glow
+            vec4 yellowAsteroid = vec4(
+              1.0,                                            // R: Pure red
+              0.75 + 0.2 * sin(i * 0.15 + iTime * 0.5),      // G: Yellow-gold variation
+              0.0,                                            // B: Pure yellow (no blue)
               1.0
             );
 
-            vec4 currentContribution = auroraColors * exp(sin(i * i + iTime * 0.8)) / length(max(v, vec2(v.x * f * 0.015, v.y * 1.5)));
-            float thinnessFactor = smoothstep(0.0, 1.0, i / 35.0) * 0.6;
-            o += currentContribution * (1.0 + tailNoise * 0.8) * thinnessFactor;
+            float distance = length(max(v, vec2(v.x * f * 0.012, v.y * 1.2)));
+            vec4 currentContribution = yellowAsteroid * exp(sin(i * i + iTime * 1.2)) / (distance + 0.5);
+
+            float thinnessFactor = smoothstep(0.0, 1.0, i / 85.0) * 0.75;
+            float glowEffect = exp(-distance * 2.0) * depthFactor;
+
+            o += currentContribution * (1.5 + tailNoise * 1.2) * thinnessFactor * (1.0 + glowEffect);
           }
 
-          // Blue background base
-          vec3 bgBlue = vec3(0.02, 0.08, 0.25);
-          o = tanh(pow(o / 100.0, vec4(1.6)));
+          // Deep blue background (outer space)
+          vec3 bgBlue = vec3(0.0, 0.04, 0.15) + starField;
 
-          // Composite: Yellow asteroids on blue background
-          gl_FragColor = vec4(mix(bgBlue, o.rgb, min(o.a, 1.0)), 1.0);
+          // Add depth with radial gradient
+          vec2 centerDist = gl_FragCoord.xy / iResolution.xy - 0.5;
+          float vignette = 1.0 - length(centerDist) * 0.3;
+          bgBlue *= vignette;
+
+          o = tanh(pow(o / 80.0, vec4(1.5)));
+
+          // Composite: Glowing yellow asteroids on deep space background
+          vec3 final = mix(bgBlue, o.rgb, min(o.a * 1.2, 1.0));
+          gl_FragColor = vec4(final, 1.0);
         }
       `
     });
