@@ -26,14 +26,14 @@ export default function TestimonialsSection({
   const thirdColumn = testimonials.slice(6, 9);
 
   return (
-    <section className="section">
+    <section className="section py-20">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
-          className="flex flex-col items-center justify-center max-w-2xl mx-auto mb-12 text-center"
+          className="flex flex-col items-center justify-center max-w-2xl mx-auto mb-16 text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-3">
             {title}
@@ -44,28 +44,33 @@ export default function TestimonialsSection({
         </motion.div>
 
         <div
-          className="flex justify-center gap-3 md:gap-4 overflow-hidden"
+          className="relative overflow-hidden"
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'stretch',
-            height: '500px',
-            gap: '12px',
-            maskImage: 'linear-gradient(to bottom, transparent, black 25%, black 75%, transparent)',
-            WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 25%, black 75%, transparent)',
+            height: '550px',
+            perspective: '1000px',
           }}
         >
-          <TestimonialsColumn testimonials={firstColumn} duration={15} />
-          <TestimonialsColumn
-            testimonials={secondColumn}
-            className="hidden md:block"
-            duration={19}
-          />
-          <TestimonialsColumn
-            testimonials={thirdColumn}
-            className="hidden lg:block"
-            duration={17}
-          />
+          <div
+            className="flex gap-6 justify-center"
+            style={{
+              maskImage:
+                'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)',
+              WebkitMaskImage:
+                'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)',
+            }}
+          >
+            <TestimonialsColumn testimonials={firstColumn} duration={25} />
+            <TestimonialsColumn
+              testimonials={secondColumn}
+              className="hidden md:block"
+              duration={30}
+            />
+            <TestimonialsColumn
+              testimonials={thirdColumn}
+              className="hidden lg:block"
+              duration={28}
+            />
+          </div>
         </div>
       </div>
     </section>
