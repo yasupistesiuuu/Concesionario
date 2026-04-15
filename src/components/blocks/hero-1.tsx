@@ -10,7 +10,6 @@ import { motion } from "framer-motion";
 const carBrands = [
   { src: "https://cdn.simpleicons.org/porsche/ffffff", alt: "Porsche" },
   { src: "https://cdn.simpleicons.org/bmw/ffffff", alt: "BMW" },
-  { src: "https://cdn.simpleicons.org/mercedes/ffffff", alt: "Mercedes" },
   { src: "https://cdn.simpleicons.org/audi/ffffff", alt: "Audi" },
   { src: "https://cdn.simpleicons.org/tesla/ffffff", alt: "Tesla" },
   { src: "https://cdn.simpleicons.org/ferrari/ffffff", alt: "Ferrari" },

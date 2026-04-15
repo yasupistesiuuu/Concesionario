@@ -22,7 +22,7 @@ export const LogoCloud = ({
 }: LogoCloudProps) => {
   return (
     <div className={cn("w-full", className)}>
-      <InfiniteSlider duration={80} direction="left" gap={16}>
+      <InfiniteSlider duration={65} direction="left" gap={16}>
         {logos.map((logo, idx) => (
           <div
             key={idx}
