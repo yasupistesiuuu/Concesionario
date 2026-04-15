@@ -50,7 +50,7 @@ export const HeroSection = () => {
           muted
           playsInline
           className="w-full h-full object-cover"
-          src="https://videos.pexels.com/video-files/5320002/5320002-uhd_2560_1440_25fps.mp4"
+          src="/hero.mp4"
         ></video>
       </div>
 
