@@ -2,9 +2,8 @@
 import Layout from '@/layouts/Layout.astro';
 import FooterAnimated from '@/components/FooterAnimated.astro';
 import Navigation from '@/components/Navigation.astro';
-import FooterAnimated from '@/components/FooterAnimated.astro';
 import HoverButton from '@/components/HoverButton.astro';
-import FooterAnimated from '@/components/FooterAnimated.astro';
+import { FAQAccordion } from '@/components/blocks/FAQAccordion';
 import catalog from '@/data/catalog.json';
 
 const title = 'Vehículos por Encargo | AUTOS VELACRUZ';
@@ -74,20 +73,8 @@ const features = [
     </div>
   </section>
 
-  <!-- FAQS -->
-  <section class="section">
-    <div class="container max-w-3xl">
-      <h2 class="text-4xl font-bold text-center mb-16 text-yellow-400">Preguntas Frecuentes</h2>
-      <div class="space-y-6">
-        {faqs.map((faq) => (
-          <div class="card p-8">
-            <h3 class="text-2xl font-bold mb-4 text-yellow-400">{faq.question}</h3>
-            <p class="text-slate-300 text-lg leading-relaxed">{faq.answer}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <!-- FAQS ACCORDION -->
+  <FAQAccordion client:load faqs={faqs} title="Preguntas Frecuentes" subtitle="Resolvemos tus dudas sobre vehículos por encargo" />
 
   <!-- PROCESS -->
   <section class="section">

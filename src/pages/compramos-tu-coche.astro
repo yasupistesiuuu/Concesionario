@@ -2,9 +2,8 @@
 import Layout from '@/layouts/Layout.astro';
 import FooterAnimated from '@/components/FooterAnimated.astro';
 import Navigation from '@/components/Navigation.astro';
-import FooterAnimated from '@/components/FooterAnimated.astro';
 import HoverButton from '@/components/HoverButton.astro';
-import FooterAnimated from '@/components/FooterAnimated.astro';
+import { FAQAccordion } from '@/components/blocks/FAQAccordion';
 import catalog from '@/data/catalog.json';
 
 const title = 'Compramos Tu Coche | AUTOS VELACRUZ';
@@ -39,6 +38,29 @@ const testimonials = [
     text: 'Unos profesionales increíbles!!! David lleva el mundo del motor en la sangre, le gustan los coches, ama los coches.',
     author: 'Álvaro Merino',
     role: 'Cliente'
+  }
+];
+
+const faqs = [
+  {
+    question: '¿Cuánto vale mi coche?',
+    answer: 'Realizamos una tasación gratuita y sin compromiso. Evaluamos el estado mecánico, estético, historial de mantenimiento y documentación. Ofrecemos siempre la mejor oferta del mercado.'
+  },
+  {
+    question: '¿Cuánto tiempo tarda el proceso?',
+    answer: 'El proceso es rápido: tasación gratuita (15-30 min), propuesta económica inmediata, y pago en el acto. Todo puede completarse en una sola visita.'
+  },
+  {
+    question: '¿Qué pasa con la documentación?',
+    answer: 'Nos encargamos de toda la documentación incluido el cambio de titularidad. No tienes que preocuparte de nada, solo del trámite administrativo mínimo.'
+  },
+  {
+    question: '¿Compran coches con problemas mecánicos?',
+    answer: 'Sí, compramos vehículos en cualquier estado: accidentados, con averías, altas millas o antigüedad. Realizamos una evaluación justa según su condición.'
+  },
+  {
+    question: '¿Es obligatorio aceptar la oferta?',
+    answer: 'No, la tasación es completamente sin compromiso. Te ofrecemos la mejor oferta, pero tú decides si aceptarla o no.'
   }
 ];
 ---
@@ -96,6 +118,9 @@ const testimonials = [
       </div>
     </div>
   </section>
+
+  <!-- FAQS ACCORDION -->
+  <FAQAccordion client:load faqs={faqs} title="Preguntas Frecuentes" subtitle="Resolvemos tus dudas sobre vender tu coche" />
 
   <!-- HOW IT WORKS -->
   <section class="section">
