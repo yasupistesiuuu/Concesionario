@@ -15,7 +15,8 @@ html {
 }
 
 body {
-  background-color: var(--color-dark);
+  background-color: #050505 !important;
+  background: transparent !important;
   @apply text-slate-100 font-sans antialiased;
 }
 
@@ -91,4 +92,10 @@ a {
 
 .gradient-border-stop-hover:hover {
   animation: none;
+}
+
+/* NUCLEAR OPTION: Force transparency on all main containers */
+main, section, header, footer, article {
+  background-color: transparent !important;
+  background: transparent !important;
 }

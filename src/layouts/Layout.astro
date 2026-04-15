@@ -16,7 +16,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="es" style="background-color: #0a0e27;">
+<html lang="es" style="background-color: #050505;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -51,16 +51,10 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body class="text-luxury-silver font-luxury antialiased overflow-x-hidden" style="background: inherit;">
-    <!-- Fondo Vivo Neón - Estética de Partículas -->
-    <div class="fixed inset-0 -z-10 h-full w-full bg-[#0a0a0a]">
-      <!-- Gradiente Radial Pulsante -->
-      <div class="absolute inset-0 bg-[radial-gradient(circle_400px_at_50%_300px,#1a1a1a,transparent)] animate-pulse-slow"></div>
-
-      <!-- Rejilla de Puntos Base -->
-      <div class="absolute inset-0 h-full w-full bg-[size:4rem_4rem] bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)]"></div>
-
-      <!-- Partículas de Neón Azul/Púrpura -->
-      <div class="absolute inset-0 h-full w-full bg-[size:6rem_6rem] bg-[radial-gradient(1px_1px_at_50%_50%,#0a84ff_2px,#bf5af2_1px,transparent_1px)] opacity-50"></div>
+    <!-- Fondo Vivo Animado (Fixed Z-index) -->
+    <div class="fixed inset-0 h-full w-full bg-black" style="z-index: -50;">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,#1a1a1a,transparent)]"></div>
+      <div class="absolute inset-0 bg-[size:20px_20px] bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] opacity-30"></div>
     </div>
 
     <div class="min-h-screen flex flex-col relative z-20">
