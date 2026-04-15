@@ -2,9 +2,8 @@
 import Layout from '@/layouts/Layout.astro';
 import FooterAnimated from '@/components/FooterAnimated.astro';
 import Navigation from '@/components/Navigation.astro';
-import FooterAnimated from '@/components/FooterAnimated.astro';
+import TestimonialsSection from '@/components/TestimonialsSection.tsx';
 import HoverButton from '@/components/HoverButton.astro';
-import FooterAnimated from '@/components/FooterAnimated.astro';
 import catalog from '@/data/catalog.json';
 
 const title = 'Sobre Nosotros | AUTOS VELACRUZ';
@@ -74,6 +73,9 @@ const company = catalog.company;
       </div>
     </div>
   </section>
+
+  <!-- TESTIMONIALS -->
+  <TestimonialsSection client:load testimonials={catalog.testimonials} />
 
   <!-- STATS -->
   <section class="section">

@@ -674,14 +674,58 @@
   ],
   "testimonials": [
     {
-      "text": "Simplemente encantado!!! Todo súper ágil y súper fácil con David, el cual el trato ha sido inmejorable. Los mejores precios y estados de coches y mira que me tiré varios días buscando por muchas páginas. Gracias por el servicio y estoy disfrutándolo como un enano! 🙂",
-      "author": "Cliente Satisfecho",
-      "role": "Comprador Verificado"
+      "text": "Simplemente encantado!!! Todo súper ágil y súper fácil con David, el cual el trato ha sido inmejorable. Los mejores precios y estados de coches y mira que me tiré varios días buscando por muchas páginas. Gracias por el servicio y estoy disfrutándolo como un enano!",
+      "name": "David García",
+      "role": "Comprador Verificado",
+      "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=David"
     },
     {
-      "text": "Hace ya más de un año que compré mi coche y estoy encantada, está igual de bien que el primer día. El trato fue estupendo desde el minuto uno, escucharon lo que quería y me encontraron el vehículo a mi medida. Se nota que les encantan los coches porque tenía hasta detalles que yo no habría tenido en cuenta. Destacaría especialmente la transparencia en cuanto a las gestiones y lo adecuado del precio. Los recomendaría totalmente.",
-      "author": "Cliente Premium",
-      "role": "Comprador Satisfecho"
+      "text": "Hace ya más de un año que compré mi coche y estoy encantada, está igual de bien que el primer día. El trato fue estupendo desde el minuto uno. Los recomendaría totalmente.",
+      "name": "María Rodríguez",
+      "role": "Comprador Satisfecho",
+      "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Maria"
+    },
+    {
+      "text": "Excelente servicio, profesionales de verdad. Me ayudaron a encontrar el coche perfecto a un precio justo. La entrega a domicilio fue rápida y sin problemas.",
+      "name": "Juan López",
+      "role": "Ejecutivo",
+      "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Juan"
+    },
+    {
+      "text": "Impresionante la variedad de vehículos. Comparé con otros concesionarios y AUTOS VELACRUZ ofrece la mejor relación calidad-precio. Muy recomendable.",
+      "name": "Patricia Hernández",
+      "role": "Gerente",
+      "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Patricia"
+    },
+    {
+      "text": "El equipo es muy atento y profesional. Me explicaron todo el proceso de financiación de manera clara. Mi nueva BMW es una joya, gracias AUTOS VELACRUZ.",
+      "name": "Carlos Menéndez",
+      "role": "Empresario",
+      "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Carlos"
+    },
+    {
+      "text": "Llevo meses con mi coche nuevo y no tengo ni una queja. La revisión previa fue exhaustiva, se nota que cuidan cada detalle. Volveré a comprar aquí.",
+      "name": "Ana Fernández",
+      "role": "Abogada",
+      "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Ana"
+    },
+    {
+      "text": "Trasladarme a otra ciudad y conseguir que me entreguem el coche en mi nueva dirección fue muy cómodo. Servicio de entrega a domicilio impecable.",
+      "name": "Roberto Silva",
+      "role": "Ingeniero",
+      "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Roberto"
+    },
+    {
+      "text": "Me presentaron varios modelos dentro de mi presupuesto. La honestidad y transparencia del equipo me ganó desde el primer día. Muy profesionales.",
+      "name": "Sandra Martínez",
+      "role": "Profesional Independiente",
+      "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sandra"
+    },
+    {
+      "text": "Mejor decisión comprar aquí. El coche ha superado mis expectativas en estado y funcionamiento. El equipo de AUTOS VELACRUZ es excepcional.",
+      "name": "Miguel Sánchez",
+      "role": "Arquitecto",
+      "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Miguel"
     }
   ],
   "company": {
