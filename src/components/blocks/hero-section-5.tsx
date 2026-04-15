@@ -50,7 +50,7 @@ export const HeroSection = () => {
           className="w-full h-full object-cover opacity-60"
         >
           <source
-            src="https://videos.pexels.com/video-files/3424652/3424652-sd_640_360_25fps.mp4"
+            src="https://commondatastorage.googleapis.com/gtv-videos-library/sample/ElephantsDream.mp4"
             type="video/mp4"
           />
         </video>
