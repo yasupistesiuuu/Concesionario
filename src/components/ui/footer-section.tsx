@@ -54,9 +54,8 @@ const footerLinks: FooterSection[] = [
 
 export function Footer() {
 	return (
-		<footer className="w-full border-t border-yellow-500/30 bg-[radial-gradient(35%_128px_at_50%_0%,rgba(217,119,6,0.05),transparent)] px-6 py-12 lg:py-16">
+		<footer className="w-full border-t border-yellow-500/30 px-6 py-12 lg:py-16">
 			<div className="mx-auto max-w-6xl">
-				<div className="bg-yellow-500/10 absolute inset-x-0 -top-px mx-auto w-1/3 rounded-full blur" />
 
 				<div className="grid w-full gap-8 md:gap-12">
 					<AnimatedContainer className="space-y-4">
