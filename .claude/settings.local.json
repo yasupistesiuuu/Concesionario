@@ -14,7 +14,9 @@
       "Bash(curl -s http://localhost:4321/)",
       "Bash(pkill -f \"npm run dev\")",
       "Bash(curl -s http://localhost:4322/)",
-      "Bash(curl -s http://localhost:4323/)"
+      "Bash(curl -s http://localhost:4323/)",
+      "Bash(vercel --prod)",
+      "Bash(curl -s https://concesionario-luxury.vercel.app/)"
     ]
   }
 }
