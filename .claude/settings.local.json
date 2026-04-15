@@ -9,7 +9,8 @@
       "Bash(vercel --prod --yes)",
       "Bash(find src/pages src/components -type f \\\\\\( -name \"*.astro\" -o -name \"*.tsx\" -o -name \"*.jsx\" \\\\\\) -exec grep -l \"bg-\" {} \\\\;)",
       "Bash(npm install *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(npm list *)"
     ]
   }
 }

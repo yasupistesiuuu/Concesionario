@@ -1,0 +1,51 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Navigation from '@/components/Navigation.astro';
+import NavHeaderDemo from '@/components/NavHeaderDemo.astro';
+import FooterAnimated from '@/components/FooterAnimated.astro';
+---
+
+<Layout title="NavHeader Demo | AUTOS VELACRUZ">
+  <Navigation />
+
+  <section class="py-20">
+    <div class="container">
+      <h1 class="text-5xl font-bold text-yellow-400 mb-8 text-center">
+        NavHeader Component Demo
+      </h1>
+      <p class="text-lg text-slate-300 text-center mb-16 max-w-2xl mx-auto">
+        Component animado premium con efecto hover suave. Pasa el mouse sobre los elementos para ver la animación del cursor de fondo.
+      </p>
+    </div>
+  </section>
+
+  <NavHeaderDemo />
+
+  <section class="py-20">
+    <div class="container">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold text-yellow-400 mb-6">Características</h2>
+        <ul class="space-y-3 text-slate-300">
+          <li class="flex items-start gap-3">
+            <span class="text-yellow-400 mt-1">✓</span>
+            <span><strong>Animación Suave:</strong> Cursor animado con framer-motion</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-yellow-400 mt-1">✓</span>
+            <span><strong>Responsivo:</strong> Se adapta a mobile (text-xs) y desktop (text-base)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-yellow-400 mt-1">✓</span>
+            <span><strong>Mix Blend Mode:</strong> Texto con efecto de mezcla de colores</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-yellow-400 mt-1">✓</span>
+            <span><strong>TypeScript Seguro:</strong> Props y estados completamente tipados</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <FooterAnimated />
+</Layout>
