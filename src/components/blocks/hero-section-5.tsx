@@ -40,15 +40,23 @@ export const HeroSection = () => {
 
   return (
     <main className="relative w-full overflow-hidden">
-      {/* FONDO CON GRADIENTE DINÁMICO */}
-      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-amber-900/30 via-black to-black">
-        {/* Elementos decorativos animados */}
+      {/* FONDO CON GRADIENTE PREMIUM VISIBLE */}
+      <div className="absolute inset-0 w-full h-full">
+        {/* Gradiente de fondo base */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(135deg, #1a1a1a 0%, #2d1f0e 25%, #1a1a1a 50%, #0f1418 75%, #1a1a1a 100%)",
+          }}
+        />
+
+        {/* Efecto de brillo dorado animado */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(circle at 20% 50%, rgba(217, 119, 6, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(217, 119, 6, 0.1) 0%, transparent 50%)",
-            animation: "pulse 4s ease-in-out infinite",
+              "radial-gradient(circle at 30% 40%, rgba(245, 158, 11, 0.25) 0%, transparent 40%), radial-gradient(circle at 70% 60%, rgba(217, 119, 6, 0.2) 0%, transparent 40%)",
+            animation: "glow 6s ease-in-out infinite",
           }}
         />
       </div>
