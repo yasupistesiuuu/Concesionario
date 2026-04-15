@@ -12,7 +12,7 @@ function NavHeader() {
 
   return (
     <ul
-      className="relative mx-auto flex w-fit rounded-full bg-black/40 backdrop-blur-md border border-white/10 p-1"
+      className="relative mx-auto flex w-fit rounded-full border border-white/10 bg-black/30 backdrop-blur-md p-1.5 shadow-[0_8px_32px_rgba(0,0,0,0.5)] mt-6"
       onMouseLeave={() => setPosition((pv) => ({ ...pv, opacity: 0 }))}
     >
       <Tab setPosition={setPosition} href="/">
@@ -63,7 +63,7 @@ const Tab = ({
     >
       <a
         href={href}
-        className="block px-3 py-1.5 text-xs uppercase text-zinc-300 hover:text-yellow-400 transition-colors mix-blend-difference md:px-5 md:py-3 md:text-sm"
+        className="relative z-10 block cursor-pointer px-4 py-2 text-sm font-medium tracking-wide text-zinc-300 transition-colors hover:text-white md:px-6 md:py-2.5 md:text-base"
       >
         {children}
       </a>
@@ -75,7 +75,7 @@ const Cursor = ({ position }: { position: any }) => {
   return (
     <motion.li
       animate={position}
-      className="absolute z-0 h-7 rounded-full bg-yellow-500/20 border border-yellow-500/50 md:h-12"
+      className="absolute z-0 h-9 md:h-11 rounded-full bg-white/10 border border-white/20 shadow-inner"
     />
   );
 };
