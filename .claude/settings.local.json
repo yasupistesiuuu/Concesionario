@@ -81,7 +81,20 @@
       "Bash(node inspect-testimonials.js)",
       "Bash(curl -s -I https://concesionario-luxury-8kcdu90on-yasupistesiuuus-projects.vercel.app/sobre-nosotros)",
       "Bash(awk '{print $2}')",
-      "Bash(xargs -r kill)"
+      "Bash(xargs -r kill)",
+      "Bash(node debug-carousel.js)",
+      "Bash(rm -rf .astro)",
+      "Bash(npm run *)",
+      "Bash(node inspect-html.js)",
+      "Bash(timeout 15 node dump-html.js)",
+      "Bash(pkill -f \"node.*dev\\\\|npm.*dev\")",
+      "Bash(netstat -tlnp)",
+      "Bash(timeout 35 node test-carousel-visually.js)",
+      "Bash(curl -s http://localhost:4321/sobre-nosotros)",
+      "Bash(pkill -f \"npm.*dev\\\\|node.*dev\")",
+      "Bash(rm -rf .astro dist)",
+      "Bash(xargs -r kill -9)",
+      "Bash(curl -s http://localhost:4327/sobre-nosotros)"
     ]
   }
 }

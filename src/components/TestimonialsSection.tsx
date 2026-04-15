@@ -43,7 +43,18 @@ export default function TestimonialsSection({
           </p>
         </motion.div>
 
-        <div className="flex justify-center gap-3 md:gap-4 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[500px] overflow-hidden">
+        <div
+          className="flex justify-center gap-3 md:gap-4 overflow-hidden"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'stretch',
+            height: '500px',
+            gap: '12px',
+            maskImage: 'linear-gradient(to bottom, transparent, black 25%, black 75%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 25%, black 75%, transparent)',
+          }}
+        >
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
           <TestimonialsColumn
             testimonials={secondColumn}

@@ -15,7 +15,7 @@ export const TestimonialsColumn = (props: {
   duration?: number;
 }) => {
   return (
-    <div className={props.className}>
+    <div className={props.className} style={{ height: '100%' }}>
       <motion.div
         animate={{
           translateY: "-50%",
