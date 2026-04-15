@@ -1,7 +1,6 @@
 "use client";
 
-import React, { ReactNode, useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import React, { ReactNode, useEffect, useRef } from "react";
 
 interface InfiniteSliderProps {
   children: ReactNode;
@@ -20,62 +19,71 @@ export const InfiniteSlider = ({
 }: InfiniteSliderProps) => {
   const childrenArray = React.Children.toArray(children);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
+  const sliderRef = useRef<HTMLDivElement>(null);
 
-  // Duplicar suficientemente para seamless looping
+  // Duplicar 2 veces para seamless loop
   const duplicatedChildren = [
-    ...childrenArray,
     ...childrenArray,
     ...childrenArray,
   ];
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!sliderRef.current) return;
 
-    // Calcular el ancho de un set de children
-    const firstChild = containerRef.current.querySelector('[data-child="0"]') as HTMLElement;
-    if (!firstChild) return;
+    const slider = sliderRef.current;
+    const animationDuration = duration;
 
-    const childWidth = firstChild.offsetWidth + 16; // 16 es el gap
-    const totalWidth = childWidth * childrenArray.length;
+    // Crear animación CSS dinámica basada en el contenido
+    const styleSheet = document.createElement("style");
+    const keyframes = `
+      @keyframes scroll-left {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      @keyframes scroll-right {
+        0% {
+          transform: translateX(-50%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+      .infinite-scroll {
+        animation: ${direction === "left" ? "scroll-left" : "scroll-right"} ${animationDuration}s linear infinite;
+      }
+    `;
+    styleSheet.textContent = keyframes;
+    document.head.appendChild(styleSheet);
 
-    // Resetear posición cada que llega al final para seamless loop
-    const container = containerRef.current.querySelector('[data-slider]') as HTMLElement;
-    if (container) {
-      container.style.width = `${totalWidth * 3}px`;
-    }
-  }, [childrenArray.length]);
+    slider.classList.add("infinite-scroll");
+
+    return () => {
+      document.head.removeChild(styleSheet);
+    };
+  }, [duration, direction]);
 
   return (
     <div
       ref={containerRef}
       className="relative overflow-hidden w-full"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
-      <motion.div
-        data-slider="true"
+      <div
+        ref={sliderRef}
         className="flex gap-4"
-        initial={{ x: 0 }}
-        animate={{
-          x: direction === "left" ? -50000 : 0
-        }}
-        transition={{
-          duration: isHovered ? duration * 1.5 : duration,
-          repeat: Infinity,
-          ease: "linear",
-          repeatType: "loop" as const,
-        }}
         style={{
           willChange: "transform",
         }}
       >
         {duplicatedChildren.map((child, idx) => (
-          <div key={idx} className="flex-shrink-0" data-child={idx % childrenArray.length}>
+          <div key={idx} className="flex-shrink-0">
             {child}
           </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };
