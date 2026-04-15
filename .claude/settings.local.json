@@ -7,7 +7,8 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(vercel --prod --yes)",
-      "Bash(find src/pages src/components -type f \\\\\\( -name \"*.astro\" -o -name \"*.tsx\" -o -name \"*.jsx\" \\\\\\) -exec grep -l \"bg-\" {} \\\\;)"
+      "Bash(find src/pages src/components -type f \\\\\\( -name \"*.astro\" -o -name \"*.tsx\" -o -name \"*.jsx\" \\\\\\) -exec grep -l \"bg-\" {} \\\\;)",
+      "Bash(npm install *)"
     ]
   }
 }
