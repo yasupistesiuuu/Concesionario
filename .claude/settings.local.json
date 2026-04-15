@@ -94,7 +94,8 @@
       "Bash(pkill -f \"npm.*dev\\\\|node.*dev\")",
       "Bash(rm -rf .astro dist)",
       "Bash(xargs -r kill -9)",
-      "Bash(curl -s http://localhost:4327/sobre-nosotros)"
+      "Bash(curl -s http://localhost:4327/sobre-nosotros)",
+      "Bash(curl -s \"https://concesionario-luxury.vercel.app/sobre-nosotros\")"
     ]
   }
 }

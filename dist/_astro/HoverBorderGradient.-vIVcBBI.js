@@ -1,1 +1,0 @@
-import{j as a}from"./jsx-runtime.u17CrQMm.js";import"./index.BA5dMYpm.js";function m({children:t,containerClassName:r="",className:s="",as:e="button",...o}){return a.jsx(e,{className:`hover-gradient-button ${r}`,...o,children:t})}export{m as HoverBorderGradient,m as default};

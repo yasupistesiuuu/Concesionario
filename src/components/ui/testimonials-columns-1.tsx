@@ -33,9 +33,9 @@ export const TestimonialsColumn = (props: {
       >
         {duplicatedTestimonials.map((testimonial, i) => (
           <div
-            className="p-8 rounded-3xl border border-slate-700 shadow-lg bg-gradient-to-br from-slate-800 to-slate-900 hover:border-yellow-500/50 transition-all duration-300 min-h-fit"
+            className="p-8 rounded-3xl border border-slate-700 shadow-lg bg-gradient-to-br from-slate-800 to-slate-900 hover:border-yellow-500/50 transition-all duration-300 min-h-fit flex-shrink-0"
             key={i}
-            style={{ minWidth: "380px" }}
+            style={{ width: "340px" }}
           >
             <div className="text-slate-200 text-sm leading-relaxed mb-6 italic">
               "{testimonial.text}"
