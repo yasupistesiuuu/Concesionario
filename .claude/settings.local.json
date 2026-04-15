@@ -5,7 +5,9 @@
       "Bash(vercel deploy *)",
       "Bash(grep -r \"button\\\\|Button\\\\|href\" src/components/*.astro src/components/*.tsx)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(vercel --prod --yes)",
+      "Bash(find src/pages src/components -type f \\\\\\( -name \"*.astro\" -o -name \"*.tsx\" -o -name \"*.jsx\" \\\\\\) -exec grep -l \"bg-\" {} \\\\;)"
     ]
   }
 }

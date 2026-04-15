@@ -50,7 +50,12 @@ const {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="text-luxury-silver font-luxury antialiased" style="background: inherit;">
+  <body class="text-luxury-silver font-luxury antialiased overflow-x-hidden" style="background: inherit;">
+    <!-- Fondo Vivo Animado -->
+    <div class="fixed inset-0 -z-10 h-full w-full bg-[#0a0a0a] bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem]">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_400px_at_50%_300px,#1a1a1a,transparent)] animate-pulse-slow pointer-events-none"></div>
+    </div>
+
     <div class="min-h-screen flex flex-col relative z-10">
       <slot />
     </div>
