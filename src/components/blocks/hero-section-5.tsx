@@ -66,10 +66,10 @@ export const HeroSection = () => {
           >
             {/* H1 PRINCIPAL */}
             <motion.div variants={itemVariants} className="space-y-4">
-              <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-                Encuentra el Coche de tus{" "}
-                <span className="bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent">
-                  Sueños
+              <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold leading-tight mb-8 text-center text-white drop-shadow-2xl">
+                Conduce el coche <br />
+                <span className="bg-gradient-to-r from-[#ff6b35] via-[#f7931e] to-[#ffdd00] bg-clip-text text-transparent drop-shadow-none">
+                  de tus sueños
                 </span>
               </h1>
             </motion.div>
@@ -83,26 +83,21 @@ export const HeroSection = () => {
             </motion.div>
 
             {/* BOTONES CTA */}
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
-            >
-              <Button
-                size="lg"
-                className="gap-2 text-base font-semibold"
-                onClick={() => (window.location.href = "/catalogo")}
-              >
-                Ver Catálogo
-                <ArrowRight className="h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-base font-semibold"
-                onClick={() => (window.location.href = "/contacto")}
-              >
-                Solicitar Información
-              </Button>
+            <motion.div variants={itemVariants}>
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-center w-full">
+                <a
+                  href="/catalogo"
+                  className="inline-block py-4 px-10 bg-white text-black rounded-lg font-bold text-lg transition-transform ease-in-out hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+                >
+                  Comprar
+                </a>
+                <a
+                  href="/contacto"
+                  className="inline-block py-4 px-10 bg-black/40 backdrop-blur-md border border-white/20 text-white rounded-lg font-bold text-lg transition-transform ease-in-out hover:-translate-y-1 hover:bg-white/10"
+                >
+                  Vender
+                </a>
+              </div>
             </motion.div>
           </motion.div>
         </div>
