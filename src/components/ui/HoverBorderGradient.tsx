@@ -5,26 +5,38 @@ interface HoverBorderGradientProps extends React.HTMLAttributes<HTMLElement> {
   containerClassName?: string
   className?: string
   children: React.ReactNode
-  rounded?: 'sm' | 'full'
+  variant?: 'filled' | 'outline'
 }
 
 export function HoverBorderGradient({
   children,
   containerClassName = '',
-  className = 'px-8 py-3 text-sm font-medium',
+  className = 'px-12 py-3',
   as: Element = 'button',
-  rounded = 'sm',
+  variant = 'filled',
   ...props
 }: HoverBorderGradientProps) {
-  const roundedClass = rounded === 'full' ? 'rounded-full' : 'rounded-sm'
-  const innerRoundedClass = rounded === 'full' ? 'rounded-full' : 'rounded-xs'
+  if (variant === 'outline') {
+    return (
+      <Element
+        className={`group relative inline-block text-sm font-medium text-yellow-400 ${containerClassName}`}
+        {...props}
+      >
+        <span className="absolute inset-0 border border-current"></span>
+        <span className={`block border border-current bg-slate-950 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 ${className}`}>
+          {children}
+        </span>
+      </Element>
+    )
+  }
 
   return (
     <Element
-      className={`group inline-block bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 p-0.5 hover:text-white transition-all ${roundedClass} ${containerClassName}`}
+      className={`group relative inline-block text-sm font-medium text-white ${containerClassName}`}
       {...props}
     >
-      <span className={`block bg-slate-950 text-yellow-400 group-hover:bg-transparent group-hover:text-white transition-all duration-300 ${className} ${innerRoundedClass}`}>
+      <span className="absolute inset-0 border border-yellow-400"></span>
+      <span className={`block border border-yellow-400 bg-yellow-500 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 ${className}`}>
         {children}
       </span>
     </Element>
