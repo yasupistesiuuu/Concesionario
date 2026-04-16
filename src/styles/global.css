@@ -22,7 +22,7 @@ body {
     radial-gradient(circle at 40% 0%, rgba(255, 248, 240, 0.5) 0%, transparent 40%),
     linear-gradient(135deg, #f8f7f5 0%, #faf9f7 50%, #f5f4f2 100%);
   background-attachment: fixed;
-  @apply text-slate-900 font-sans antialiased;
+  @apply text-slate-900 font-outfit antialiased;
 }
 
 h1 {
@@ -63,11 +63,27 @@ a {
 
 /* Tipografía Premium */
 h1, h2, h3 {
-  @apply text-white;
+  @apply text-black;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 p {
-  @apply text-slate-300;
+  @apply text-slate-700;
+  font-family: 'Outfit', sans-serif;
 }
 
 .card {

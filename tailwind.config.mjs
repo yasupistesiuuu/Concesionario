@@ -2,6 +2,10 @@ export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
+      fontFamily: {
+        'playfair': ['Playfair Display', 'serif'],
+        'outfit': ['Outfit', 'sans-serif'],
+      },
       animation: {
         'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'cosmic-spin': 'cosmic-spin 3s linear infinite',

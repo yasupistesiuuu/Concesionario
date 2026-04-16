@@ -22,7 +22,8 @@
       "Bash(vercel --version)",
       "Bash(npx shadcn@latest add https://cult-ui.com/r/cosmic-button.json)",
       "Bash(curl -s https://cult-ui.com/r/cosmic-button.json)",
-      "Bash(curl -sL https://cult-ui.com/r/cosmic-button.json)"
+      "Bash(curl -sL https://cult-ui.com/r/cosmic-button.json)",
+      "Bash(find src *)"
     ]
   }
 }
