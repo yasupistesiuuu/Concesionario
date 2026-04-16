@@ -109,10 +109,10 @@ const emissionTags = {
   </section>
 
   <!-- DISTINTIVO AMBIENTAL -->
-  <section class="section">
-    <div class="container">
+  <section class="section w-full">
+    <div class="w-full px-4">
       <h2 class="text-4xl font-bold mb-16 text-yellow-400">Distintivo Ambiental</h2>
-      <div class="grid md:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 w-full px-4 md:px-8 lg:px-16">
         {Object.entries(emissionTags).map(([key, tag]) => (
           <a href={`/etiqueta/${key}`} class={`card p-8 text-center border-2 border-slate-700 hover:border-yellow-400 hover:shadow-lg transition-all cursor-pointer`}>
             <div class={`${tag.color} inline-block px-6 py-3 rounded-full text-white font-bold text-3xl mb-4`}>
@@ -132,16 +132,18 @@ const emissionTags = {
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="section">
-    <div class="container">
+  <section class="section w-full">
+    <div class="w-full px-4">
       <h2 class="text-4xl font-bold text-center mb-16 text-yellow-400">Opiniones de Clientes</h2>
-      <Testimonials client:visible />
+      <div class="w-full px-4 md:px-8 lg:px-16">
+        <Testimonials client:visible />
+      </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="section">
-    <div class="container text-center">
+  <section class="section w-full">
+    <div class="w-full px-4 text-center">
       <h2 class="text-4xl font-bold mb-6 text-yellow-400">Encuentra Tu Vehículo Ideal Hoy</h2>
       <p class="text-xl mb-8 text-slate-300">Contáctanos para una consulta sin compromiso</p>
       <HoverButton href="/contacto" containerClass="h-auto inline-flex" className="px-8 py-3 text-lg">
