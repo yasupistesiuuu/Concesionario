@@ -125,3 +125,22 @@ main, section, header, footer, article {
     transform: translateY(-10px);
   }
 }
+
+/* Cosmic Button Animations */
+@keyframes cosmic-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cosmic-spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}

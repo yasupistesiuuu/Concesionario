@@ -19,7 +19,10 @@
       "Bash(curl -s https://concesionario-luxury.vercel.app/)",
       "Bash(curl -I \"https://cdn.coverr.co/videos/coverr-driving-a-porsche-in-the-mountains-5435/1080p.mp4\")",
       "Bash(grep -E \"\\\\.\\(tsx|astro\\)$\")",
-      "Bash(vercel --version)"
+      "Bash(vercel --version)",
+      "Bash(npx shadcn@latest add https://cult-ui.com/r/cosmic-button.json)",
+      "Bash(curl -s https://cult-ui.com/r/cosmic-button.json)",
+      "Bash(curl -sL https://cult-ui.com/r/cosmic-button.json)"
     ]
   }
 }

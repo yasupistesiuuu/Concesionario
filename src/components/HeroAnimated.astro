@@ -1,5 +1,5 @@
 ---
-import HoverButton from '@/components/HoverButton.astro';
+import CosmicButton from '@/components/CosmicButton.astro';
 import '@/styles/hero-animated.css';
 
 interface Props {
@@ -27,9 +27,9 @@ const {
 } = Astro.props;
 ---
 
-<section class="hero-animated section">
-  <div class="container">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
+<section class="hero-animated section w-full">
+  <div class="w-full px-4 md:px-8 lg:px-16">
+    <div class="grid md:grid-cols-2 gap-12 items-center w-full">
       <div class="hero-animated-content">
         <h1 class="hero-title">
           {title}
@@ -39,12 +39,12 @@ const {
           {description}
         </p>
         <div class="hero-buttons">
-          <HoverButton href={primaryButtonHref} containerClass="h-auto">
+          <CosmicButton href={primaryButtonHref}>
             {primaryButtonText}
-          </HoverButton>
-          <HoverButton href={secondaryButtonHref} containerClass="h-auto">
+          </CosmicButton>
+          <CosmicButton href={secondaryButtonHref}>
             {secondaryButtonText}
-          </HoverButton>
+          </CosmicButton>
         </div>
       </div>
       <div class="hero-image-container">

@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Navigation from '@/components/Navigation.astro';
-import HoverButton from '@/components/HoverButton.astro';
+import CosmicButton from '@/components/CosmicButton.astro';
 import GradientCard from '@/components/GradientCard.astro';
 import catalog from '@/data/catalog.json';
 
@@ -60,12 +60,12 @@ const getEmissionColor = (emission) => {
                 </li>
               </ul>
               <div class="space-y-2">
-                <HoverButton containerClass="w-full" className="w-full py-2 text-center">
+                <CosmicButton as="button">
                   Solicitar Información
-                </HoverButton>
-                <HoverButton href="/contacto" containerClass="w-full" className="w-full py-2 text-center">
+                </CosmicButton>
+                <CosmicButton href="/contacto">
                   Agendar Test Drive
-                </HoverButton>
+                </CosmicButton>
               </div>
             </div>
           </GradientCard>
@@ -73,12 +73,12 @@ const getEmissionColor = (emission) => {
       </div>
 
       <div class="mt-16 text-center">
-        <p class="text-lg text-slate-400 mb-8">
+        <p class="text-lg text-slate-300 mb-8">
           ¿No encuentra lo que busca? Contáctenos para vehículos por encargo o consultar opciones especiales.
         </p>
-        <HoverButton href="/contacto" containerClass="h-auto inline-flex">
+        <CosmicButton href="/contacto">
           Contactar Asesor Especializado
-        </HoverButton>
+        </CosmicButton>
       </div>
     </div>
   </section>

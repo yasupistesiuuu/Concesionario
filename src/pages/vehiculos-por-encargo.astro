@@ -2,7 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import FooterAnimated from '@/components/FooterAnimated.astro';
 import Navigation from '@/components/Navigation.astro';
-import HoverButton from '@/components/HoverButton.astro';
+import CosmicButton from '@/components/CosmicButton.astro';
 import { FAQAccordion } from '@/components/blocks/FAQAccordion';
 import catalog from '@/data/catalog.json';
 
@@ -50,9 +50,9 @@ const features = [
         <p class="text-xl text-slate-300 mb-8">
           ¿No encuentras el vehículo que buscas? Contáctanos para encontrar el coche perfecto para ti.
         </p>
-        <HoverButton href="/contacto" containerClass="h-auto inline-flex">
+        <CosmicButton href="/contacto">
           Solicitar Vehículo
-        </HoverButton>
+        </CosmicButton>
       </div>
     </div>
   </section>
@@ -138,9 +138,9 @@ const features = [
     <div class="w-full px-4 md:px-8 lg:px-16 text-center">
       <h2 class="text-4xl font-bold mb-6 text-yellow-400">¿Necesitas un Vehículo Específico?</h2>
       <p class="text-xl mb-8 text-slate-300">Contáctanos y encontraremos el coche perfecto para ti</p>
-      <a href="/contacto" class="inline-block px-12 py-4 text-yellow-400 font-bold rounded-lg hover:text-yellow-300 transition-all">
+      <CosmicButton href="/contacto">
         Solicitar Vehículo por Encargo
-      </a>
+      </CosmicButton>
     </div>
   </section>
 

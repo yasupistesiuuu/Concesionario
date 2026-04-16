@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro';
 import FooterAnimated from '@/components/FooterAnimated.astro';
 import Navigation from '@/components/Navigation.astro';
 import Testimonials from '@/components/blocks/Testimonials';
-import HoverButton from '@/components/HoverButton.astro';
+import CosmicButton from '@/components/CosmicButton.astro';
 import catalog from '@/data/catalog.json';
 
 const title = 'Sobre Nosotros | AUTOS VELACRUZ';
@@ -127,9 +127,9 @@ const company = catalog.company;
     <div class="w-full px-4 md:px-8 lg:px-16 text-center">
       <h2 class="text-4xl font-bold mb-6 text-yellow-400">¿Quieres Conocernos?</h2>
       <p class="text-xl mb-8 text-slate-300">Visítanos en Valdemoro o contacta con nosotros hoy mismo</p>
-      <HoverButton href="/contacto" containerClass="h-auto inline-flex" className="px-8 py-3 text-lg">
+      <CosmicButton href="/contacto">
         Contactar Ahora
-      </HoverButton>
+      </CosmicButton>
     </div>
   </section>
 
