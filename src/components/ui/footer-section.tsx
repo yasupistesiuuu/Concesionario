@@ -54,7 +54,7 @@ const footerLinks: FooterSection[] = [
 
 export function Footer() {
 	return (
-		<footer className="w-full border-t border-yellow-500/30 px-6 py-12 lg:py-16">
+		<footer className="w-full bg-slate-950 border-t border-slate-800 px-6 py-12 lg:py-16">
 			<div className="mx-auto max-w-6xl">
 
 				<div className="grid w-full gap-8 md:gap-12">
@@ -94,7 +94,7 @@ export function Footer() {
 					</div>
 
 					<AnimatedContainer delay={0.5}>
-						<div className="border-t border-yellow-500/20 pt-8 mt-8">
+						<div className="border-t border-slate-800 pt-8 mt-8">
 							<div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
 								<p className="text-slate-400 text-sm">
 									© {new Date().getFullYear()} AUTOS VELACRUZ. Todos los derechos reservados.
