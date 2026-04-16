@@ -69,8 +69,8 @@ const faqs = [
   <Navigation />
 
   <!-- HERO -->
-  <section class="section">
-    <div class="container">
+  <section class="section w-full">
+    <div class="w-full px-4 md:px-8 lg:px-16">
       <div class="max-w-3xl">
         <h1 class="text-5xl md:text-6xl font-bold mb-6 text-yellow-400">
           Compramos Tu Coche
@@ -86,10 +86,10 @@ const faqs = [
   </section>
 
   <!-- BENEFITS -->
-  <section class="section">
-    <div class="container">
+  <section class="section w-full">
+    <div class="w-full px-4 md:px-8 lg:px-16">
       <h2 class="text-4xl font-bold mb-16 text-yellow-400">Nuestro Proceso</h2>
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-3 gap-8 w-full">
         {benefits.map((benefit) => (
           <div class="card p-8 text-center">
             <div class="text-5xl mb-4">{benefit.icon}</div>
@@ -102,10 +102,10 @@ const faqs = [
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="section">
-    <div class="container">
+  <section class="section w-full">
+    <div class="w-full px-4 md:px-8 lg:px-16">
       <h2 class="text-4xl font-bold text-center mb-16 text-yellow-400">Lo Que Dicen Nuestros Clientes</h2>
-      <div class="grid md:grid-cols-2 gap-8">
+      <div class="grid md:grid-cols-2 gap-8 w-full">
         {testimonials.map((test) => (
           <div class="card p-8 border-l-4 border-yellow-500">
             <p class="text-lg italic text-slate-300 mb-6">"{test.text}"</p>
@@ -123,8 +123,8 @@ const faqs = [
   <FAQAccordion client:load faqs={faqs} title="Preguntas Frecuentes" subtitle="Resolvemos tus dudas sobre vender tu coche" />
 
   <!-- HOW IT WORKS -->
-  <section class="section">
-    <div class="container max-w-3xl">
+  <section class="section w-full">
+    <div class="w-full px-4 md:px-8 lg:px-16 max-w-3xl">
       <h2 class="text-4xl font-bold text-center mb-16 text-yellow-400">¿Cómo Funciona?</h2>
       <div class="space-y-8">
         <div class="flex gap-6">
@@ -160,8 +160,8 @@ const faqs = [
   </section>
 
   <!-- CTA -->
-  <section class="section">
-    <div class="container text-center">
+  <section class="section w-full">
+    <div class="w-full px-4 md:px-8 lg:px-16 text-center">
       <h2 class="text-4xl font-bold mb-6 text-yellow-400">¿Listo para Vender Tu Coche?</h2>
       <p class="text-xl mb-8 text-slate-300">Contáctanos para una tasación sin compromiso</p>
       <a href="/contacto" class="inline-block px-12 py-4 text-yellow-400 font-bold rounded-lg hover:text-yellow-300 transition-all">
