@@ -52,7 +52,24 @@ a {
   @apply py-20 md:py-32;
 }
 
+.section-alt {
+  @apply py-20 md:py-32 bg-slate-50/50;
+}
+
+/* Tipografía Premium */
+h1, h2, h3 {
+  @apply text-slate-900;
+}
+
+p {
+  @apply text-slate-700;
+}
+
 .card {
+  @apply bg-white border border-slate-200 rounded-lg p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all;
+}
+
+.card-dark {
   @apply bg-black/60 border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-500/50 transition-all backdrop-blur-sm;
 }
 
