@@ -16,7 +16,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="es" style="background-color: #ffffff;">
+<html lang="es" style="background: linear-gradient(135deg, #f8f7f5 0%, #faf9f7 50%, #f5f4f2 100%); background-attachment: fixed;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -51,8 +51,12 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body class="text-luxury-silver font-luxury antialiased overflow-x-hidden" style="background: inherit;">
-    <!-- Fondo Blanco Limpio (Fixed Z-index) -->
-    <div class="fixed inset-0 w-full h-full" style="z-index: -50; background-color: #ffffff;">
+    <!-- Fondo Blanco Humo Premium con Reflejos (Fixed Z-index) -->
+    <div class="fixed inset-0 w-full h-full" style="z-index: -50; background: linear-gradient(135deg, #f8f7f5 0%, #faf9f7 50%, #f5f4f2 100%); background-attachment: fixed;">
+      <!-- Reflejos sutiles -->
+      <div class="absolute inset-0" style="background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 50%);"></div>
+      <div class="absolute inset-0" style="background: radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.6) 0%, transparent 50%);"></div>
+      <div class="absolute inset-0" style="background: radial-gradient(circle at 40% 0%, rgba(255, 248, 240, 0.5) 0%, transparent 40%);"></div>
     </div>
 
     <div class="min-h-screen flex flex-col relative z-20">
