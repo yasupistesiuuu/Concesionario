@@ -87,8 +87,8 @@ const emissionTags = {
               </div>
               <div class="p-6">
                 <h3 class="font-bold text-lg mb-2 text-white">{vehicle.name}</h3>
-                <p class="text-black text-2xl font-bold mb-4">{vehicle.price}€</p>
-                <ul class="text-sm text-slate-400 space-y-1 mb-4">
+                <p class="text-white text-2xl font-bold mb-4">{vehicle.price}€</p>
+                <ul class="text-sm text-slate-300 space-y-1 mb-4">
                   <li>📅 {vehicle.year} | {vehicle.km} km</li>
                   <li>⛽ {vehicle.fuel} | ⚙️ {vehicle.transmission}</li>
                 </ul>
@@ -118,8 +118,8 @@ const emissionTags = {
             <div class={`${tag.color} inline-block px-6 py-3 rounded-full text-white font-bold text-3xl mb-4`}>
               {tag.label}
             </div>
-            <p class="text-3xl font-bold text-black mb-2">{tag.count}</p>
-            <p class="text-slate-400">
+            <p class="text-3xl font-bold text-white mb-2">{tag.count}</p>
+            <p class="text-slate-300">
               {key === 'C' && 'Emisiones Moderadas'}
               {key === 'B' && 'Bajas Emisiones'}
               {key === 'ECO' && 'Ecológicos (Híbridos)'}
