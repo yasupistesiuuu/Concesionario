@@ -23,7 +23,9 @@
       "Bash(npx shadcn@latest add https://cult-ui.com/r/cosmic-button.json)",
       "Bash(curl -s https://cult-ui.com/r/cosmic-button.json)",
       "Bash(curl -sL https://cult-ui.com/r/cosmic-button.json)",
-      "Bash(find src *)"
+      "Bash(find src *)",
+      "Bash(find src/pages -name \"*.astro\" -type f -exec sed -i 's/text-white/text-black/g' {} +)",
+      "Bash(find src/components -name \"*.astro\" -type f -exec sed -i 's/text-white/text-black/g' {} +)"
     ]
   }
 }

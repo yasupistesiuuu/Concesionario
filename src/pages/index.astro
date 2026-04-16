@@ -82,11 +82,11 @@ const emissionTags = {
           <GradientCard animationMode="rotate-on-hover" animationSpeed={3}>
             <div class="overflow-hidden relative">
               <img src={vehicle.image} alt={vehicle.name} class="w-full h-48 object-cover" />
-              <div class={`absolute top-3 right-3 ${getEmissionColor(vehicle.emission)} px-3 py-1 rounded-full text-white font-bold text-sm`}>
+              <div class={`absolute top-3 right-3 ${getEmissionColor(vehicle.emission)} px-3 py-1 rounded-full text-black font-bold text-sm`}>
                 {vehicle.emission}
               </div>
               <div class="p-6">
-                <h3 class="font-bold text-lg mb-2 text-white">{vehicle.name}</h3>
+                <h3 class="font-bold text-lg mb-2 text-black">{vehicle.name}</h3>
                 <p class="text-black text-2xl font-bold mb-4">{vehicle.price}€</p>
                 <ul class="text-sm text-slate-400 space-y-1 mb-4">
                   <li>📅 {vehicle.year} | {vehicle.km} km</li>
@@ -115,7 +115,7 @@ const emissionTags = {
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 w-full px-4 md:px-8 lg:px-16">
         {Object.entries(emissionTags).map(([key, tag]) => (
           <a href={`/etiqueta/${key}`} class={`card p-8 text-center border-2 border-slate-700 hover:border-yellow-400 hover:shadow-lg transition-all cursor-pointer`}>
-            <div class={`${tag.color} inline-block px-6 py-3 rounded-full text-white font-bold text-3xl mb-4`}>
+            <div class={`${tag.color} inline-block px-6 py-3 rounded-full text-black font-bold text-3xl mb-4`}>
               {tag.label}
             </div>
             <p class="text-3xl font-bold text-black mb-2">{tag.count}</p>
