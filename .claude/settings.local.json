@@ -18,7 +18,8 @@
       "Bash(vercel --prod)",
       "Bash(curl -s https://concesionario-luxury.vercel.app/)",
       "Bash(curl -I \"https://cdn.coverr.co/videos/coverr-driving-a-porsche-in-the-mountains-5435/1080p.mp4\")",
-      "Bash(grep -E \"\\\\.\\(tsx|astro\\)$\")"
+      "Bash(grep -E \"\\\\.\\(tsx|astro\\)$\")",
+      "Bash(vercel --version)"
     ]
   }
 }

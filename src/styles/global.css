@@ -49,20 +49,20 @@ a {
 }
 
 .section {
-  @apply py-20 md:py-32;
+  @apply py-20 md:py-32 bg-black/90;
 }
 
 .section-alt {
-  @apply py-20 md:py-32 bg-slate-50/50;
+  @apply py-20 md:py-32 bg-black/90;
 }
 
 /* Tipografía Premium */
 h1, h2, h3 {
-  @apply text-slate-900;
+  @apply text-white;
 }
 
 p {
-  @apply text-slate-700;
+  @apply text-slate-300;
 }
 
 .card {
