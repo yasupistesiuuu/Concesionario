@@ -15,9 +15,9 @@ html {
 }
 
 body {
-  background-color: #050505 !important;
+  background-color: #ffffff !important;
   background: transparent !important;
-  @apply text-slate-100 font-sans antialiased;
+  @apply text-slate-900 font-sans antialiased;
 }
 
 h1 {
@@ -70,7 +70,7 @@ p {
 }
 
 .card-dark {
-  @apply bg-black/60 border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-500/50 transition-all backdrop-blur-sm;
+  @apply bg-white border border-slate-200 rounded-lg p-6 hover:border-slate-300 transition-all shadow-sm hover:shadow-md;
 }
 
 /* Animated Gradient Border Styles */
