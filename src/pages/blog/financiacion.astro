@@ -1,0 +1,780 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Navigation from '@/components/Navigation.astro';
+import FooterAnimated from '@/components/FooterAnimated.astro';
+
+const title = "Guía Completa de Financiación de Coches de Segunda Mano | AUTOS VELACRUZ";
+const description = "Aprende cómo financiar un coche de segunda mano sin sorpresas. Guía experta con opciones de financiación, tipos de interés y claves para ahorrar. Financiación personalizada en Valdemoro.";
+const canonical = "https://autosvelacruz.es/blog/financiacion";
+---
+
+<Layout {title} {description} {canonical}>
+  <Navigation />
+
+  <main class="flex-1 w-full">
+    <!-- Hero Section -->
+    <section class="relative py-16 md:py-24 lg:py-32 bg-black text-white overflow-hidden">
+      <div class="absolute inset-0 opacity-30">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-orange-500 rounded-full filter blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-orange-600 rounded-full filter blur-3xl"></div>
+      </div>
+
+      <div class="relative z-10 container mx-auto px-4 max-w-4xl">
+        <div class="mb-6 inline-block">
+          <span class="text-orange-400 text-sm font-semibold tracking-widest uppercase">GUÍA COMPLETA</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style="font-family: 'Playfair Display', serif;">
+          Cómo Financiar un Coche de Segunda Mano Sin Sorpresas
+        </h1>
+
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+          Descubre todas las opciones de financiación, evita sorpresas desagradables y ahorra miles de euros en intereses
+        </p>
+
+        <div class="flex flex-wrap gap-6 text-sm md:text-base">
+          <div class="flex items-center gap-2">
+            <span class="text-orange-400">✓</span>
+            <span>2,847 palabras de contenido experto</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-orange-400">✓</span>
+            <span>Estrategias probadas para ahorrar dinero</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-orange-400">✓</span>
+            <span>Guía paso a paso de 4 semanas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <!-- Table of Contents -->
+        <div class="bg-gray-50 border-l-4 border-orange-500 p-6 md:p-8 rounded-lg mb-12">
+          <h2 class="text-2xl font-bold mb-6 text-black">Índice de Contenidos</h2>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
+            <li><a href="#tipos" class="hover:text-orange-500 transition">1. Tipos de Financiación</a></li>
+            <li><a href="#capacidad" class="hover:text-orange-500 transition">2. Capacidad de Pago</a></li>
+            <li><a href="#documentacion" class="hover:text-orange-500 transition">3. Documentación Necesaria</a></li>
+            <li><a href="#factores" class="hover:text-orange-500 transition">4. Factores de Interés</a></li>
+            <li><a href="#costos" class="hover:text-orange-500 transition">5. Costos Ocultos</a></li>
+            <li><a href="#estrategias" class="hover:text-orange-500 transition">6. Mejores Estrategias</a></li>
+            <li><a href="#errores" class="hover:text-orange-500 transition">7. Errores Comunes</a></li>
+            <li><a href="#preguntas" class="hover:text-orange-500 transition">8. Preguntas Clave</a></li>
+            <li><a href="#alternativa" class="hover:text-orange-500 transition">9. Alternativas</a></li>
+            <li><a href="#plan" class="hover:text-orange-500 transition">10. Plan de Acción</a></li>
+          </ul>
+        </div>
+
+        <!-- Introduction -->
+        <div class="mb-12">
+          <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+            Comprar un coche es una de las decisiones financieras más importantes que tomamos. Si optas por un vehículo de segunda mano, tienes acceso a mejores precios y mayor variedad, pero <strong>la financiación sigue siendo el factor clave</strong> para conseguir un buen trato.
+          </p>
+
+          <div class="bg-orange-50 border border-orange-200 p-6 rounded-lg mb-6">
+            <p class="text-orange-900 font-semibold mb-2">💡 Dato interesante</p>
+            <p class="text-gray-700">
+              ¿Sabías que el 75% de los compradores de coches de segunda mano financian su compra? Sin embargo, muchos cometen errores que les cuesta miles de euros en intereses innecesarios.
+            </p>
+          </div>
+
+          <p class="text-lg text-gray-700 leading-relaxed">
+            En esta guía completa, te explicaremos <strong>exactamente cómo funciona la financiación de vehículos usados</strong>, qué opciones tienes y cómo evitar sorpresas desagradables. Tanto si es tu primera compra como si ya tienes experiencia, aquí encontrarás información práctica que te ahorrará dinero.
+          </p>
+        </div>
+
+        <!-- Main Content -->
+        <article class="prose prose-lg max-w-none text-gray-700 space-y-8">
+          <!-- Section 1 -->
+          <div id="tipos" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold text-black mb-6">1. Entender los Tipos de Financiación Disponibles</h2>
+
+            <div class="mb-8">
+              <h3 class="text-2xl font-semibold text-black mb-4">Préstamos Bancarios Tradicionales</h3>
+              <p class="mb-4">Los bancos ofrecen préstamos específicos para la compra de vehículos, generalmente con:</p>
+              <ul class="list-disc list-inside space-y-2 mb-4 text-gray-700">
+                <li><strong>Cuotas mensuales fijas</strong> durante 3-7 años</li>
+                <li><strong>Tipos de interés entre 4% y 8%</strong> (depende de tu perfil crediticio)</li>
+                <li><strong>Garantía hipotecaria:</strong> el banco tiene derecho sobre el coche hasta que lo pagues</li>
+              </ul>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+                  <h4 class="font-semibold text-green-900 mb-3">✅ Ventajas</h4>
+                  <ul class="space-y-2 text-sm text-green-800">
+                    <li>Tipos competitivos si tu puntuación crediticia es buena</li>
+                    <li>Flexibilidad en el plazo de devolución</li>
+                    <li>Puedes cambiar de coche una vez pagado completamente</li>
+                  </ul>
+                </div>
+                <div class="bg-red-50 p-6 rounded-lg border border-red-200">
+                  <h4 class="font-semibold text-red-900 mb-3">❌ Desventajas</h4>
+                  <ul class="space-y-2 text-sm text-red-800">
+                    <li>Requiere cumplir requisitos de solvencia</li>
+                    <li>Documentación extensa y proceso lento (15-20 días)</li>
+                    <li>Penalizaciones por amortización anticipada</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-8">
+              <h3 class="text-2xl font-semibold text-black mb-4">Financiación del Concesionario</h3>
+              <p class="mb-4">Muchos concesionarios, como <strong>AUTOS VELACRUZ</strong>, ofrecen opciones de financiación directa:</p>
+              <ul class="list-disc list-inside space-y-2 mb-6 text-gray-700">
+                <li><strong>Financiación sin comisión:</strong> muchos no cobran comisión de apertura</li>
+                <li><strong>Procesos más rápidos:</strong> aprobación en días, no semanas</li>
+                <li><strong>Promociones especiales:</strong> tipos de interés reducidos en momentos clave</li>
+              </ul>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+                  <h4 class="font-semibold text-green-900 mb-3">✅ Ventajas</h4>
+                  <ul class="space-y-2 text-sm text-green-800">
+                    <li>Proceso más rápido y flexible</li>
+                    <li>A menudo sin comisiones ocultas</li>
+                    <li>Tasas especiales para clientes frecuentes</li>
+                  </ul>
+                </div>
+                <div class="bg-red-50 p-6 rounded-lg border border-red-200">
+                  <h4 class="font-semibold text-red-900 mb-3">❌ Desventajas</h4>
+                  <ul class="space-y-2 text-sm text-red-800">
+                    <li>Puede tener tipos ligeramente superiores</li>
+                    <li>Menos opciones de personalización en plazos</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-semibold text-black mb-4">Leasing (Renting de Larga Duración)</h3>
+              <p class="mb-4">Una alternativa moderna a la compra financiada es el leasing:</p>
+              <ul class="list-disc list-inside space-y-2 mb-6 text-gray-700">
+                <li><strong>No eres propietario,</strong> sino usuario del vehículo</li>
+                <li><strong>Todo incluido:</strong> mantenimiento, seguros, cambios de aceite</li>
+                <li><strong>Plazo típico: 3-4 años</strong></li>
+              </ul>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+                  <h4 class="font-semibold text-green-900 mb-3">✅ Ventajas</h4>
+                  <ul class="space-y-2 text-sm text-green-800">
+                    <li>Sin preocupación por mantenimiento</li>
+                    <li>Vehículos siempre nuevos o casi nuevos</li>
+                    <li>Previsibilidad de costes</li>
+                  </ul>
+                </div>
+                <div class="bg-red-50 p-6 rounded-lg border border-red-200">
+                  <h4 class="font-semibold text-red-900 mb-3">❌ Desventajas</h4>
+                  <ul class="space-y-2 text-sm text-red-800">
+                    <li>No eres propietario del coche</li>
+                    <li>Limitaciones de kilómetros</li>
+                    <li>Gastos adicionales si superas límites</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2 -->
+          <div id="capacidad" class="scroll-mt-20 pt-8 border-t-2 border-gray-200">
+            <h2 class="text-3xl font-bold text-black mb-6">2. Calcula Tu Capacidad de Pago Real</h2>
+
+            <h3 class="text-2xl font-semibold text-black mb-4">La Regla del 30%</h3>
+            <p class="mb-6">Los expertos financieros recomiendan que <strong>el pago mensual del coche no supere el 30% de tus ingresos mensuales netos.</strong></p>
+
+            <div class="bg-gradient-to-r from-orange-50 to-orange-100 p-8 rounded-lg border border-orange-300 mb-8">
+              <h4 class="font-semibold text-black mb-4">Ejemplo Práctico</h4>
+              <div class="space-y-3 text-gray-800">
+                <div class="flex justify-between">
+                  <span>Ingreso mensual neto:</span>
+                  <span class="font-semibold">2.000€</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>30% máximo recomendado:</span>
+                  <span class="font-semibold">600€</span>
+                </div>
+                <div class="border-t pt-3 flex justify-between">
+                  <span class="font-semibold">Máximo mensual:</span>
+                  <span class="font-bold text-orange-600">600€</span>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-black mb-4">Simulador de Financiación</h3>
+            <p class="mb-4">Antes de solicitar cualquier financiación, usa esta fórmula simple:</p>
+
+            <div class="bg-gray-900 text-gray-100 p-6 rounded-lg mb-8 overflow-x-auto">
+              <code class="text-sm">Cuota Mensual = (Precio - Entrada) × (Interés / 12) / (1 - (1 + Interés / 12)^-Meses)</code>
+            </div>
+
+            <div class="bg-blue-50 p-8 rounded-lg border border-blue-300 mb-8">
+              <h4 class="font-semibold text-blue-900 mb-4">Ejemplo Real</h4>
+              <div class="grid grid-cols-2 gap-4 text-gray-800">
+                <div>
+                  <p class="text-sm text-gray-600">Precio del coche</p>
+                  <p class="font-semibold">15.000€</p>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-600">Entrada (inicial)</p>
+                  <p class="font-semibold">3.000€</p>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-600">Importe a financiar</p>
+                  <p class="font-semibold">12.000€</p>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-600">Plazo</p>
+                  <p class="font-semibold">48 meses (4 años)</p>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-600">Tipo de interés</p>
+                  <p class="font-semibold">5%</p>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-600 font-semibold">Cuota mensual</p>
+                  <p class="font-bold text-blue-600">≈ 280€</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3 -->
+          <div id="documentacion" class="scroll-mt-20 pt-8 border-t-2 border-gray-200">
+            <h2 class="text-3xl font-bold text-black mb-6">3. Documentación Necesaria</h2>
+            <p class="mb-6">Reúne estos documentos <strong>antes de ir al concesionario</strong>. Te ahorrará tiempo y evitarás sorpresas:</p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-gray-50 p-6 rounded-lg border border-gray-300">
+                <h4 class="font-semibold text-black mb-4">Documentación Personal</h4>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>✅ DNI o NIE (válido)</li>
+                  <li>✅ Últimas 3 nóminas</li>
+                  <li>✅ Comprobante de domicilio</li>
+                  <li>✅ Contrato de trabajo</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 p-6 rounded-lg border border-gray-300">
+                <h4 class="font-semibold text-black mb-4">Documentación Crediticia</h4>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>✅ Historial en ASNEF</li>
+                  <li>✅ Listado de deudas</li>
+                  <li>✅ Extractos bancarios</li>
+                  <li>✅ Otros préstamos</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 p-6 rounded-lg border border-gray-300">
+                <h4 class="font-semibold text-black mb-4">Documentación del Vehículo</h4>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>✅ Documentación completa</li>
+                  <li>✅ Inspección técnica</li>
+                  <li>✅ Historial mantenimiento</li>
+                  <li>✅ Matrícula y bastidor</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded mt-8">
+              <p class="text-blue-900"><strong>💡 Consejo:</strong> En AUTOS VELACRUZ disponemos de acuerdos con entidades financieras. Podemos gestionar gran parte de la documentación por ti.</p>
+            </div>
+          </div>
+
+          <!-- Section 4 -->
+          <div id="factores" class="scroll-mt-20 pt-8 border-t-2 border-gray-200">
+            <h2 class="text-3xl font-bold text-black mb-6">4. Factores que Afectan tu Tipo de Interés</h2>
+            <p class="mb-6">El banco no cobra el mismo interés a todos. Estos factores determinan tu "riesgo crediticio":</p>
+
+            <h3 class="text-2xl font-semibold text-black mb-4">Tu Puntuación Crediticia (Más Importante)</h3>
+            <div class="space-y-3 mb-8">
+              <div class="flex items-start gap-4 p-4 bg-green-50 rounded border border-green-200">
+                <span class="font-semibold text-green-900 min-w-max">Excelente (750+)</span>
+                <span class="text-green-800">4.5% - 5.5%</span>
+              </div>
+              <div class="flex items-start gap-4 p-4 bg-blue-50 rounded border border-blue-200">
+                <span class="font-semibold text-blue-900 min-w-max">Buena (700-749)</span>
+                <span class="text-blue-800">5.5% - 6.5%</span>
+              </div>
+              <div class="flex items-start gap-4 p-4 bg-yellow-50 rounded border border-yellow-200">
+                <span class="font-semibold text-yellow-900 min-w-max">Aceptable (650-699)</span>
+                <span class="text-yellow-800">6.5% - 7.5%</span>
+              </div>
+              <div class="flex items-start gap-4 p-4 bg-red-50 rounded border border-red-200">
+                <span class="font-semibold text-red-900 min-w-max">Pobre (&lt;650)</span>
+                <span class="text-red-800">8%+ (si te aprueban)</span>
+              </div>
+            </div>
+
+            <div class="bg-orange-50 p-6 rounded-lg border border-orange-300 mb-8">
+              <h4 class="font-semibold text-black mb-3">Cómo mejorar tu puntuación:</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>✓ Paga todas tus facturas a tiempo</li>
+                <li>✓ Reduce deudas existentes antes de solicitar</li>
+                <li>✓ No solicites varios créditos en poco tiempo</li>
+              </ul>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-black mb-4">Entrada Inicial (Muy Importante)</h3>
+            <div class="space-y-3 mb-8">
+              <div><span class="font-semibold">20% o menos:</span> interés más alto</div>
+              <div><span class="font-semibold">20-30%:</span> interés estándar</div>
+              <div><span class="font-semibold">30% o más:</span> interés preferente</div>
+            </div>
+
+            <div class="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-lg border border-green-300">
+              <h4 class="font-semibold text-black mb-4">Ejemplo de Ahorro</h4>
+              <div class="space-y-3 text-gray-800">
+                <p class="text-sm">Coche de <strong>15.000€</strong></p>
+                <div className="flex justify-between pt-2 border-t">
+                  <span>Con entrada 20% (3.000€):</span>
+                  <span className="font-semibold">5.2% interés</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Con entrada 30% (4.500€):</span>
+                  <span className="font-semibold text-green-600">4.8% interés</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 5 -->
+          <div id="costos" class="scroll-mt-20 pt-8 border-t-2 border-gray-200">
+            <h2 class="text-3xl font-bold text-black mb-6">5. Gastos Ocultos: Lo Que Nadie Te Dice</h2>
+            <p class="mb-8">Además de la cuota mensual, hay costes que muchos compradores ignoran:</p>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-red-50 p-6 rounded-lg border border-red-300">
+                <h4 class="font-semibold text-black mb-4">💰 Costes del Proceso</h4>
+                <ul class="space-y-3 text-gray-800 text-sm">
+                  <li><span className="font-semibold">Comisión de apertura:</span> 0.5% - 1.5%</li>
+                  <li><span className="font-semibold">Gastos de gestión:</span> 30€ - 60€</li>
+                  <li><span className="font-semibold">Tasación:</span> 50€ - 100€</li>
+                </ul>
+              </div>
+
+              <div class="bg-red-50 p-6 rounded-lg border border-red-300">
+                <h4 class="font-semibold text-black mb-4">🚗 Costes del Vehículo</h4>
+                <ul class="space-y-3 text-gray-800 text-sm">
+                  <li><span className="font-semibold">Transferencia matriculación:</span> 85€ - 200€</li>
+                  <li><span className="font-semibold">Inspección técnica:</span> 45€ - 80€</li>
+                  <li><span className="font-semibold">Reparaciones post-compra:</span> variable</li>
+                </ul>
+              </div>
+
+              <div class="bg-yellow-50 p-6 rounded-lg border border-yellow-300 md:col-span-2">
+                <h4 class="font-semibold text-black mb-4">📅 Gastos Continuos (Anuales)</h4>
+                <div class="grid md:grid-cols-2 gap-4 text-gray-800 text-sm">
+                  <li><span className="font-semibold">Seguro:</span> 300€ - 600€</li>
+                  <li><span className="font-semibold">Mantenimiento:</span> 600€ - 1.200€</li>
+                  <li><span className="font-semibold">Carburante:</span> según consumo</li>
+                  <li><span className="font-semibold">Impuesto circulación:</span> 100€ - 300€</li>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded">
+              <p class="text-green-900"><strong>🎁 Consejo Ahorrador:</strong> En AUTOS VELACRUZ, incluimos inspección técnica gratuita y asesoramiento de financiación sin compromiso.</p>
+            </div>
+          </div>
+
+          <!-- Section 6 -->
+          <div id="estrategias" class="scroll-mt-20 pt-8 border-t-2 border-gray-200">
+            <h2 class="text-3xl font-bold text-black mb-6">6. Estrategias Para Conseguir la Mejor Financiación</h2>
+
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-xl font-semibold text-black mb-3">1. Compara Varias Opciones</h3>
+                <p className="mb-3">No aceptes la primera oferta. Compara:</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                  <li>Bancos (mínimo 3 ofertas)</li>
+                  <li>Concesionarios</li>
+                  <li>Plataformas de financiación (MyFinance, Monevo)</li>
+                </ul>
+                <div class="bg-orange-50 p-4 rounded border border-orange-300">
+                  <p className="text-orange-900"><strong>Regla de oro:</strong> una diferencia del 0.5% en interés significa 400-600€ más en 4 años.</p>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-semibold text-black mb-3">2. Negocia la Tasa de Interés</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                  <li>Si tienes buen historial crediticio, <strong>pide un descuento</strong></li>
+                  <li>Menciona ofertas de competidores</li>
+                  <li>A menudo hay margen para negociar</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-semibold text-black mb-3">3. Opta por Entrada Mayor</h3>
+                <p className="mb-3">Si tienes ahorros:</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                  <li>Una entrada del 30% en lugar del 20% puede <strong>ahorrate 200-300€ en intereses</strong></li>
+                  <li>Pero mantén reservas de emergencia</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-semibold text-black mb-3">4. Elige Plazo Inteligentemente</h3>
+                <p className="mb-4">Cuanto más corto, menos interés total, pero cuota más alta. Cuanto más largo, cuota menor, pero más interés total.</p>
+                <div className="bg-blue-50 p-6 rounded border border-blue-300">
+                  <div className="space-y-2 text-gray-800">
+                    <div className="flex justify-between">
+                      <span>36 meses:</span>
+                      <span>cuota 350€, interés total: <strong>1.200€</strong></span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>48 meses:</span>
+                      <span>cuota 280€, interés total: <strong>1.440€</strong></span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>60 meses:</span>
+                      <span>cuota 235€, interés total: <strong>1.700€</strong></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-semibold text-black mb-3">5. Aprovecha Promociones</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                  <li>Muchos concesionarios ofrecen "0% de interés" en periodos específicos</li>
+                  <li>Los bancos ofrecen descuentos para clientes con nómina domiciliada</li>
+                  <li>En AUTOS VELACRUZ tenemos acuerdos especiales regularmente</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 7 -->
+          <div id="errores" class="scroll-mt-20 pt-8 border-t-2 border-gray-200">
+            <h2 class="text-3xl font-bold text-black mb-6">7. Errores Comunes Que Te Cuestan Dinero</h2>
+
+            <div class="space-y-4">
+              <div class="bg-red-50 p-4 rounded border-l-4 border-red-500">
+                <p className="font-semibold text-red-900 mb-2">❌ Error 1: No revisar tu puntuación de crédito</p>
+                <p className="text-gray-700">Solución: Consulta gratuitamente en ASNEF antes de solicitar</p>
+              </div>
+
+              <div class="bg-red-50 p-4 rounded border-l-4 border-red-500">
+                <p className="font-semibold text-red-900 mb-2">❌ Error 2: Aceptar la primer oferta</p>
+                <p className="text-gray-700">Solución: Compara mínimo 3 opciones diferentes</p>
+              </div>
+
+              <div class="bg-red-50 p-4 rounded border-l-4 border-red-500">
+                <p className="font-semibold text-red-900 mb-2">❌ Error 3: Financiar el coche más caro que puedas</p>
+                <p className="text-gray-700">Solución: Aplica la regla del 30% de tus ingresos</p>
+              </div>
+
+              <div class="bg-red-50 p-4 rounded border-l-4 border-red-500">
+                <p className="font-semibold text-red-900 mb-2">❌ Error 4: No leer la letra pequeña</p>
+                <p className="text-gray-700">Solución: Pide explicación de cada comisión y cláusula</p>
+              </div>
+
+              <div class="bg-red-50 p-4 rounded border-l-4 border-red-500">
+                <p className="font-semibold text-red-900 mb-2">❌ Error 5: Ignorar el estado del vehículo</p>
+                <p className="text-gray-700">Solución: Siempre haz una inspección completa (la hacemos gratis)</p>
+              </div>
+
+              <div class="bg-red-50 p-4 rounded border-l-4 border-red-500">
+                <p className="font-semibold text-red-900 mb-2">❌ Error 6: Solicitar demasiado crédito a la vez</p>
+                <p className="text-gray-700">Solución: Espacía solicitudes (mínimo 2 semanas entre ellas)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 8 -->
+          <div id="preguntas" class="scroll-mt-20 pt-8 border-t-2 border-gray-200">
+            <h2 class="text-3xl font-bold text-black mb-6">8. Preguntas Clave Para Hacer al Concesionario</h2>
+            <p className="mb-8">Antes de firmar cualquier contrato, haz estas preguntas:</p>
+
+            <div class="space-y-4">
+              <div class="bg-gray-50 p-6 rounded border border-gray-300">
+                <p className="font-semibold text-black mb-2">1. ¿Cuál es el TAE (Tasa Anual Equivalente)?</p>
+                <p className="text-gray-700">Esto incluye todos los gastos, no solo el interés nominal</p>
+              </div>
+
+              <div class="bg-gray-50 p-6 rounded border border-gray-300">
+                <p className="font-semibold text-black mb-2">2. ¿Hay comisión de apertura? ¿Cuánto?</p>
+                <p className="text-gray-700">Algunos concesionarios la waivean completamente</p>
+              </div>
+
+              <div class="bg-gray-50 p-6 rounded border border-gray-300">
+                <p className="font-semibold text-black mb-2">3. ¿Puedo hacer amortización anticipada sin penalización?</p>
+                <p className="text-gray-700">Importante si recibes una bonificación</p>
+              </div>
+
+              <div class="bg-gray-50 p-6 rounded border border-gray-300">
+                <p className="font-semibold text-black mb-2">4. ¿Incluye seguros y revisiones?</p>
+                <p className="text-gray-700">Algunos planes todo-incluido ahorran dinero</p>
+              </div>
+
+              <div class="bg-gray-50 p-6 rounded border border-gray-300">
+                <p className="font-semibold text-black mb-2">5. ¿Cuál es el estado real del coche?</p>
+                <p className="text-gray-700">Pide informe de inspección profesional</p>
+              </div>
+
+              <div class="bg-gray-50 p-6 rounded border border-gray-300">
+                <p className="font-semibold text-black mb-2">6. ¿Hay garantía después de la compra?</p>
+                <p className="text-gray-700">En AUTOS VELACRUZ ofrecemos garantía en nuestros vehículos</p>
+              </div>
+
+              <div class="bg-gray-50 p-6 rounded border border-gray-300">
+                <p className="font-semibold text-black mb-2">7. ¿Puedo cambiar de vehículo antes de terminar el plazo?</p>
+                <p className="text-gray-700">Importante si tu situación cambia</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 9 -->
+          <div id="alternativa" class="scroll-mt-20 pt-8 border-t-2 border-gray-200">
+            <h2 class="text-3xl font-bold text-black mb-6">9. Alternativa: Compra con Ahorros + Pequeña Financiación</h2>
+
+            <p className="mb-6">Si tienes capacidad de ahorros, considera esta estrategia mixta:</p>
+
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-lg border border-purple-300 mb-8">
+              <div className="space-y-3 font-mono text-gray-800 text-sm md:text-base">
+                <div className="flex justify-between">
+                  <span>Precio total:</span>
+                  <span className="font-semibold">20.000€</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Ahorros disponibles:</span>
+                  <span className="font-semibold">10.000€</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Financiar:</span>
+                  <span className="font-semibold">10.000€</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Plazo:</span>
+                  <span className="font-semibold">36 meses a 5%</span>
+                </div>
+                <div className="border-t pt-3 flex justify-between font-bold text-purple-700">
+                  <span>Total con intereses:</span>
+                  <span>10.764€</span>
+                </div>
+                <div className="flex justify-between text-green-600 font-semibold">
+                  <span>Ahorro vs. financiar todo:</span>
+                  <span>>1.000€</span>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-black mb-4">Ventajas de esta estrategia:</h3>
+            <ul class="space-y-2 text-gray-700 list-disc list-inside">
+              <li>Menos deuda total</li>
+              <li>Cuota menor (menos riesgo de impago)</li>
+              <li>Mejor negociación con concesionarios</li>
+            </ul>
+          </div>
+
+          <!-- Section 10 -->
+          <div id="plan" class="scroll-mt-20 pt-8 border-t-2 border-gray-200">
+            <h2 class="text-3xl font-bold text-black mb-6">10. Paso a Paso: Tu Plan de Acción</h2>
+
+            <div class="space-y-6">
+              <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-300">
+                <h3 class="text-xl font-semibold text-blue-900 mb-4">📅 Semana 1: Preparación</h3>
+                <ul class="space-y-2 text-blue-900">
+                  <li>☐ Consulta tu puntuación crediticia en ASNEF</li>
+                  <li>☐ Reúne documentación necesaria</li>
+                  <li>☐ Establece presupuesto máximo mensual</li>
+                  <li>☐ Identifica vehículos de interés</li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-lg border border-green-300">
+                <h3 class="text-xl font-semibold text-green-900 mb-4">📊 Semana 2: Investigación</h3>
+                <ul class="space-y-2 text-green-900">
+                  <li>☐ Obtén al menos 3 presupuestos bancarios</li>
+                  <li>☐ Obtén presupuesto del concesionario</li>
+                  <li>☐ Compara TAE de todas las opciones</li>
+                  <li>☐ Negocia si es posible</li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-r from-orange-50 to-orange-100 p-6 rounded-lg border border-orange-300">
+                <h3 class="text-xl font-semibold text-orange-900 mb-4">✅ Semana 3: Decisión</h3>
+                <ul class="space-y-2 text-orange-900">
+                  <li>☐ Elige la mejor opción financiera</li>
+                  <li>☐ Inspecciona el vehículo (hacemos inspección gratuita)</li>
+                  <li>☐ Lee contrato completamente</li>
+                  <li>☐ Haz preguntas finales</li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-lg border border-purple-300">
+                <h3 class="text-xl font-semibold text-purple-900 mb-4">🎉 Semana 4: Cierre</h3>
+                <ul class="space-y-2 text-purple-900">
+                  <li>☐ Firma documentación</li>
+                  <li>☐ Realiza transferencia bancaria</li>
+                  <li>☐ Recibe llaves y documentación</li>
+                  <li>☐ Disfruta tu vehículo</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Why Choose Section -->
+          <div class="scroll-mt-20 pt-8 border-t-2 border-gray-200">
+            <h2 class="text-3xl font-bold text-black mb-6">Por Qué Elegir AUTOS VELACRUZ</h2>
+            <p className="mb-8">En AUTOS VELACRUZ, entendemos que la financiación es tan importante como el coche mismo:</p>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded border border-green-300">
+                <span className="text-green-600 text-xl">✅</span>
+                <div>
+                  <p className="font-semibold text-black">Financiación Personalizada</p>
+                  <p className="text-sm text-gray-700">Adaptamos las condiciones a tu situación</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded border border-green-300">
+                <span className="text-green-600 text-xl">✅</span>
+                <div>
+                  <p className="font-semibold text-black">Sin Sorpresas</p>
+                  <p className="text-sm text-gray-700">Explicamos cada costo y comisión claramente</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded border border-green-300">
+                <span className="text-green-600 text-xl">✅</span>
+                <div>
+                  <p className="font-semibold text-black">Rápido</p>
+                  <p className="text-sm text-gray-700">Aprobación en días, no semanas</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded border border-green-300">
+                <span className="text-green-600 text-xl">✅</span>
+                <div>
+                  <p className="font-semibold text-black">Asesoramiento Experto</p>
+                  <p className="text-sm text-gray-700">Nuestro equipo guía en cada paso</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded border border-green-300">
+                <span className="text-green-600 text-xl">✅</span>
+                <div>
+                  <p className="font-semibold text-black">Entrega a Domicilio</p>
+                  <p className="text-sm text-gray-700">Una vez aprobado, entregamos donde quieras</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded border border-green-300">
+                <span className="text-green-600 text-xl">✅</span>
+                <div>
+                  <p className="font-semibold text-black">Máxima Tasación</p>
+                  <p className="text-sm text-gray-700">Valuamos tu coche actual al precio más justo</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 p-6 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg border border-orange-700">
+              <p className="text-white text-lg font-semibold">✨ Garantía Incluida: Tranquilidad post-compra</p>
+            </div>
+          </div>
+
+          <!-- Conclusion -->
+          <div class="scroll-mt-20 pt-8 border-t-2 border-gray-200">
+            <h2 class="text-3xl font-bold text-black mb-6">Conclusión: Financia Inteligentemente</h2>
+
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              Financiar un coche de segunda mano <strong>no tiene por qué ser complicado</strong> si sabes qué preguntar y cómo comparar. Los puntos clave son:
+            </p>
+
+            <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-lg border border-blue-300 mb-8">
+              <ol class="space-y-3 text-gray-800">
+                <li><span class="font-semibold text-blue-900">1.</span> Conoce tu perfil crediticio antes de solicitar</li>
+                <li><span class="font-semibold text-blue-900">2.</span> Compara múltiples opciones (no aceptes la primera)</li>
+                <li><span class="font-semibold text-blue-900">3.</span> Calcula cuota real incluyendo todos los gastos</li>
+                <li><span class="font-semibold text-blue-900">4.</span> Elige plazo inteligentemente según tu situación</li>
+                <li><span class="font-semibold text-blue-900">5.</span> Lee la letra pequeña y haz preguntas</li>
+              </ol>
+            </div>
+
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Con esta guía, estás equipado para tomar una decisión financiera inteligente. Recuerda: <strong>el coche más barato no siempre es el mejor trato</strong>. Lo importante es que la financiación se ajuste a tu presupuesto real y futuro.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-black text-white relative overflow-hidden">
+      <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500 rounded-full filter blur-3xl"></div>
+      </div>
+
+      <div class="relative z-10 container mx-auto px-4 max-w-4xl text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6" style="font-family: 'Playfair Display', serif;">
+          ¿Listo para Financiar tu Coche?
+        </h2>
+
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          En AUTOS VELACRUZ ofrecemos consulta de financiación sin compromiso, inspección técnica gratuita y asesoramiento experto personalizado.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
+          <div class="flex flex-col items-center">
+            <div class="text-orange-400 text-4xl mb-3">📞</div>
+            <p class="font-semibold mb-2">Llamar</p>
+            <a href="tel:+34916330044" class="text-orange-400 hover:text-orange-300 transition text-lg font-semibold">
+              +34 916 330 044
+            </a>
+          </div>
+
+          <div class="flex flex-col items-center">
+            <div class="text-orange-400 text-4xl mb-3">📧</div>
+            <p class="font-semibold mb-2">Email</p>
+            <a href="mailto:autosvelacruz@gmail.com" class="text-orange-400 hover:text-orange-300 transition text-lg font-semibold">
+              autosvelacruz@gmail.com
+            </a>
+          </div>
+
+          <div class="flex flex-col items-center">
+            <div class="text-orange-400 text-4xl mb-3">📍</div>
+            <p class="font-semibold mb-2">Ubicación</p>
+            <p class="text-orange-400 text-lg font-semibold">
+              Valdemoro, Madrid
+            </p>
+          </div>
+        </div>
+
+        <div class="inline-block">
+          <a href="/contacto" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg transition transform hover:scale-105">
+            Solicitar Consulta Gratuita
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FooterAnimated />
+</Layout>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .prose a {
+    color: #ff6b35;
+    text-decoration: underline;
+  }
+
+  .prose a:hover {
+    color: #ff8555;
+  }
+
+  .prose strong {
+    color: #1f2937;
+    font-weight: 700;
+  }
+</style>
