@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2d2d2d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Elementos decorativos laterales -->
+  <circle cx="100" cy="100" r="80" fill="#fbbf24" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="100" fill="#fbbf24" opacity="0.08"/>
+
+  <!-- Línea decorativa superior -->
+  <line x1="0" y1="80" x2="1200" y2="80" stroke="url(#accentGrad)" stroke-width="2" opacity="0.6"/>
+
+  <!-- Contenedor principal -->
+  <g filter="url(#glow)">
+    <!-- Logo/Marca -->
+    <text x="600" y="180" font-family="'Playfair Display', serif" font-size="72" font-weight="700" text-anchor="middle" fill="#fbbf24" letter-spacing="-2">
+      AUTOS VELACRUZ
+    </text>
+  </g>
+
+  <!-- Subtítulo -->
+  <text x="600" y="240" font-family="'Outfit', sans-serif" font-size="28" text-anchor="middle" fill="#e5e7eb" letter-spacing="1">
+    Concesionario de Lujo
+  </text>
+
+  <!-- Descripción principal -->
+  <text x="600" y="310" font-family="'Outfit', sans-serif" font-size="22" text-anchor="middle" fill="#d1d5db">
+    Amplia selección de vehículos de segunda mano
+  </text>
+  <text x="600" y="345" font-family="'Outfit', sans-serif" font-size="22" text-anchor="middle" fill="#d1d5db">
+    Financiación personalizada • Entrega a domicilio
+  </text>
+
+  <!-- Línea decorativa inferior -->
+  <line x1="300" y1="420" x2="900" y2="420" stroke="url(#accentGrad)" stroke-width="2" opacity="0.6"/>
+
+  <!-- Características -->
+  <g font-family="'Outfit', sans-serif" font-size="18" fill="#9ca3af" text-anchor="middle">
+    <text x="300" y="490">✓ Máxima Tasación</text>
+    <text x="600" y="490">✓ Financiación</text>
+    <text x="900" y="490">✓ Entrega Rápida</text>
+  </g>
+
+  <!-- URL -->
+  <text x="600" y="570" font-family="'Outfit', sans-serif" font-size="20" text-anchor="middle" fill="#fbbf24" font-weight="600">
+    autosvelacruz.es
+  </text>
+
+  <!-- Marca de lujo esquina -->
+  <circle cx="1150" cy="50" r="25" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.8"/>
+  <text x="1150" y="60" font-family="'Playfair Display', serif" font-size="24" text-anchor="middle" fill="#fbbf24">★</text>
+</svg>

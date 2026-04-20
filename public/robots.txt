@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://autosvelacruz.es/sitemap.xml
+
+# Crawl-delay para bots
+Crawl-delay: 1
