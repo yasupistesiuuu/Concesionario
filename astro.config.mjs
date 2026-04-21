@@ -1,11 +1,12 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 import path from 'path';
 
 export default defineConfig({
   output: 'static',
-  site: 'https://autosvelacruz.es',
-  integrations: [react()],
+  site: 'https://concesionario-luxury.vercel.app',
+  integrations: [react(), sitemap()],
   vite: {
     resolve: {
       alias: {
