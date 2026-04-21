@@ -6,7 +6,7 @@ import path from 'path';
 export default defineConfig({
   output: 'static',
   site: 'https://concesionario-luxury.vercel.app',
-  integrations: [react(), sitemap()],
+  integrations: [react(), sitemap({ filter: (page) => page !== 'https://concesionario-luxury.vercel.app/404' })],
   vite: {
     resolve: {
       alias: {
